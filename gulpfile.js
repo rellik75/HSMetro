@@ -16,10 +16,10 @@ var requireJsRuntimeConfig = vm.runInNewContext(fs.readFileSync('src/app/require
         },
         include: [
             'requireLib',
-            'components/nav-bar/nav-bar',
-            'components/home-page/home',
-            'text!components/about-page/about.html',
-            'components/hsdevice/hsdevice'
+            'components/hsdevice/hsdevice',
+            'components/clock/clock',
+            'components/refresh/refresh',
+            'components/weather/weather'
         ],
         insertRequire: ['app/startup'],
         bundles: {
@@ -27,8 +27,17 @@ var requireJsRuntimeConfig = vm.runInNewContext(fs.readFileSync('src/app/require
             // above, and group them into bundles here.
             // 'bundle-name': [ 'some/module', 'another/module' ],
             // 'another-bundle-name': [ 'yet-another-module' ]
+            'home':['components/home-page/home']
         }
     });
+
+
+
+
+gulp.task('images', function() {
+  return gulp.src('src/img/*.*')
+    .pipe(gulp.dest('./dist/img'))
+});
 
 // Discovers all AMD dependencies, concatenates together all required .js files, minifies them
 gulp.task('js', function () {
@@ -64,7 +73,7 @@ gulp.task('clean', function() {
         .pipe(clean());
 });
 
-gulp.task('default', ['html', 'js', 'css'], function(callback) {
+gulp.task('default', ['html', 'js', 'css', 'images'], function(callback) {
     callback();
     console.log('\nPlaced optimized files in ' + chalk.magenta('dist/\n'));
 });

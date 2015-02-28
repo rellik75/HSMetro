@@ -575,11 +575,46 @@
   -webkit-transform: translate(-50%, 0px);
   transform: translate(-50%, 0px);
 }
+.live-tile .align-mid-top {
+  display: inline-block;
+  left: 50%;
+  max-width: 100%;
+  position: relative;
+  -moz-transform: translate(-50%, 0px);
+  -ms-transform: translate(-50%, 0px);
+  -o-transform: translate(-50%, 0px);
+  -webkit-transform: translate(-50%, 0px);
+  transform: translate(-50%, 0px);
+}
 .live-tile .align-mid-y {
   display: inline-block;
   max-height: 100%;
   position: absolute;
   top: 50%;
+  -moz-transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  -o-transform: translate(0px, -50%);
+  -webkit-transform: translate(0px, -50%);
+  transform: translate(0px, -50%);
+}
+.live-tile .align-left-y {
+  display: inline-block;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -moz-transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  -o-transform: translate(0px, -50%);
+  -webkit-transform: translate(0px, -50%);
+  transform: translate(0px, -50%);
+}
+.live-tile .align-right-y {
+  display: inline-block;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  right: 10px;
   -moz-transform: translate(0px, -50%);
   -ms-transform: translate(0px, -50%);
   -o-transform: translate(0px, -50%);

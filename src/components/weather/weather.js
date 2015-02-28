@@ -3,6 +3,8 @@ define(['knockout', 'text!./weather.html', 'simpleweather','jquery','metrojs'], 
     function Weather(params) {
         var self = this;
         var zipcode=params.zipcode;
+        var color=params.color;
+        self.classInfo=ko.observable("live-tile two-wide two-tall exclude accent " + color);
         self.image=ko.observable();
         self.status=ko.observable();
         self.temp=ko.observable();
@@ -36,7 +38,7 @@ define(['knockout', 'text!./weather.html', 'simpleweather','jquery','metrojs'], 
                 alert(error.message);
             }
         })
-        $(".live-tile, .flip-list").not(".exclude").liveTile();
+       // $(".live-tile, .flip-list").not(".exclude").liveTile();
     }
 
     // This runs when the component is torn down. Put here any logic necessary to clean up,

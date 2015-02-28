@@ -7,18 +7,37 @@
     <title></title>
     <script src="src/bower_modules/jquery/dist/jquery.js"></script>
     <script src="src/bower_modules/underscore/underscore-min.js"></script>
+    <script src="src/bower_modules/libs/HSLib.js"></script>
+
 </head>
 
 <body>
     <input type="button" id="a" onclick="test()" value="off">
-    </button>
-</body>
-
-</html>
 
 <script>
-            
-        var timer = null;
+    
+    var hslib=new HSLib();
+    alert(hslib.someMethod());
+   // var io = require('socket.io-client');
+/*var socket = io.connect('192.168.1.250:11000');
+  socket.on('connect', function (data) {
+      debugger;
+    console.log(data);
+    document.write(data + "\r\n");
+    socket.emit('tcp', "For TCP");  });  */
+    
+    var connection = new WebSocket("ws://192.168.1.250:11000");
+    connection.onopen=function(e) {
+        debugger;
+    }
+    connection.onmessage = function (e) {
+        debugger;
+        alert('Server: ' + e.data);
+        };
+    connection.onerror = function (error) {debugger;
+  alert.log('WebSocket Error ' + error);
+};
+    var timer = null;
     var obj = [
         {
             "label": "off",
@@ -39,25 +58,33 @@
     function test(params) {
 
 
-if(timer != null)
-{
-  clearTimeout(timer); 
-  timer = null;
-}
+        if (timer != null) {
+            clearTimeout(timer);
+            timer = null;
+        }
 
 
         var o = _.find(obj, function (item) {
             return item.label == $('#a').attr("value")
         });
-        var i = _.indexOf(obj,o);
+        var i = _.indexOf(obj, o);
         ++i;
-        if (i>=_.size(obj)) {i=0};
+        if (i >= _.size(obj)) {
+            i = 0
+        };
         //debugger;
         var label = obj[i].label;
         //debugger;
         $('#a').attr("value", label);
-        timer=setTimeout(test2,5000);
+        timer = setTimeout(test2, 5000);
     }
+
+    function test2() {
+        alert("Hi")
+    };
+</script>    
     
-    function test2(){ alert ("Hi")};
-</script>
+</body>
+
+</html>
+

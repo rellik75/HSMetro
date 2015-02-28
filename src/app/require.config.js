@@ -12,14 +12,14 @@ var require = {
         "text":                 "bower_modules/requirejs-text/text",
         "metrojs":              "bower_modules/libs/MetroJs.min",
         "jqueryui":             "bower_modules/jquery/dist/jquery-ui.min",
-        "knockout-mapping":     "bower_modules/knockout/dist/knockout.mapping",
+        //"knockout-mapping":     "bower_modules/knockout/dist/knockout.mapping",
         "simpleweather":        "bower_modules/libs/jQuery.simpleWeather",
         "touchpunch":           "bower_modules/libs/jquery.ui.touch-punch",
         "underscore":           "bower_modules/underscore/underscore-min",
     },
     shim: {
         "bootstrap": { deps: ["jquery"] },
-        "knockout.mapping": ["knockout"],
+        //"knockout.mapping": ["knockout"],
         "jquery.ui.touch-punch": ["jquery", "jquery-ui.min"],
         "MetroJS.min":["jquery"]
     }

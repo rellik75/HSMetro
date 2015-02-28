@@ -1,0 +1,8 @@
+    <div class="live-tile accent {0} " data-bind='event: {click: toggleDevice, touchstart: toggleDevice}, attr: {"id": ref}, attr: {"class": classInfo}' >
+
+        <span class="tile-title align-" data-bind="text: name"></span>
+        <p class="align-mid-top" data-bind="text: status"></p>
+        <img class="align-mid" data-bind="attr:{src: statusIcon}"/>
+        <input class="align-left-y" type="image" src="../../img/up.png"  id="up" data-bind="event: {click: rangeUp, touchstart: rangeUp}, visible: controlButtonsVisible">
+        <input class="align-right-y" type="image" src="../../img/down.png"  id="down" data-bind="event: {click: rangeDown, touchstart: rangeDown}, visible: controlButtonsVisible">
+    </div>

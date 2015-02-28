@@ -1,12 +1,35 @@
 
-<div class="tiles">
-    <clock class="hstile"></clock>
-    <hsdevice class="hstile"  params="url: 'http://192.168.1.250', ref: 230, color: 'steel'"></hsdevice>
-    <hsdevice class="hstile"  params="url: 'http://192.168.1.250', ref: 215, color: 'steel'"></hsdevice>
-    <hsdevice class="hstile"  params="url: 'http://192.168.1.250', ref: 354, color: 'steel'"></hsdevice>
-    <hsdevice class="hstile"  params="url: 'http://192.168.1.250', ref: 341, color: 'steel'"></hsdevice>
-    <weather class="hstile"   params="zipcode: '89135'"></weather>
-    <refresh clas="hstile"></refresh>
+<div class="tiles tile-group three-tall">
+    <weather class="hstile"   params="zipcode: '89135', color: 'blue'"></weather>
+    <clock class="hstile" params="color: 'yellow'"></clock>
+    <hsdevice class="hstile"  params="url: 'http://192.168.1.250', ref: 230, color: 'steel', icons: {
+                                      'on': '/images/HomeSeer/status/on.gif', 
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+    <hsdevice class="hstile"  params="url: 'http://192.168.1.250', ref: 215, color: 'steel', icons: {
+                                      'on': '/images/HomeSeer/status/on.gif', 
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+    <hsdevice class="hstile"  params="url: 'http://192.168.1.250', ref: 434, color: 'steel', icons: {
+                                      'unlocked': '/images/HomeSeer/status/unlocked.gif', 
+                                      'locked': '/images/HomeSeer/status/locked.gif'}"></hsdevice>
+    <hsdevice class="hstile"  params="url: 'http://192.168.1.250', ref: 298, color: 'steel', icons: {
+                                      'home': '/images/home_sm.png',
+                                      'away': '/images/home_red_sm.png',
+                                      'night': '/images/nighttime.png'
+                                      }"></hsdevice>
+    
+    <hsdevice clas="hstile" params="url: 'http://192.168.1.250', ref: 229, color: 'steel', icons: {
+                                      'on': '/images/HomeSeer/status/on.gif', 
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+       <hsdevice clas="hstile" params="url: 'http://192.168.1.250', ref: 226, color: 'steel', icons: {
+                                      'on': '/images/HomeSeer/status/on.gif', 
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+        <hsdevice clas="hstile" params="url: 'http://192.168.1.250', ref: 216, color: 'steel', icons: {
+                                      'on': '/images/HomeSeer/status/on.gif', 
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+        <hsdevice clas="hstile" params="url: 'http://192.168.1.250', ref: 217, color: 'steel', icons: {
+                                      'on': '/images/HomeSeer/status/on.gif', 
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+    <refresh clas="hstile" params="color: 'blue'"></refresh>
     
     
 </div>

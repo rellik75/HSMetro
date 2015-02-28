@@ -1,4 +1,4 @@
-<div class="live-tile three-wide two-tall" data-mode="flip" data-delay="4000" id="weather">
+<div class="live-tile two-wide two-tall exclude"  id="weather" data-bind='attr: {"class": classInfo}'>
     <div>
         <span class="tile-title" data-bind="text: city"></span>
 <p>
@@ -6,11 +6,9 @@
 
                     Temp: <span class="metroSmall" data-bind="text: temp()"></span></br>
     Currently: <span class="metroSmall" data-bind="text: status"></span></br>
-                    Wind Dir: <span class="metroSmall" data-bind="text: windDirection"></span>
+                    Wind Dir: <span class="metroSmall" data-bind="text: windDirection"></span> </br>
+Wind Speed: <span class="metroSmall" data-bind="text: windSpeed"></span>
 
 </p>
-    </div>
-    <div>
-        <span class="tile-title" data-bind="text: city"></span>
     </div>
 </div>
