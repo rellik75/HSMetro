@@ -1,17 +1,20 @@
-define(['jquery', 'knockout', 'text!./hsdevice.html', 'jqueryui', 'touchpunch', 'underscore'], function ($, ko, templateMarkup) {
+define(['jquery', 'knockout', 'faye', 'text!./hsdevice.html', 'jqueryui', 'touchpunch', 'underscore'], function ($, ko, faye, templateMarkup) {
 
     function Hsdevice(params) {
 
         var timer = null;
         var self = this;
         self.icons = params.icons;
+        
 
         if (params.hasOwnProperty('ref')) {
             self.ref = params.ref;
         }
         if (params.hasOwnProperty("color")) {
             self.classInfo = ko.observable('live-tile exclude accent ' + params.color);
+            self.defaultColor=params.color;
         }
+        else self.defaultColor="steel";
         self.url = params.url;
         self.name = ko.observable();
         self.value = ko.observable();
@@ -35,6 +38,16 @@ define(['jquery', 'knockout', 'text!./hsdevice.html', 'jqueryui', 'touchpunch', 
         };
 
         queryDevice(self);
+        var client = new Faye.Client('http://192.168.1.8:8000/faye');
+        client.subscribe('/chat/tick', function(message) {
+            //debugger;
+            var arr=String(message).split(",");
+            if (parseInt(arr[1])==self.ref) {
+                self.value(parseInt(arr[2]));
+                controlDeviceByValue(self)
+            }
+        //self.message(message);
+      })        
     }
 
 
@@ -115,12 +128,16 @@ function queryDevice(self) {
 
 
 function controlDeviceByValue(self) {
-    var controlData = $.getJSON(self.url + "/JSON?request=controldevicebyvalue&ref=" + self.ref + "&value=" + self.value());
+    //debugger;
+    var val=self.value();
+    //debugger;
+    var controlData = $.getJSON(self.url + "/JSON?request=controldevicebyvalue&ref=" + self.ref + "&value=" + val);
     var statusData = $.getJSON(self.url + "/JSON?request=getstatus&ref=" + self.ref);
 
     $.when(controlData, statusData).done(function (_cdata, _sdata) {
         //debugger;
         var data = $.extend(_cdata[0], _sdata[0]);
+        self.status(data.Devices[0].status);
         setStatusIcon(self);
     });
 }
@@ -184,7 +201,7 @@ function setStatusIcon(self) {
         case "Disarmed":
         default:
         {
-            self.classInfo("live-tile exclude accent " + params.color);
+            self.classInfo("live-tile exclude accent " + self.defaultColor);
             self.statusIcon(self.url + iconPath);
             break;
         }        

@@ -16,6 +16,7 @@ var require = {
         "simpleweather":        "bower_modules/libs/jQuery.simpleWeather",
         "touchpunch":           "bower_modules/libs/jquery.ui.touch-punch",
         "underscore":           "bower_modules/underscore/underscore-min",
+        "faye":                  "bower_modules/faye-browser-min"
     },
     shim: {
         "bootstrap": { deps: ["jquery"] },
