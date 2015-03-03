@@ -4,17 +4,20 @@ define(['jquery', 'knockout', 'faye', 'text!./hsdevice.html', 'jqueryui', 'touch
 
         var timer = null;
         var self = this;
+        var proxyIP = params.proxyIP;
+        var proxyPort = params.proxyPort;
         self.icons = params.icons;
-        
+
 
         if (params.hasOwnProperty('ref')) {
             self.ref = params.ref;
         }
         if (params.hasOwnProperty("color")) {
             self.classInfo = ko.observable('live-tile exclude accent ' + params.color);
-            self.defaultColor=params.color;
+            self.defaultColor = params.color;
+        } else {
+            self.defaultColor = "steel";
         }
-        else self.defaultColor="steel";
         self.url = params.url;
         self.name = ko.observable();
         self.value = ko.observable();
@@ -38,23 +41,32 @@ define(['jquery', 'knockout', 'faye', 'text!./hsdevice.html', 'jqueryui', 'touch
         };
 
         queryDevice(self);
-        var client = new Faye.Client('http://192.168.1.8:8000/faye');
-        client.subscribe('/chat/tick', function(message) {
-            //debugger;
-            var arr=String(message).split(",");
-            if (parseInt(arr[1])==self.ref) {
-                self.value(parseInt(arr[2]));
-                controlDeviceByValue(self)
-            }
-        //self.message(message);
-      })        
+
+        // Check to ensure proxy IP and port values are set.  ThenCreate a new client that subscribes 
+        // to the proxy server.  Convert the message to an array
+        // and check to ensure the current value isn't equal to the value received from the proxy.
+        // If the the value received from the proxy is different then call the function to control the device
+
+        if (proxyIP && proxyPort) {
+            var proxyURL = "http://" + proxyIP + ":" + proxyPort + "/faye";
+            var client = new Faye.Client(proxyURL);
+            client.subscribe('/homeseer/statuschange', function (message) {
+                //debugger;
+                var arr = String(message).split(",");
+                if (parseInt(arr[1]) == self.ref) {
+                    if (self.value() != parseInt(arr[2])) {
+                        self.value(parseInt(arr[2]));
+                        queryDevice(self)
+                    }
+                }
+            });
+        }
     }
 
 
     // This runs when the component is torn down. Put here any logic necessary to clean up,
     // for example cancelling setTimeouts or disposing Knockout subscriptions/computeds.
-    Hsdevice.prototype.dispose = function () {
-    };
+    Hsdevice.prototype.dispose = function () {};
 
 
     return {
@@ -77,8 +89,7 @@ function toggleButton(self) {
     ++i;
     if (i >= _.size(self.controlPairs())) {
         i = 0
-    }
-    ;
+    };
     //debugger;
     var label = self.controlPairs()[i].Label;
     if (self.controlPairs()[i].Range != null) {
@@ -86,8 +97,7 @@ function toggleButton(self) {
         if (self.value() > self.controlPairs()[i].Range.RangeEnd) {
             self.value(self.controlPairs()[i].Range.RangeEnd);
         }
-    }
-    else
+    } else
         self.controlButtonsVisible(false);
     //debugger; 
     self.status(label);
@@ -113,23 +123,13 @@ function queryDevice(self) {
         _.each(data.ControlPairs, function (item) {
             self.controlPairs.push(item)
         });
-        /*var o = _.find(self.controlPairs(), function (item) {
-            //debugger;
-            return item.Label == self.status();
-        });
-        //debugger;
-        if (o){
-        var i = _.indexOf(self.controlPairs(), o);
-        self.controlValue(self.controlPairs()[i].ControlValue);
-    }*/
     });
-}
-;
+};
 
 
 function controlDeviceByValue(self) {
     //debugger;
-    var val=self.value();
+    var val = self.value();
     //debugger;
     var controlData = $.getJSON(self.url + "/JSON?request=controldevicebyvalue&ref=" + self.ref + "&value=" + val);
     var statusData = $.getJSON(self.url + "/JSON?request=getstatus&ref=" + self.ref);
@@ -163,48 +163,48 @@ function setStatusIcon(self) {
     }
 
     switch (self.status()) {
-        case "Locked":
-        case "Lock":
-        case "On Last Level":
-        case ((String(self.status()).toLowerCase().match(/dim/)) ? self.status() : "undefined"):
-        case "On":
+    case "Locked":
+    case "Lock":
+    case "On Last Level":
+    case ((String(self.status()).toLowerCase().match(/dim/)) ? self.status() : "undefined"):
+    case "On":
         {
             self.classInfo("live-tile exclude accent green");
             self.statusIcon(self.url + iconPath);
             break;
         }
-        case "Away":
+    case "Away":
         {
             self.classInfo("live-tile exclude accent mauve");
             self.statusIcon(self.url + iconPath);
             break;
         }
-        case "Night":
+    case "Night":
         {
             self.classInfo("live-tile exclude accent orange");
             self.statusIcon(self.url + iconPath);
             break;
         }
-        case "Arm":
-        case "Armed":
+    case "Arm":
+    case "Armed":
         {
             self.classInfo("live-tile exclude accent red");
             self.statusIcon(self.url + iconPath);
             break;
         }
-        case "Unknown":
-        case "Unlock":
-        case "Unlocked":
-        case "Off":
-        case "Home":
-        case "Disarm":
-        case "Disarmed":
-        default:
+    case "Unknown":
+    case "Unlock":
+    case "Unlocked":
+    case "Off":
+    case "Home":
+    case "Disarm":
+    case "Disarmed":
+    default:
         {
             self.classInfo("live-tile exclude accent " + self.defaultColor);
             self.statusIcon(self.url + iconPath);
             break;
-        }        
+        }
     }
 }
 
@@ -215,8 +215,7 @@ function rangeUp(self, event) {
         if ((currentVal + 10) < 98) {
             if (currentVal === 1) {
                 self.value(10);
-            }
-            else
+            } else
                 self.value(currentVal + 10);
         } else {
             self.value(98);
