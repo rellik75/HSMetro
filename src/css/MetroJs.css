@@ -1,453 +1,527 @@
 /* Sizes */
+
 .live-tile,
 .list-tile,
 .copy-tile,
 .tile-strip .flip-list > li {
-  height: 150px;
-  margin: 5px;
-  outline: 1px solid transparent;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0px;
-  width: 150px;
+    height: 150px;
+    margin: 5px;
+    outline: 1px solid transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0px;
+    width: 150px;
 }
+
 .live-tile.half-tile,
 .list-tile.half-tile,
 .copy-tile.half-tile,
 .tile-strip .flip-list > li.half-tile {
-  height: 70px;
-  width: 70px;
+    height: 70px;
+    width: 70px;
 }
+
 .live-tile.half-wide,
 .list-tile.half-wide,
 .copy-tile.half-wide,
 .tile-strip .flip-list > li.half-wide {
-  width: 70px;
+    width: 70px;
 }
+
 .live-tile.two-wide,
 .list-tile.two-wide,
 .copy-tile.two-wide,
 .tile-strip .flip-list > li.two-wide {
-  width: 310px;
+    width: 310px;
 }
+
 .live-tile.three-wide,
 .list-tile.three-wide,
 .copy-tile.three-wide,
 .tile-strip .flip-list > li.three-wide {
-  width: 470px;
+    width: 470px;
 }
+
 .live-tile.four-wide,
 .list-tile.four-wide,
 .copy-tile.four-wide,
 .tile-strip .flip-list > li.four-wide {
-  width: 630px;
+    width: 630px;
 }
+
 .live-tile.five-wide,
 .list-tile.five-wide,
 .copy-tile.five-wide,
 .tile-strip .flip-list > li.five-wide {
-  width: 790px;
+    width: 790px;
 }
+
 .live-tile.six-wide,
 .list-tile.six-wide,
 .copy-tile.six-wide,
 .tile-strip .flip-list > li.six-wide {
-  width: 950px;
+    width: 950px;
 }
+
 .live-tile.seven-wide,
 .list-tile.seven-wide,
 .copy-tile.seven-wide,
 .tile-strip .flip-list > li.seven-wide {
-  width: 1110px;
+    width: 1110px;
 }
+
 .live-tile.eight-wide,
 .list-tile.eight-wide,
 .copy-tile.eight-wide,
 .tile-strip .flip-list > li.eight-wide {
-  width: 1270px;
+    width: 1270px;
 }
+
 .live-tile.nine-wide,
 .list-tile.nine-wide,
 .copy-tile.nine-wide,
 .tile-strip .flip-list > li.nine-wide {
-  width: 1430px;
+    width: 1430px;
 }
+
 .live-tile.ten-wide,
 .list-tile.ten-wide,
 .copy-tile.ten-wide,
 .tile-strip .flip-list > li.ten-wide {
-  width: 1590px;
+    width: 1590px;
 }
+
 .live-tile.half-tall,
 .list-tile.half-tall,
 .copy-tile.half-tall,
 .tile-strip .flip-list > li.half-tall {
-  height: 70px;
+    height: 70px;
 }
+
 .live-tile.two-tall,
 .list-tile.two-tall,
 .copy-tile.two-tall,
 .tile-strip .flip-list > li.two-tall {
-  height: 310px;
+    height: 310px;
 }
+
 .live-tile.three-tall,
 .list-tile.three-tall,
 .copy-tile.three-tall,
 .tile-strip .flip-list > li.three-tall {
-  height: 470px;
+    height: 470px;
 }
+
 .live-tile.four-tall,
 .list-tile.four-tall,
 .copy-tile.four-tall,
 .tile-strip .flip-list > li.four-tall {
-  height: 630px;
+    height: 630px;
 }
+
 .live-tile.five-tall,
 .list-tile.five-tall,
 .copy-tile.five-tall,
 .tile-strip .flip-list > li.five-tall {
-  height: 790px;
+    height: 790px;
 }
+
 .live-tile.six-tall,
 .list-tile.six-tall,
 .copy-tile.six-tall,
 .tile-strip .flip-list > li.six-tall {
-  height: 950px;
+    height: 950px;
 }
+
 .live-tile.seven-tall,
 .list-tile.seven-tall,
 .copy-tile.seven-tall,
 .tile-strip .flip-list > li.seven-tall {
-  height: 1110px;
+    height: 1110px;
 }
+
 .live-tile.eight-tall,
 .list-tile.eight-tall,
 .copy-tile.eight-tall,
 .tile-strip .flip-list > li.eight-tall {
-  height: 1270px;
+    height: 1270px;
 }
+
 .live-tile.nine-tall,
 .list-tile.nine-tall,
 .copy-tile.nine-tall,
 .tile-strip .flip-list > li.nine-tall {
-  height: 1430px;
+    height: 1430px;
 }
+
 .live-tile.ten-tall,
 .list-tile.ten-tall,
 .copy-tile.ten-tall,
 .tile-strip .flip-list > li.ten-tall {
-  height: 1590px;
+    height: 1590px;
 }
 /* End Sizes */
 /* flip-list tile grid sprite styles */
+
 .live-tile > .flip-list,
 .list-tile > .flip-list {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 }
+
 .flip-list > li {
-  height: 50px;
-  margin: 0px;
-  padding: 0px;
-  width: 50px;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    width: 50px;
 }
+
 .flip-list.fourTiles > li {
-  border: none;
-  padding: 0;
-  margin: 0;
-  height: 50%;
-  width: 50%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 50%;
+    width: 50%;
 }
+
 .flip-list.nineTiles > li {
-  height: 33%;
-  width: 33%;
-  border: none;
-  padding: 0;
-  margin: 0;
+    height: 33%;
+    width: 33%;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
+
 .flip-list.fourTiles > li > div,
 .flip-list.fourTiles > li > div > a,
 .flip-list.fourTiles > li > div > img,
 .flip-list.nineTiles > li > div,
 .flip-list.nineTiles > li > div > a,
 .flip-list.nineTiles > li > div > img {
-  border: none;
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+    border: none;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 /* fourTile background positions */
+
 .fourTiles .fourTiles1 img,
 .fourTiles img.fourTiles1,
 .fourTiles .fourTiles1 a,
 .fourTiles .tile-1 img,
 .fourTiles .tile-1 a {
-  background-position: 0px 0px;
+    background-position: 0px 0px;
 }
+
 .fourTiles .fourTiles2 img,
 .fourTiles img.fourTiles2,
 .fourTiles .fourTiles2 a,
 .fourTiles .tile-2 img,
 .fourTiles .tile-2 a {
-  background-position: -75px 0px;
+    background-position: -75px 0px;
 }
+
 .fourTiles .fourTiles3 img,
 .fourTiles img.fourTiles3,
 .fourTiles .fourTiles3 a,
 .fourTiles .tile-3 img,
 .fourTiles .tile-3 a {
-  background-position: 0px -75px;
+    background-position: 0px -75px;
 }
+
 .fourTiles .fourTiles4 img,
 .fourTiles img.fourTiles4,
 .fourTiles .fourTiles4 a,
 .fourTiles .tile-4 img,
 .fourTiles .tile-4 a {
-  background-position: -75px -75px;
+    background-position: -75px -75px;
 }
 /* nineTile background positions */
+
 .nineTiles .nineTiles1 img,
 .nineTiles img.nineTiles1,
 .nineTiles .nineTiles1 a,
 .nineTiles .tile-1 img,
 .nineTiles .tile-1 a {
-  background-position: 0px 0px;
+    background-position: 0px 0px;
 }
+
 .nineTiles .nineTiles2 img,
 .nineTiles img.nineTiles2,
 .nineTiles .nineTiles2 a,
 .nineTiles .tile-2 img,
 .nineTiles .tile-2 a {
-  background-position: -50px 0px;
+    background-position: -50px 0px;
 }
+
 .nineTiles .nineTiles3 img,
 .nineTiles img.nineTiles3,
 .nineTiles .nineTiles3 a,
 .nineTiles .tile-3 img,
 .nineTiles .tile-3 a {
-  background-position: -100px 0px;
+    background-position: -100px 0px;
 }
+
 .nineTiles .nineTiles4 img,
 .nineTiles img.nineTiles4,
 .nineTiles .nineTiles4 a,
 .nineTiles .tile-4 img,
 .nineTiles .tile-4 a {
-  background-position: 0px -50px;
+    background-position: 0px -50px;
 }
+
 .nineTiles .nineTiles5 img,
 .nineTiles img.nineTiles5,
 .nineTiles .nineTiles5 a,
 .nineTiles .tile-5 img,
 .nineTiles .tile-5 a {
-  background-position: -50px -50px;
+    background-position: -50px -50px;
 }
+
 .nineTiles .nineTiles6 img,
 .nineTiles img.nineTiles6,
 .nineTiles .nineTiles6 a,
 .nineTiles .tile-6 img,
 .nineTiles .tile-6 a {
-  background-position: -100px -50px;
+    background-position: -100px -50px;
 }
+
 .nineTiles .nineTiles7 img,
 .nineTiles img.nineTiles7,
 .nineTiles .nineTiles7 a,
 .nineTiles .tile-7 img,
 .nineTiles .tile-7 a {
-  background-position: 0px -100px;
+    background-position: 0px -100px;
 }
+
 .nineTiles .nineTiles8 img,
 .nineTiles img.nineTiles8,
 .nineTiles .nineTiles8 a,
 .nineTiles .tile-8 img,
 .nineTiles .tile-8 a {
-  background-position: -50px -100px;
+    background-position: -50px -100px;
 }
+
 .nineTiles .nineTiles9 img,
 .nineTiles img.nineTiles9,
 .nineTiles .nineTiles9 a,
 .nineTiles .tile-9 img,
 .nineTiles .tile-9 a {
-  background-position: -100px -100px;
-}
-.tile-group,
-.tile-strip {
-  display: block;
-  overflow: hidden;
-  position: relative;
-  z-index: 20;
-  -webkit-perspective: 800px;
-  -moz-perspective: 800px;
-  -ms-perspective: 800px;
-  perspective: 800px;
-}
-.tile-group.one-tile,
-.tile-strip.one-tile {
-  height: 160px;
-  width: 160px;
-}
-.tile-group.half-wide,
-.tile-strip.half-wide {
-  width: 80px;
-}
-.tile-group.one-wide,
-.tile-strip.one-wide {
-  width: 160px;
-}
-.tile-group.two-wide,
-.tile-strip.two-wide {
-  width: 320px;
-}
-.tile-group.three-wide,
-.tile-strip.three-wide {
-  width: 480px;
-}
-.tile-group.four-wide,
-.tile-strip.four-wide {
-  width: 640px;
-}
-.tile-group.five-wide,
-.tile-strip.five-wide {
-  width: 800px;
-}
-.tile-group.six-wide,
-.tile-strip.six-wide {
-  width: 960px;
-}
-.tile-group.seven-wide,
-.tile-strip.seven-wide {
-  width: 1120px;
-}
-.tile-group.eight-wide,
-.tile-strip.eight-wide {
-  width: 1280px;
-}
-.tile-group.nine-wide,
-.tile-strip.nine-wide {
-  width: 1440px;
-}
-.tile-group.ten-wide,
-.tile-strip.ten-wide {
-  width: 1600px;
-}
-.tile-group.half-tall,
-.tile-strip.half-tall {
-  height: 80px;
-}
-.tile-group.one-tall,
-.tile-strip.one-tall {
-  height: 160px;
-}
-.tile-group.two-tall,
-.tile-strip.two-tall {
-  height: 320px;
-}
-.tile-group.three-tall,
-.tile-strip.three-tall {
-  height: 480px;
-}
-.tile-group.four-tall,
-.tile-strip.four-tall {
-  height: 640px;
-}
-.tile-group.five-tall,
-.tile-strip.five-tall {
-  height: 800px;
-}
-.tile-group.six-tall,
-.tile-strip.six-tall {
-  height: 960px;
-}
-.tile-group.seven-tall,
-.tile-strip.seven-tall {
-  height: 1120px;
-}
-.tile-group.eight-tall,
-.tile-strip.eight-tall {
-  height: 1280px;
-}
-.tile-group.nine-tall,
-.tile-strip.nine-tall {
-  height: 1440px;
-}
-.tile-group.ten-tall,
-.tile-strip.ten-tall {
-  height: 1600px;
+    background-position: -100px -100px;
 }
 
+.tile-group,
+.tile-strip {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -ms-perspective: 800px;
+    perspective: 800px;
+}
+
+.tile-group.one-tile,
+.tile-strip.one-tile {
+    height: 160px;
+    width: 160px;
+}
+
+.tile-group.half-wide,
+.tile-strip.half-wide {
+    width: 80px;
+}
+
+.tile-group.one-wide,
+.tile-strip.one-wide {
+    width: 160px;
+}
+
+.tile-group.two-wide,
+.tile-strip.two-wide {
+    width: 320px;
+}
+
+.tile-group.three-wide,
+.tile-strip.three-wide {
+    width: 480px;
+}
+
+.tile-group.four-wide,
+.tile-strip.four-wide {
+    width: 640px;
+}
+
+.tile-group.five-wide,
+.tile-strip.five-wide {
+    width: 800px;
+}
+
+.tile-group.six-wide,
+.tile-strip.six-wide {
+    width: 960px;
+}
+
+.tile-group.seven-wide,
+.tile-strip.seven-wide {
+    width: 1120px;
+}
+
+.tile-group.eight-wide,
+.tile-strip.eight-wide {
+    width: 1280px;
+}
+
+.tile-group.nine-wide,
+.tile-strip.nine-wide {
+    width: 1440px;
+}
+
+.tile-group.ten-wide,
+.tile-strip.ten-wide {
+    width: 1600px;
+}
+
+.tile-group.half-tall,
+.tile-strip.half-tall {
+    height: 80px;
+}
+
+.tile-group.one-tall,
+.tile-strip.one-tall {
+    height: 160px;
+}
+
+.tile-group.two-tall,
+.tile-strip.two-tall {
+    height: 320px;
+}
+
+.tile-group.three-tall,
+.tile-strip.three-tall {
+    height: 480px;
+}
+
+.tile-group.four-tall,
+.tile-strip.four-tall {
+    height: 640px;
+}
+
+.tile-group.five-tall,
+.tile-strip.five-tall {
+    height: 800px;
+}
+
+.tile-group.six-tall,
+.tile-strip.six-tall {
+    height: 960px;
+}
+
+.tile-group.seven-tall,
+.tile-strip.seven-tall {
+    height: 1120px;
+}
+
+.tile-group.eight-tall,
+.tile-strip.eight-tall {
+    height: 1280px;
+}
+
+.tile-group.nine-tall,
+.tile-strip.nine-tall {
+    height: 1440px;
+}
+
+.tile-group.ten-tall,
+.tile-strip.ten-tall {
+    height: 1600px;
+}
 /* liveTile styles */
+
 .tile-strip,
 .live-tile,
 .list-tile,
 .copy-tile,
 .slide {
-  float: left;
+    float: left;
 }
+
 .live-tile,
 .list-tile,
 .copy-tile {
-  color: #fff;
-  overflow: hidden;
-  position: relative;
-  z-index: 20;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
 }
+
 .live-tile p,
 .list-tile p,
 .copy-tile p,
 .live-tile .face,
 .list-tile .face,
 .copy-tile .face {
-  display: block;
-  font-size: 1em;
-  line-height: 1.2em;
-  margin: 0;
+    display: block;
+    font-size: 1em;
+    line-height: 1.2em;
+    margin: 0;
 }
+
 .live-tile .face,
 .list-tile .face,
 .copy-tile .face {
-  padding: 0px;
+    padding: 0px;
 }
+
 .live-tile p,
 .list-tile p,
 .copy-tile p {
-  padding: 10px;
+    padding: 10px;
 }
+
 .live-tile.half-tile p,
 .list-tile.half-tile p,
 .copy-tile.half-tile p {
-  padding: 5px;
+    padding: 5px;
 }
+
 .live-tile .face.full,
 .list-tile .face.full,
 .copy-tile .face.full {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 }
+
 .live-tile img,
 .list-tile img,
 .copy-tile img {
-  border: none;
+    border: none;
 }
+
 .live-tile .tile-title,
 .list-tile .tile-title,
 .copy-tile .tile-title {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 2px;
-  font-size: 14px;
-  left: 5px;
-  text-decoration: none;
-  width: 100%;
-  z-index: 30;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 2px;
+    font-size: 14px;
+    left: 5px;
+    text-decoration: none;
+    width: 100%;
+    z-index: 30;
 }
+
 .live-tile a,
 .list-tile a,
 .copy-tile a {
-  color: #fff;
+    color: #fff;
 }
+
 .live-tile a.tile-title:link,
 .list-tile a.tile-title:link,
 .copy-tile a.tile-title:link,
@@ -460,45 +534,53 @@
 .live-tile a.tile-title,
 .list-tile a.tile-title,
 .copy-tile a.tile-title {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .live-tile a:link,
 .list-tile a:link,
 .copy-tile a:link,
 .live-tile a:visited,
 .list-tile a:visited,
 .copy-tile a:visited {
-  color: #fff;
-  text-decoration: underline;
+    color: #fff;
+    text-decoration: underline;
 }
+
 .live-tile a:hover,
 .list-tile a:hover,
 .copy-tile a:hover {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
+
 .light .copy-tile {
-  color: #000;
+    color: #000;
 }
+
 .light .copy-tile.accent {
-  color: #fff;
+    color: #fff;
 }
+
 .light .copy-tile.accent a,
 .light .copy-tile.accent a:link,
 .light .copy-tile.accent a:visited,
 .light .copy-tile.accent a:hover {
-  color: #fff;
+    color: #fff;
 }
+
 .light .copy-tile a,
 .light .copy-tile a:link,
 .light .copy-tile a:visited,
 .light .copy-tile a:hover {
-  color: #000;
+    color: #000;
 }
+
 .light .copy-tile .face,
 .light .copy-tile .accent {
-  color: #fff;
+    color: #fff;
 }
+
 .light .copy-tile .face a,
 .light .copy-tile .accent a,
 .light .copy-tile .face a:link,
@@ -507,12 +589,14 @@
 .light .copy-tile .accent a:visited,
 .light .copy-tile .face a:hover,
 .light .copy-tile .accent a:hover {
-  color: #fff;
+    color: #fff;
 }
+
 .copy-tile p {
-  padding: 5px 5px 0px 5px;
-  font-size: .95em;
+    padding: 5px 5px 0px 5px;
+    font-size: .95em;
 }
+
 .noselect > div,
 .noselect > .slide,
 .noselect > .slide-front,
@@ -521,11 +605,12 @@
 .noselect > .fade-back,
 .noselect > .flip-front,
 .noselect > .flip-back {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
+
 .live-tile > div,
 .list-tile > div,
 .live-tile > .slide,
@@ -536,125 +621,136 @@
 .live-tile > .fade-back,
 .live-tile > .flip-front,
 .live-tile > .flip-back {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  top: 0px;
-  left: 0px;
-  margin: 0px;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: absolute;
-  z-index: 20;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 20;
 }
+
 .list-tile > div {
-  position: relative;
-  background-color: transparent;
+    position: relative;
+    background-color: transparent;
 }
+
 .live-tile .align-mid {
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  max-height: 100%;
-  top: 50%;
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    max-height: 100%;
+    top: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
+
 .live-tile .align-mid-x {
-  display: inline-block;
-  left: 50%;
-  max-width: 100%;
-  position: absolute;
-  -moz-transform: translate(-50%, 0px);
-  -ms-transform: translate(-50%, 0px);
-  -o-transform: translate(-50%, 0px);
-  -webkit-transform: translate(-50%, 0px);
-  transform: translate(-50%, 0px);
+    display: inline-block;
+    left: 50%;
+    max-width: 100%;
+    position: absolute;
+    -moz-transform: translate(-50%, 0px);
+    -ms-transform: translate(-50%, 0px);
+    -o-transform: translate(-50%, 0px);
+    -webkit-transform: translate(-50%, 0px);
+    transform: translate(-50%, 0px);
 }
+
 .live-tile .align-mid-top {
-  display: inline-block;
-  left: 50%;
-  max-width: 100%;
-  position: relative;
-  -moz-transform: translate(-50%, 0px);
-  -ms-transform: translate(-50%, 0px);
-  -o-transform: translate(-50%, 0px);
-  -webkit-transform: translate(-50%, 0px);
-  transform: translate(-50%, 0px);
+    display: inline-block;
+    left: 50%;
+    max-width: 100%;
+    position: relative;
+    -moz-transform: translate(-50%, 0px);
+    -ms-transform: translate(-50%, 0px);
+    -o-transform: translate(-50%, 0px);
+    -webkit-transform: translate(-50%, 0px);
+    transform: translate(-50%, 0px);
 }
+
 .live-tile .align-mid-y {
-  display: inline-block;
-  max-height: 100%;
-  position: absolute;
-  top: 50%;
-  -moz-transform: translate(0px, -50%);
-  -ms-transform: translate(0px, -50%);
-  -o-transform: translate(0px, -50%);
-  -webkit-transform: translate(0px, -50%);
-  transform: translate(0px, -50%);
+    display: inline-block;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    -moz-transform: translate(0px, -50%);
+    -ms-transform: translate(0px, -50%);
+    -o-transform: translate(0px, -50%);
+    -webkit-transform: translate(0px, -50%);
+    transform: translate(0px, -50%);
 }
+
 .live-tile .align-left-y {
-  display: inline-block;
-  max-height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  -moz-transform: translate(0px, -50%);
-  -ms-transform: translate(0px, -50%);
-  -o-transform: translate(0px, -50%);
-  -webkit-transform: translate(0px, -50%);
-  transform: translate(0px, -50%);
+    display: inline-block;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    -moz-transform: translate(0px, -50%);
+    -ms-transform: translate(0px, -50%);
+    -o-transform: translate(0px, -50%);
+    -webkit-transform: translate(0px, -50%);
+    transform: translate(0px, -50%);
 }
+
 .live-tile .align-right-y {
-  display: inline-block;
-  max-height: 100%;
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  -moz-transform: translate(0px, -50%);
-  -ms-transform: translate(0px, -50%);
-  -o-transform: translate(0px, -50%);
-  -webkit-transform: translate(0px, -50%);
-  transform: translate(0px, -50%);
+    display: inline-block;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    -moz-transform: translate(0px, -50%);
+    -ms-transform: translate(0px, -50%);
+    -o-transform: translate(0px, -50%);
+    -webkit-transform: translate(0px, -50%);
+    transform: translate(0px, -50%);
 }
+
 img.full,
 a.full,
 .live-tile .full,
 .list-tile .full {
-  display: block;
-  margin: 0px;
-  height: 100%;
-  text-decoration: none;
-  width: 100%;
+    display: block;
+    margin: 0px;
+    height: 100%;
+    text-decoration: none;
+    width: 100%;
 }
+
 img.full-w,
 a.full-w,
 .live-tile .full-w,
 .list-tile .full-w {
-  display: block;
-  margin: 0px;
-  text-decoration: none;
-  width: 100%;
+    display: block;
+    margin: 0px;
+    text-decoration: none;
+    width: 100%;
 }
+
 img.full-h,
 a.full-h,
 .live-tile .full-h,
 .list-tile .full-h {
-  display: block;
-  margin: 0px;
-  height: 100%;
+    display: block;
+    margin: 0px;
+    height: 100%;
 }
+
 .live-tile > .back,
 .live-tile > .slide-back,
 .live-tile > .fade-back,
 .live-tile > .flip-back,
 .flip-list .flip-back {
-  position: absolute;
-  z-index: 10;
+    position: absolute;
+    z-index: 10;
 }
 /*  ========== flip-list Styles ==========
 	.flip-list
@@ -662,190 +758,209 @@ a.full-h,
 	------div.flip-front
 	------div.flip-back
 */
+
 .flip-list {
-  padding: 0px;
-  margin: 0px;
+    padding: 0px;
+    margin: 0px;
 }
+
 .list-tile .flip-list {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 }
+
 .flip-list > li > a {
-  border: none;
-  outline: none;
-  text-decoration: none;
-  margin: 0px;
-  padding: 0px;
-  height: 100%;
-  width: 100%;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
 }
+
 .flip-list > li img {
-  border: none;
-  outline: none;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
+    border: none;
+    outline: none;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
 }
+
 .flip-list > li {
-  float: left;
-  list-style-type: none;
-  outline: none;
-  position: relative;
+    float: left;
+    list-style-type: none;
+    outline: none;
+    position: relative;
 }
+
 .flip-list > li > div {
-  border: none;
-  background: white;
-  height: 100%;
-  left: 0px;
-  margin: 0px;
-  overflow: hidden;
-  position: absolute;
-  padding: 0px;
-  top: 0px;
-  width: 100%;
-  z-index: 20;
+    border: none;
+    background: white;
+    height: 100%;
+    left: 0px;
+    margin: 0px;
+    overflow: hidden;
+    position: absolute;
+    padding: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 20;
 }
+
 .flip-list > li > div.flip-back {
-  height: 0px;
+    height: 0px;
 }
 /* ------ Hardware Accelerated Tiles --------*/
 /* flip */
+
 .live-tile.flip.ha,
 .flip-list.ha {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
+
 .live-tile.flip .ha.flip-front,
 .flip-list .ha.flip-front,
 .live-tile.flip .ha.flip-back,
 .flip-list .ha.flip-back {
-  position: absolute;
-  z-index: 20;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
+    position: absolute;
+    z-index: 20;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
+
 .flip-list > li > .ha.flip-back,
 .flip-list > li > .ha.flip-back img {
-  /* override the values set for margin and ensure the back tile is visible  */
-
-  margin: 0px !important;
-  height: 100%;
+    /* override the values set for margin and ensure the back tile is visible  */
+    
+    margin: 0px !important;
+    height: 100%;
 }
 
 .bounce {
-  cursor: pointer;
-  outline: 1px solid transparent;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s ease;
-  -moz-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  -moz-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  -o-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
+    cursor: pointer;
+    outline: 1px solid transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
+
 .bounce.bounce-c {
-  filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.95, M12=0, M21=0, M22=0.95);
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  -moz-transform: scale(0.95);
-  -o-transform: scale(0.95);
-  transform: scale(0.95);
+    filter: progid: DXImageTransform.Microsoft.Matrix(M11=0.95, M12=0, M21=0, M22=0.95);
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    transform: scale(0.95);
 }
+
 .bounce.bounce-t {
-  -webkit-transform: rotateX(20deg);
-  -ms-transform: rotateX(20deg);
-  -moz-transform: rotateX(20deg);
-  -o-transform: rotateX(20deg);
-  transform: rotateX(20deg);
-  -webkit-transform-origin: 0% 100%;
-  -moz-transform-origin: 0% 100%;
-  -ms-transform-origin: 0% 100%;
-  -o-transform-origin: 0% 100%;
-  transform-origin: 0% 100%;
+    -webkit-transform: rotateX(20deg);
+    -ms-transform: rotateX(20deg);
+    -moz-transform: rotateX(20deg);
+    -o-transform: rotateX(20deg);
+    transform: rotateX(20deg);
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    -o-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
 }
+
 .bounce.bounce-b {
-  -webkit-transform: rotateX(-20deg);
-  -ms-transform: rotateX(-20deg);
-  -moz-transform: rotateX(-20deg);
-  -o-transform: rotateX(-20deg);
-  transform: rotateX(-20deg);
-  -webkit-transform-origin: 50% 0%;
-  -moz-transform-origin: 50% 0%;
-  -ms-transform-origin: 50% 0%;
-  -o-transform-origin: 50% 0%;
-  transform-origin: 50% 0%;
+    -webkit-transform: rotateX(-20deg);
+    -ms-transform: rotateX(-20deg);
+    -moz-transform: rotateX(-20deg);
+    -o-transform: rotateX(-20deg);
+    transform: rotateX(-20deg);
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    -o-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
 }
+
 .bounce.bounce-r {
-  -webkit-transform: rotateY(20deg);
-  -ms-transform: rotateY(20deg);
-  -moz-transform: rotateY(20deg);
-  -o-transform: rotateY(20deg);
-  transform: rotateY(20deg);
-  -webkit-transform-origin: 0% 50%;
-  -moz-transform-origin: 0% 50%;
-  -ms-transform-origin: 0% 50%;
-  -o-transform-origin: 0% 50%;
-  transform-origin: 0% 50%;
+    -webkit-transform: rotateY(20deg);
+    -ms-transform: rotateY(20deg);
+    -moz-transform: rotateY(20deg);
+    -o-transform: rotateY(20deg);
+    transform: rotateY(20deg);
+    -webkit-transform-origin: 0% 50%;
+    -moz-transform-origin: 0% 50%;
+    -ms-transform-origin: 0% 50%;
+    -o-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
 }
+
 .bounce.bounce-l {
-  -webkit-transform: rotateY(-20deg);
-  -ms-transform: rotateY(-20deg);
-  -moz-transform: rotateY(-20deg);
-  -o-transform: rotateY(-20deg);
-  transform: rotateY(-20deg);
-  -webkit-transform-origin: 100% 50%;
-  -moz-transform-origin: 100% 50%;
-  -ms-transform-origin: 100% 50%;
-  -o-transform-origin: 100% 50%;
-  transform-origin: 100% 50%;
+    -webkit-transform: rotateY(-20deg);
+    -ms-transform: rotateY(-20deg);
+    -moz-transform: rotateY(-20deg);
+    -o-transform: rotateY(-20deg);
+    transform: rotateY(-20deg);
+    -webkit-transform-origin: 100% 50%;
+    -moz-transform-origin: 100% 50%;
+    -ms-transform-origin: 100% 50%;
+    -o-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
 }
+
 .bounce.bounce-tl {
-  -webkit-transform: rotateX(10deg) rotateY(-10deg);
-  -ms-transform: rotateX(10deg) rotateY(-10deg);
-  -moz-transform: rotateX(10deg) rotateY(-10deg);
-  -o-transform: rotateX(10deg) rotateY(-10deg);
-  transform: rotateX(10deg) rotateY(-10deg);
+    -webkit-transform: rotateX(10deg) rotateY(-10deg);
+    -ms-transform: rotateX(10deg) rotateY(-10deg);
+    -moz-transform: rotateX(10deg) rotateY(-10deg);
+    -o-transform: rotateX(10deg) rotateY(-10deg);
+    transform: rotateX(10deg) rotateY(-10deg);
 }
+
 .bounce.bounce-tr {
-  -webkit-transform: rotateX(10deg) rotateY(10deg);
-  -ms-transform: rotateX(10deg) rotateY(10deg);
-  -moz-transform: rotateX(10deg) rotateY(10deg);
-  -o-transform: rotateX(10deg) rotateY(10deg);
-  transform: rotateX(10deg) rotateY(10deg);
+    -webkit-transform: rotateX(10deg) rotateY(10deg);
+    -ms-transform: rotateX(10deg) rotateY(10deg);
+    -moz-transform: rotateX(10deg) rotateY(10deg);
+    -o-transform: rotateX(10deg) rotateY(10deg);
+    transform: rotateX(10deg) rotateY(10deg);
 }
+
 .bounce.bounce-bl {
-  -webkit-transform: rotateX(-10deg) rotateY(-10deg);
-  -ms-transform: rotateX(-10deg) rotateY(-10deg);
-  -moz-transform: rotateX(-10deg) rotateY(-10deg);
-  -o-transform: rotateX(-10deg) rotateY(-10deg);
-  transform: rotateX(-10deg) rotateY(-10deg);
+    -webkit-transform: rotateX(-10deg) rotateY(-10deg);
+    -ms-transform: rotateX(-10deg) rotateY(-10deg);
+    -moz-transform: rotateX(-10deg) rotateY(-10deg);
+    -o-transform: rotateX(-10deg) rotateY(-10deg);
+    transform: rotateX(-10deg) rotateY(-10deg);
 }
+
 .bounce.bounce-br {
-  -webkit-transform: rotateX(-10deg) rotateY(10deg);
-  -ms-transform: rotateX(-10deg) rotateY(10deg);
-  -moz-transform: rotateX(-10deg) rotateY(10deg);
-  -o-transform: rotateX(-10deg) rotateY(10deg);
-  transform: rotateX(-10deg) rotateY(10deg);
+    -webkit-transform: rotateX(-10deg) rotateY(10deg);
+    -ms-transform: rotateX(-10deg) rotateY(10deg);
+    -moz-transform: rotateX(-10deg) rotateY(10deg);
+    -o-transform: rotateX(-10deg) rotateY(10deg);
+    transform: rotateX(-10deg) rotateY(10deg);
 }
 
 .metroBig,
@@ -853,117 +968,139 @@ a.full-h,
 .face.metroBig,
 .face.metroExtraLarge,
 .live-tile .metroExtraLarge {
-  font-size: 2em;
-  line-height: 1.1em;
+    font-size: 2em;
+    line-height: 1.1em;
 }
+
 a.metroBig:link,
 a.metroExtraLarge:link,
 a.face.metroBig:link,
 a.face.metroExtraLarge:link,
 a.live-tile .metroExtraLarge:link {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .metroLarger,
 .face.metroLarger,
 .live-tile .metroLarger {
-  font-size: 1.5em;
-  line-height: 1.1em;
+    font-size: 1.5em;
+    line-height: 1.1em;
 }
+
 a.metroLarger:link,
 a.face.metroLarger:link,
 a.live-tile .metroLarger:link {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .metroLarge,
 .face.metroLarge,
 .live-tile .metroLarge {
-  font-size: 1.2em;
-  line-height: 1.1em;
+    font-size: 1.2em;
+    line-height: 1.1em;
 }
+
 a.metroLarge:link,
 a.face.metroLarge:link,
 a.live-tile .metroLarge:link {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .metroSmall,
 .face.metroSmall,
 .live-tile .metroSmall {
-  font-size: .9em;
-  line-height: 1em;
+    font-size: .9em;
+    line-height: 1em;
 }
+
 a.metroSmall:link,
 a.face.metroSmall:link,
 a.live-tile .metroSmall:link {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .metroSmaller,
 .face.metroSmaller,
 .live-tile .metroSmaller {
-  font-size: .8em;
-  line-height: 1em;
+    font-size: .8em;
+    line-height: 1em;
 }
+
 a.metroSmaller:link,
 a.face.metroSmaller:link,
 a.live-tile .metroSmaller:link {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .metroExtraSmall,
 .face.metroExtraSmall,
 .live-tile .metroExtraSmall {
-  font-size: .7em;
-  line-height: 1em;
+    font-size: .7em;
+    line-height: 1em;
 }
+
 a.metroExtraSmall:link,
 a.face.metroExtraSmall:link,
 a.live-tile .metroExtraSmall:link {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .live-tile .p-top {
-  display: block;
-  position: absolute;
-  right: 0px;
-  text-decoration: none;
+    display: block;
+    position: absolute;
+    right: 0px;
+    text-decoration: none;
 }
+
 .live-tile .p-right {
-  display: block;
-  position: absolute;
-  right: 0px;
-  text-decoration: none;
+    display: block;
+    position: absolute;
+    right: 0px;
+    text-decoration: none;
 }
+
 .live-tile .p-bottom {
-  display: block;
-  position: absolute;
-  bottom: 0px;
-  text-decoration: none;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    text-decoration: none;
 }
+
 .live-tile .p-left {
-  display: block;
-  position: absolute;
-  left: 0px;
-  text-decoration: none;
+    display: block;
+    position: absolute;
+    left: 0px;
+    text-decoration: none;
 }
 /***** Theme Definitions *****/
+
 .light {
-  background-color: #fff;
-  color: #000;
+    background-color: #fff;
+    color: #000;
 }
+
 .dark {
-  background-color: #000;
-  color: #fff;
+    background-color: #000;
+    color: #fff;
 }
+
 .light.accent {
-  background-color: #fff;
+    background-color: #fff;
 }
+
 .dark.accent {
-  background-color: #000;
+    background-color: #000;
 }
+
 .light .appbar {
-  background-color: #dfdfdf;
+    background-color: #dfdfdf;
 }
+
 .dark .appbar {
-  background-color: #212021;
+    background-color: #212021;
 }
 /*live tile accent colors */
+
 .amber .accent,
 .amber .accentBg,
 .amber .accentBgHover:hover,
@@ -979,8 +1116,9 @@ a.live-tile .metroExtraSmall:link {
 .amber .live-tile > .slide-front,
 .amber .list-tile > div,
 .amber .flip-list > li > div {
-  background-color: #f1a30b;
+    background-color: #f1a30b;
 }
+
 .amber .accentColor,
 .amber .accentHover:hover,
 .amber .accentHover a:hover,
@@ -990,23 +1128,29 @@ a.live-tile .metroExtraSmall:link {
 .amber a.accentLink,
 .amber a.accentLink:hover,
 .amber a.accentLink:visited {
-  color: #f1a30b;
+    color: #f1a30b;
 }
+
 .amber .accentBorder {
-  border-color: #f1a30b;
+    border-color: #f1a30b;
 }
+
 .amber .accentBorderBottom {
-  border-bottom-color: #f1a30b;
+    border-bottom-color: #f1a30b;
 }
+
 .amber .accentBorderLeft {
-  border-left-color: #f1a30b;
+    border-left-color: #f1a30b;
 }
+
 .amber .accentBorderRight {
-  border-right-color: #f1a30b;
+    border-right-color: #f1a30b;
 }
+
 .amber .accentBorderTop {
-  border-top-color: #f1a30b;
+    border-top-color: #f1a30b;
 }
+
 .blue .accent,
 .blue .accentBg,
 .blue .accentBgHover:hover,
@@ -1022,8 +1166,9 @@ a.live-tile .metroExtraSmall:link {
 .blue .live-tile > .slide-front,
 .blue .list-tile > div,
 .blue .flip-list > li > div {
-  background-color: #1ba1e2;
+    background-color: #1ba1e2;
 }
+
 .blue .accentColor,
 .blue .accentHover:hover,
 .blue .accentHover a:hover,
@@ -1033,23 +1178,29 @@ a.live-tile .metroExtraSmall:link {
 .blue a.accentLink,
 .blue a.accentLink:hover,
 .blue a.accentLink:visited {
-  color: #1ba1e2;
+    color: #1ba1e2;
 }
+
 .blue .accentBorder {
-  border-color: #1ba1e2;
+    border-color: #1ba1e2;
 }
+
 .blue .accentBorderBottom {
-  border-bottom-color: #1ba1e2;
+    border-bottom-color: #1ba1e2;
 }
+
 .blue .accentBorderLeft {
-  border-left-color: #1ba1e2;
+    border-left-color: #1ba1e2;
 }
+
 .blue .accentBorderRight {
-  border-right-color: #1ba1e2;
+    border-right-color: #1ba1e2;
 }
+
 .blue .accentBorderTop {
-  border-top-color: #1ba1e2;
+    border-top-color: #1ba1e2;
 }
+
 .brown .accent,
 .brown .accentBg,
 .brown .accentBgHover:hover,
@@ -1065,8 +1216,9 @@ a.live-tile .metroExtraSmall:link {
 .brown .live-tile > .slide-front,
 .brown .list-tile > div,
 .brown .flip-list > li > div {
-  background-color: #a05000;
+    background-color: #a05000;
 }
+
 .brown .accentColor,
 .brown .accentHover:hover,
 .brown .accentHover a:hover,
@@ -1076,23 +1228,29 @@ a.live-tile .metroExtraSmall:link {
 .brown a.accentLink,
 .brown a.accentLink:hover,
 .brown a.accentLink:visited {
-  color: #a05000;
+    color: #a05000;
 }
+
 .brown .accentBorder {
-  border-color: #a05000;
+    border-color: #a05000;
 }
+
 .brown .accentBorderBottom {
-  border-bottom-color: #a05000;
+    border-bottom-color: #a05000;
 }
+
 .brown .accentBorderLeft {
-  border-left-color: #a05000;
+    border-left-color: #a05000;
 }
+
 .brown .accentBorderRight {
-  border-right-color: #a05000;
+    border-right-color: #a05000;
 }
+
 .brown .accentBorderTop {
-  border-top-color: #a05000;
+    border-top-color: #a05000;
 }
+
 .cobalt .accent,
 .cobalt .accentBg,
 .cobalt .accentBgHover:hover,
@@ -1108,8 +1266,9 @@ a.live-tile .metroExtraSmall:link {
 .cobalt .live-tile > .slide-front,
 .cobalt .list-tile > div,
 .cobalt .flip-list > li > div {
-  background-color: #0050ef;
+    background-color: #0050ef;
 }
+
 .cobalt .accentColor,
 .cobalt .accentHover:hover,
 .cobalt .accentHover a:hover,
@@ -1119,23 +1278,29 @@ a.live-tile .metroExtraSmall:link {
 .cobalt a.accentLink,
 .cobalt a.accentLink:hover,
 .cobalt a.accentLink:visited {
-  color: #0050ef;
+    color: #0050ef;
 }
+
 .cobalt .accentBorder {
-  border-color: #0050ef;
+    border-color: #0050ef;
 }
+
 .cobalt .accentBorderBottom {
-  border-bottom-color: #0050ef;
+    border-bottom-color: #0050ef;
 }
+
 .cobalt .accentBorderLeft {
-  border-left-color: #0050ef;
+    border-left-color: #0050ef;
 }
+
 .cobalt .accentBorderRight {
-  border-right-color: #0050ef;
+    border-right-color: #0050ef;
 }
+
 .cobalt .accentBorderTop {
-  border-top-color: #0050ef;
+    border-top-color: #0050ef;
 }
+
 .crimson .accent,
 .crimson .accentBg,
 .crimson .accentBgHover:hover,
@@ -1151,8 +1316,9 @@ a.live-tile .metroExtraSmall:link {
 .crimson .live-tile > .slide-front,
 .crimson .list-tile > div,
 .crimson .flip-list > li > div {
-  background-color: #a20025;
+    background-color: #a20025;
 }
+
 .crimson .accentColor,
 .crimson .accentHover:hover,
 .crimson .accentHover a:hover,
@@ -1162,23 +1328,29 @@ a.live-tile .metroExtraSmall:link {
 .crimson a.accentLink,
 .crimson a.accentLink:hover,
 .crimson a.accentLink:visited {
-  color: #a20025;
+    color: #a20025;
 }
+
 .crimson .accentBorder {
-  border-color: #a20025;
+    border-color: #a20025;
 }
+
 .crimson .accentBorderBottom {
-  border-bottom-color: #a20025;
+    border-bottom-color: #a20025;
 }
+
 .crimson .accentBorderLeft {
-  border-left-color: #a20025;
+    border-left-color: #a20025;
 }
+
 .crimson .accentBorderRight {
-  border-right-color: #a20025;
+    border-right-color: #a20025;
 }
+
 .crimson .accentBorderTop {
-  border-top-color: #a20025;
+    border-top-color: #a20025;
 }
+
 .cyan .accent,
 .cyan .accentBg,
 .cyan .accentBgHover:hover,
@@ -1194,8 +1366,9 @@ a.live-tile .metroExtraSmall:link {
 .cyan .live-tile > .slide-front,
 .cyan .list-tile > div,
 .cyan .flip-list > li > div {
-  background-color: #1ba0e1;
+    background-color: #1ba0e1;
 }
+
 .cyan .accentColor,
 .cyan .accentHover:hover,
 .cyan .accentHover a:hover,
@@ -1205,23 +1378,29 @@ a.live-tile .metroExtraSmall:link {
 .cyan a.accentLink,
 .cyan a.accentLink:hover,
 .cyan a.accentLink:visited {
-  color: #1ba0e1;
+    color: #1ba0e1;
 }
+
 .cyan .accentBorder {
-  border-color: #1ba0e1;
+    border-color: #1ba0e1;
 }
+
 .cyan .accentBorderBottom {
-  border-bottom-color: #1ba0e1;
+    border-bottom-color: #1ba0e1;
 }
+
 .cyan .accentBorderLeft {
-  border-left-color: #1ba0e1;
+    border-left-color: #1ba0e1;
 }
+
 .cyan .accentBorderRight {
-  border-right-color: #1ba0e1;
+    border-right-color: #1ba0e1;
 }
+
 .cyan .accentBorderTop {
-  border-top-color: #1ba0e1;
+    border-top-color: #1ba0e1;
 }
+
 .emerald .accent,
 .emerald .accentBg,
 .emerald .accentBgHover:hover,
@@ -1237,8 +1416,9 @@ a.live-tile .metroExtraSmall:link {
 .emerald .live-tile > .slide-front,
 .emerald .list-tile > div,
 .emerald .flip-list > li > div {
-  background-color: #008a00;
+    background-color: #008a00;
 }
+
 .emerald .accentColor,
 .emerald .accentHover:hover,
 .emerald .accentHover a:hover,
@@ -1248,23 +1428,29 @@ a.live-tile .metroExtraSmall:link {
 .emerald a.accentLink,
 .emerald a.accentLink:hover,
 .emerald a.accentLink:visited {
-  color: #008a00;
+    color: #008a00;
 }
+
 .emerald .accentBorder {
-  border-color: #008a00;
+    border-color: #008a00;
 }
+
 .emerald .accentBorderBottom {
-  border-bottom-color: #008a00;
+    border-bottom-color: #008a00;
 }
+
 .emerald .accentBorderLeft {
-  border-left-color: #008a00;
+    border-left-color: #008a00;
 }
+
 .emerald .accentBorderRight {
-  border-right-color: #008a00;
+    border-right-color: #008a00;
 }
+
 .emerald .accentBorderTop {
-  border-top-color: #008a00;
+    border-top-color: #008a00;
 }
+
 .green .accent,
 .green .accentBg,
 .green .accentBgHover:hover,
@@ -1280,8 +1466,9 @@ a.live-tile .metroExtraSmall:link {
 .green .live-tile > .slide-front,
 .green .list-tile > div,
 .green .flip-list > li > div {
-  background-color: #339933;
+    background-color: #339933;
 }
+
 .green .accentColor,
 .green .accentHover:hover,
 .green .accentHover a:hover,
@@ -1291,23 +1478,29 @@ a.live-tile .metroExtraSmall:link {
 .green a.accentLink,
 .green a.accentLink:hover,
 .green a.accentLink:visited {
-  color: #339933;
+    color: #339933;
 }
+
 .green .accentBorder {
-  border-color: #339933;
+    border-color: #339933;
 }
+
 .green .accentBorderBottom {
-  border-bottom-color: #339933;
+    border-bottom-color: #339933;
 }
+
 .green .accentBorderLeft {
-  border-left-color: #339933;
+    border-left-color: #339933;
 }
+
 .green .accentBorderRight {
-  border-right-color: #339933;
+    border-right-color: #339933;
 }
+
 .green .accentBorderTop {
-  border-top-color: #339933;
+    border-top-color: #339933;
 }
+
 .indigo .accent,
 .indigo .accentBg,
 .indigo .accentBgHover:hover,
@@ -1323,8 +1516,9 @@ a.live-tile .metroExtraSmall:link {
 .indigo .live-tile > .slide-front,
 .indigo .list-tile > div,
 .indigo .flip-list > li > div {
-  background-color: #6a00ff;
+    background-color: #6a00ff;
 }
+
 .indigo .accentColor,
 .indigo .accentHover:hover,
 .indigo .accentHover a:hover,
@@ -1334,23 +1528,29 @@ a.live-tile .metroExtraSmall:link {
 .indigo a.accentLink,
 .indigo a.accentLink:hover,
 .indigo a.accentLink:visited {
-  color: #6a00ff;
+    color: #6a00ff;
 }
+
 .indigo .accentBorder {
-  border-color: #6a00ff;
+    border-color: #6a00ff;
 }
+
 .indigo .accentBorderBottom {
-  border-bottom-color: #6a00ff;
+    border-bottom-color: #6a00ff;
 }
+
 .indigo .accentBorderLeft {
-  border-left-color: #6a00ff;
+    border-left-color: #6a00ff;
 }
+
 .indigo .accentBorderRight {
-  border-right-color: #6a00ff;
+    border-right-color: #6a00ff;
 }
+
 .indigo .accentBorderTop {
-  border-top-color: #6a00ff;
+    border-top-color: #6a00ff;
 }
+
 .lime .accent,
 .lime .accentBg,
 .lime .accentBgHover:hover,
@@ -1366,8 +1566,9 @@ a.live-tile .metroExtraSmall:link {
 .lime .live-tile > .slide-front,
 .lime .list-tile > div,
 .lime .flip-list > li > div {
-  background-color: #a2c139;
+    background-color: #a2c139;
 }
+
 .lime .accentColor,
 .lime .accentHover:hover,
 .lime .accentHover a:hover,
@@ -1377,23 +1578,29 @@ a.live-tile .metroExtraSmall:link {
 .lime a.accentLink,
 .lime a.accentLink:hover,
 .lime a.accentLink:visited {
-  color: #a2c139;
+    color: #a2c139;
 }
+
 .lime .accentBorder {
-  border-color: #a2c139;
+    border-color: #a2c139;
 }
+
 .lime .accentBorderBottom {
-  border-bottom-color: #a2c139;
+    border-bottom-color: #a2c139;
 }
+
 .lime .accentBorderLeft {
-  border-left-color: #a2c139;
+    border-left-color: #a2c139;
 }
+
 .lime .accentBorderRight {
-  border-right-color: #a2c139;
+    border-right-color: #a2c139;
 }
+
 .lime .accentBorderTop {
-  border-top-color: #a2c139;
+    border-top-color: #a2c139;
 }
+
 .magenta .accent,
 .magenta .accentBg,
 .magenta .accentBgHover:hover,
@@ -1409,8 +1616,9 @@ a.live-tile .metroExtraSmall:link {
 .magenta .live-tile > .slide-front,
 .magenta .list-tile > div,
 .magenta .flip-list > li > div {
-  background-color: #d80073;
+    background-color: #d80073;
 }
+
 .magenta .accentColor,
 .magenta .accentHover:hover,
 .magenta .accentHover a:hover,
@@ -1420,23 +1628,29 @@ a.live-tile .metroExtraSmall:link {
 .magenta a.accentLink,
 .magenta a.accentLink:hover,
 .magenta a.accentLink:visited {
-  color: #d80073;
+    color: #d80073;
 }
+
 .magenta .accentBorder {
-  border-color: #d80073;
+    border-color: #d80073;
 }
+
 .magenta .accentBorderBottom {
-  border-bottom-color: #d80073;
+    border-bottom-color: #d80073;
 }
+
 .magenta .accentBorderLeft {
-  border-left-color: #d80073;
+    border-left-color: #d80073;
 }
+
 .magenta .accentBorderRight {
-  border-right-color: #d80073;
+    border-right-color: #d80073;
 }
+
 .magenta .accentBorderTop {
-  border-top-color: #d80073;
+    border-top-color: #d80073;
 }
+
 .mango .accent,
 .mango .accentBg,
 .mango .accentBgHover:hover,
@@ -1452,8 +1666,9 @@ a.live-tile .metroExtraSmall:link {
 .mango .live-tile > .slide-front,
 .mango .list-tile > div,
 .mango .flip-list > li > div {
-  background-color: #f09609;
+    background-color: #f09609;
 }
+
 .mango .accentColor,
 .mango .accentHover:hover,
 .mango .accentHover a:hover,
@@ -1463,23 +1678,29 @@ a.live-tile .metroExtraSmall:link {
 .mango a.accentLink,
 .mango a.accentLink:hover,
 .mango a.accentLink:visited {
-  color: #f09609;
+    color: #f09609;
 }
+
 .mango .accentBorder {
-  border-color: #f09609;
+    border-color: #f09609;
 }
+
 .mango .accentBorderBottom {
-  border-bottom-color: #f09609;
+    border-bottom-color: #f09609;
 }
+
 .mango .accentBorderLeft {
-  border-left-color: #f09609;
+    border-left-color: #f09609;
 }
+
 .mango .accentBorderRight {
-  border-right-color: #f09609;
+    border-right-color: #f09609;
 }
+
 .mango .accentBorderTop {
-  border-top-color: #f09609;
+    border-top-color: #f09609;
 }
+
 .mauve .accent,
 .mauve .accentBg,
 .mauve .accentBgHover:hover,
@@ -1495,8 +1716,9 @@ a.live-tile .metroExtraSmall:link {
 .mauve .live-tile > .slide-front,
 .mauve .list-tile > div,
 .mauve .flip-list > li > div {
-  background-color: #765f89;
+    background-color: #765f89;
 }
+
 .mauve .accentColor,
 .mauve .accentHover:hover,
 .mauve .accentHover a:hover,
@@ -1506,23 +1728,29 @@ a.live-tile .metroExtraSmall:link {
 .mauve a.accentLink,
 .mauve a.accentLink:hover,
 .mauve a.accentLink:visited {
-  color: #765f89;
+    color: #765f89;
 }
+
 .mauve .accentBorder {
-  border-color: #765f89;
+    border-color: #765f89;
 }
+
 .mauve .accentBorderBottom {
-  border-bottom-color: #765f89;
+    border-bottom-color: #765f89;
 }
+
 .mauve .accentBorderLeft {
-  border-left-color: #765f89;
+    border-left-color: #765f89;
 }
+
 .mauve .accentBorderRight {
-  border-right-color: #765f89;
+    border-right-color: #765f89;
 }
+
 .mauve .accentBorderTop {
-  border-top-color: #765f89;
+    border-top-color: #765f89;
 }
+
 .olive .accent,
 .olive .accentBg,
 .olive .accentBgHover:hover,
@@ -1538,8 +1766,9 @@ a.live-tile .metroExtraSmall:link {
 .olive .live-tile > .slide-front,
 .olive .list-tile > div,
 .olive .flip-list > li > div {
-  background-color: #6d8764;
+    background-color: #6d8764;
 }
+
 .olive .accentColor,
 .olive .accentHover:hover,
 .olive .accentHover a:hover,
@@ -1549,23 +1778,29 @@ a.live-tile .metroExtraSmall:link {
 .olive a.accentLink,
 .olive a.accentLink:hover,
 .olive a.accentLink:visited {
-  color: #6d8764;
+    color: #6d8764;
 }
+
 .olive .accentBorder {
-  border-color: #6d8764;
+    border-color: #6d8764;
 }
+
 .olive .accentBorderBottom {
-  border-bottom-color: #6d8764;
+    border-bottom-color: #6d8764;
 }
+
 .olive .accentBorderLeft {
-  border-left-color: #6d8764;
+    border-left-color: #6d8764;
 }
+
 .olive .accentBorderRight {
-  border-right-color: #6d8764;
+    border-right-color: #6d8764;
 }
+
 .olive .accentBorderTop {
-  border-top-color: #6d8764;
+    border-top-color: #6d8764;
 }
+
 .orange .accent,
 .orange .accentBg,
 .orange .accentBgHover:hover,
@@ -1581,8 +1816,9 @@ a.live-tile .metroExtraSmall:link {
 .orange .live-tile > .slide-front,
 .orange .list-tile > div,
 .orange .flip-list > li > div {
-  background-color: #fa6801;
+    background-color: #fa6801;
 }
+
 .orange .accentColor,
 .orange .accentHover:hover,
 .orange .accentHover a:hover,
@@ -1592,23 +1828,29 @@ a.live-tile .metroExtraSmall:link {
 .orange a.accentLink,
 .orange a.accentLink:hover,
 .orange a.accentLink:visited {
-  color: #fa6801;
+    color: #fa6801;
 }
+
 .orange .accentBorder {
-  border-color: #fa6801;
+    border-color: #fa6801;
 }
+
 .orange .accentBorderBottom {
-  border-bottom-color: #fa6801;
+    border-bottom-color: #fa6801;
 }
+
 .orange .accentBorderLeft {
-  border-left-color: #fa6801;
+    border-left-color: #fa6801;
 }
+
 .orange .accentBorderRight {
-  border-right-color: #fa6801;
+    border-right-color: #fa6801;
 }
+
 .orange .accentBorderTop {
-  border-top-color: #fa6801;
+    border-top-color: #fa6801;
 }
+
 .pink .accent,
 .pink .accentBg,
 .pink .accentBgHover:hover,
@@ -1624,8 +1866,9 @@ a.live-tile .metroExtraSmall:link {
 .pink .live-tile > .slide-front,
 .pink .list-tile > div,
 .pink .flip-list > li > div {
-  background-color: #e671b8;
+    background-color: #e671b8;
 }
+
 .pink .accentColor,
 .pink .accentHover:hover,
 .pink .accentHover a:hover,
@@ -1635,23 +1878,29 @@ a.live-tile .metroExtraSmall:link {
 .pink a.accentLink,
 .pink a.accentLink:hover,
 .pink a.accentLink:visited {
-  color: #e671b8;
+    color: #e671b8;
 }
+
 .pink .accentBorder {
-  border-color: #e671b8;
+    border-color: #e671b8;
 }
+
 .pink .accentBorderBottom {
-  border-bottom-color: #e671b8;
+    border-bottom-color: #e671b8;
 }
+
 .pink .accentBorderLeft {
-  border-left-color: #e671b8;
+    border-left-color: #e671b8;
 }
+
 .pink .accentBorderRight {
-  border-right-color: #e671b8;
+    border-right-color: #e671b8;
 }
+
 .pink .accentBorderTop {
-  border-top-color: #e671b8;
+    border-top-color: #e671b8;
 }
+
 .purple .accent,
 .purple .accentBg,
 .purple .accentBgHover:hover,
@@ -1667,8 +1916,9 @@ a.live-tile .metroExtraSmall:link {
 .purple .live-tile > .slide-front,
 .purple .list-tile > div,
 .purple .flip-list > li > div {
-  background-color: #a200ff;
+    background-color: #a200ff;
 }
+
 .purple .accentColor,
 .purple .accentHover:hover,
 .purple .accentHover a:hover,
@@ -1678,23 +1928,29 @@ a.live-tile .metroExtraSmall:link {
 .purple a.accentLink,
 .purple a.accentLink:hover,
 .purple a.accentLink:visited {
-  color: #a200ff;
+    color: #a200ff;
 }
+
 .purple .accentBorder {
-  border-color: #a200ff;
+    border-color: #a200ff;
 }
+
 .purple .accentBorderBottom {
-  border-bottom-color: #a200ff;
+    border-bottom-color: #a200ff;
 }
+
 .purple .accentBorderLeft {
-  border-left-color: #a200ff;
+    border-left-color: #a200ff;
 }
+
 .purple .accentBorderRight {
-  border-right-color: #a200ff;
+    border-right-color: #a200ff;
 }
+
 .purple .accentBorderTop {
-  border-top-color: #a200ff;
+    border-top-color: #a200ff;
 }
+
 .violet .accent,
 .violet .accentBg,
 .violet .accentBgHover:hover,
@@ -1710,8 +1966,9 @@ a.live-tile .metroExtraSmall:link {
 .violet .live-tile > .slide-front,
 .violet .list-tile > div,
 .violet .flip-list > li > div {
-  background-color: #a200ff;
+    background-color: #a200ff;
 }
+
 .violet .accentColor,
 .violet .accentHover:hover,
 .violet .accentHover a:hover,
@@ -1721,23 +1978,29 @@ a.live-tile .metroExtraSmall:link {
 .violet a.accentLink,
 .violet a.accentLink:hover,
 .violet a.accentLink:visited {
-  color: #a200ff;
+    color: #a200ff;
 }
+
 .violet .accentBorder {
-  border-color: #a200ff;
+    border-color: #a200ff;
 }
+
 .violet .accentBorderBottom {
-  border-bottom-color: #a200ff;
+    border-bottom-color: #a200ff;
 }
+
 .violet .accentBorderLeft {
-  border-left-color: #a200ff;
+    border-left-color: #a200ff;
 }
+
 .violet .accentBorderRight {
-  border-right-color: #a200ff;
+    border-right-color: #a200ff;
 }
+
 .violet .accentBorderTop {
-  border-top-color: #a200ff;
+    border-top-color: #a200ff;
 }
+
 .red .accent,
 .red .accentBg,
 .red .accentBgHover:hover,
@@ -1753,8 +2016,9 @@ a.live-tile .metroExtraSmall:link {
 .red .live-tile > .slide-front,
 .red .list-tile > div,
 .red .flip-list > li > div {
-  background-color: #e51400;
+    background-color: #e51400;
 }
+
 .red .accentColor,
 .red .accentHover:hover,
 .red .accentHover a:hover,
@@ -1764,23 +2028,29 @@ a.live-tile .metroExtraSmall:link {
 .red a.accentLink,
 .red a.accentLink:hover,
 .red a.accentLink:visited {
-  color: #e51400;
+    color: #e51400;
 }
+
 .red .accentBorder {
-  border-color: #e51400;
+    border-color: #e51400;
 }
+
 .red .accentBorderBottom {
-  border-bottom-color: #e51400;
+    border-bottom-color: #e51400;
 }
+
 .red .accentBorderLeft {
-  border-left-color: #e51400;
+    border-left-color: #e51400;
 }
+
 .red .accentBorderRight {
-  border-right-color: #e51400;
+    border-right-color: #e51400;
 }
+
 .red .accentBorderTop {
-  border-top-color: #e51400;
+    border-top-color: #e51400;
 }
+
 .sienna .accent,
 .sienna .accentBg,
 .sienna .accentBgHover:hover,
@@ -1796,8 +2066,9 @@ a.live-tile .metroExtraSmall:link {
 .sienna .live-tile > .slide-front,
 .sienna .list-tile > div,
 .sienna .flip-list > li > div {
-  background-color: #7b3a3e;
+    background-color: #7b3a3e;
 }
+
 .sienna .accentColor,
 .sienna .accentHover:hover,
 .sienna .accentHover a:hover,
@@ -1807,23 +2078,29 @@ a.live-tile .metroExtraSmall:link {
 .sienna a.accentLink,
 .sienna a.accentLink:hover,
 .sienna a.accentLink:visited {
-  color: #7b3a3e;
+    color: #7b3a3e;
 }
+
 .sienna .accentBorder {
-  border-color: #7b3a3e;
+    border-color: #7b3a3e;
 }
+
 .sienna .accentBorderBottom {
-  border-bottom-color: #7b3a3e;
+    border-bottom-color: #7b3a3e;
 }
+
 .sienna .accentBorderLeft {
-  border-left-color: #7b3a3e;
+    border-left-color: #7b3a3e;
 }
+
 .sienna .accentBorderRight {
-  border-right-color: #7b3a3e;
+    border-right-color: #7b3a3e;
 }
+
 .sienna .accentBorderTop {
-  border-top-color: #7b3a3e;
+    border-top-color: #7b3a3e;
 }
+
 .steel .accent,
 .steel .accentBg,
 .steel .accentBgHover:hover,
@@ -1839,8 +2116,9 @@ a.live-tile .metroExtraSmall:link {
 .steel .live-tile > .slide-front,
 .steel .list-tile > div,
 .steel .flip-list > li > div {
-  background-color: #657688;
+    background-color: #657688;
 }
+
 .steel .accentColor,
 .steel .accentHover:hover,
 .steel .accentHover a:hover,
@@ -1850,23 +2128,29 @@ a.live-tile .metroExtraSmall:link {
 .steel a.accentLink,
 .steel a.accentLink:hover,
 .steel a.accentLink:visited {
-  color: #657688;
+    color: #657688;
 }
+
 .steel .accentBorder {
-  border-color: #657688;
+    border-color: #657688;
 }
+
 .steel .accentBorderBottom {
-  border-bottom-color: #657688;
+    border-bottom-color: #657688;
 }
+
 .steel .accentBorderLeft {
-  border-left-color: #657688;
+    border-left-color: #657688;
 }
+
 .steel .accentBorderRight {
-  border-right-color: #657688;
+    border-right-color: #657688;
 }
+
 .steel .accentBorderTop {
-  border-top-color: #657688;
+    border-top-color: #657688;
 }
+
 .teal .accent,
 .teal .accentBg,
 .teal .accentBgHover:hover,
@@ -1882,8 +2166,9 @@ a.live-tile .metroExtraSmall:link {
 .teal .live-tile > .slide-front,
 .teal .list-tile > div,
 .teal .flip-list > li > div {
-  background-color: #00aba9;
+    background-color: #00aba9;
 }
+
 .teal .accentColor,
 .teal .accentHover:hover,
 .teal .accentHover a:hover,
@@ -1893,23 +2178,29 @@ a.live-tile .metroExtraSmall:link {
 .teal a.accentLink,
 .teal a.accentLink:hover,
 .teal a.accentLink:visited {
-  color: #00aba9;
+    color: #00aba9;
 }
+
 .teal .accentBorder {
-  border-color: #00aba9;
+    border-color: #00aba9;
 }
+
 .teal .accentBorderBottom {
-  border-bottom-color: #00aba9;
+    border-bottom-color: #00aba9;
 }
+
 .teal .accentBorderLeft {
-  border-left-color: #00aba9;
+    border-left-color: #00aba9;
 }
+
 .teal .accentBorderRight {
-  border-right-color: #00aba9;
+    border-right-color: #00aba9;
 }
+
 .teal .accentBorderTop {
-  border-top-color: #00aba9;
+    border-top-color: #00aba9;
 }
+
 .yellow .accent,
 .yellow .accentBg,
 .yellow .accentBgHover:hover,
@@ -1925,8 +2216,9 @@ a.live-tile .metroExtraSmall:link {
 .yellow .live-tile > .slide-front,
 .yellow .list-tile > div,
 .yellow .flip-list > li > div {
-  background-color: #d8c101;
+    background-color: #d8c101;
 }
+
 .yellow .accentColor,
 .yellow .accentHover:hover,
 .yellow .accentHover a:hover,
@@ -1936,23 +2228,29 @@ a.live-tile .metroExtraSmall:link {
 .yellow a.accentLink,
 .yellow a.accentLink:hover,
 .yellow a.accentLink:visited {
-  color: #d8c101;
+    color: #d8c101;
 }
+
 .yellow .accentBorder {
-  border-color: #d8c101;
+    border-color: #d8c101;
 }
+
 .yellow .accentBorderBottom {
-  border-bottom-color: #d8c101;
+    border-bottom-color: #d8c101;
 }
+
 .yellow .accentBorderLeft {
-  border-left-color: #d8c101;
+    border-left-color: #d8c101;
 }
+
 .yellow .accentBorderRight {
-  border-right-color: #d8c101;
+    border-right-color: #d8c101;
 }
+
 .yellow .accentBorderTop {
-  border-top-color: #d8c101;
+    border-top-color: #d8c101;
 }
+
 .trans .accent,
 .trans .accentBg,
 .trans .accentBgHover:hover,
@@ -1968,8 +2266,9 @@ a.live-tile .metroExtraSmall:link {
 .trans .live-tile > .slide-front,
 .trans .list-tile > div,
 .trans .flip-list > li > div {
-  background-color: transparent;
+    background-color: transparent;
 }
+
 .trans .accentColor,
 .trans .accentHover:hover,
 .trans .accentHover a:hover,
@@ -1979,23 +2278,29 @@ a.live-tile .metroExtraSmall:link {
 .trans a.accentLink,
 .trans a.accentLink:hover,
 .trans a.accentLink:visited {
-  color: transparent;
+    color: transparent;
 }
+
 .trans .accentBorder {
-  border-color: transparent;
+    border-color: transparent;
 }
+
 .trans .accentBorderBottom {
-  border-bottom-color: transparent;
+    border-bottom-color: transparent;
 }
+
 .trans .accentBorderLeft {
-  border-left-color: transparent;
+    border-left-color: transparent;
 }
+
 .trans .accentBorderRight {
-  border-right-color: transparent;
+    border-right-color: transparent;
 }
+
 .trans .accentBorderTop {
-  border-top-color: transparent;
+    border-top-color: transparent;
 }
+
 .white .accent,
 .white .accentBg,
 .white .accentBgHover:hover,
@@ -2011,8 +2316,9 @@ a.live-tile .metroExtraSmall:link {
 .white .live-tile > .slide-front,
 .white .list-tile > div,
 .white .flip-list > li > div {
-  background-color: #ffffff;
+    background-color: #ffffff;
 }
+
 .white .accentColor,
 .white .accentHover:hover,
 .white .accentHover a:hover,
@@ -2022,23 +2328,29 @@ a.live-tile .metroExtraSmall:link {
 .white a.accentLink,
 .white a.accentLink:hover,
 .white a.accentLink:visited {
-  color: #ffffff;
+    color: #ffffff;
 }
+
 .white .accentBorder {
-  border-color: #ffffff;
+    border-color: #ffffff;
 }
+
 .white .accentBorderBottom {
-  border-bottom-color: #ffffff;
+    border-bottom-color: #ffffff;
 }
+
 .white .accentBorderLeft {
-  border-left-color: #ffffff;
+    border-left-color: #ffffff;
 }
+
 .white .accentBorderRight {
-  border-right-color: #ffffff;
+    border-right-color: #ffffff;
 }
+
 .white .accentBorderTop {
-  border-top-color: #ffffff;
+    border-top-color: #ffffff;
 }
+
 .black .accent,
 .black .accentBg,
 .black .accentBgHover:hover,
@@ -2054,8 +2366,9 @@ a.live-tile .metroExtraSmall:link {
 .black .live-tile > .slide-front,
 .black .list-tile > div,
 .black .flip-list > li > div {
-  background-color: #000000;
+    background-color: #000000;
 }
+
 .black .accentColor,
 .black .accentHover:hover,
 .black .accentHover a:hover,
@@ -2065,24 +2378,30 @@ a.live-tile .metroExtraSmall:link {
 .black a.accentLink,
 .black a.accentLink:hover,
 .black a.accentLink:visited {
-  color: #000000;
+    color: #000000;
 }
+
 .black .accentBorder {
-  border-color: #000000;
+    border-color: #000000;
 }
+
 .black .accentBorderBottom {
-  border-bottom-color: #000000;
+    border-bottom-color: #000000;
 }
+
 .black .accentBorderLeft {
-  border-left-color: #000000;
+    border-left-color: #000000;
 }
+
 .black .accentBorderRight {
-  border-right-color: #000000;
+    border-right-color: #000000;
 }
+
 .black .accentBorderTop {
-  border-top-color: #000000;
+    border-top-color: #000000;
 }
 /* Local style overrides */
+
 html body .amber.accent,
 html body .amber.live-tile > .accent,
 html body .amber.list-tile > .accent,
@@ -2106,8 +2425,9 @@ html body .amber.slide-front.accent,
 html body .amber.slide-back.accent,
 html body .amber.flip-front.accent,
 html body .amber.flip-back.accent {
-  background-color: #f1a30b;
+    background-color: #f1a30b;
 }
+
 html body .amber.accentColor,
 html body .amber.accentHover:hover,
 html body .amber.accentHover a:hover,
@@ -2117,23 +2437,29 @@ html body .amber.accentLink a:visited,
 a.accentLinkhtml body .amber,
 a.accentLinkhtml body .amber:hover,
 a.accentLinkhtml body .amber:visited {
-  color: #f1a30b;
+    color: #f1a30b;
 }
+
 html body .amber.accentBorder {
-  border-color: #f1a30b;
+    border-color: #f1a30b;
 }
+
 html body .amber.accentBorderBottom {
-  border-bottom-color: #f1a30b;
+    border-bottom-color: #f1a30b;
 }
+
 html body .amber.accentBorderLeft {
-  border-left-color: #f1a30b;
+    border-left-color: #f1a30b;
 }
+
 html body .amber.accentBorderRight {
-  border-right-color: #f1a30b;
+    border-right-color: #f1a30b;
 }
+
 html body .amber.accentBorderTop {
-  border-top-color: #f1a30b;
+    border-top-color: #f1a30b;
 }
+
 html body .blue.accent,
 html body .blue.live-tile > .accent,
 html body .blue.list-tile > .accent,
@@ -2157,8 +2483,9 @@ html body .blue.slide-front.accent,
 html body .blue.slide-back.accent,
 html body .blue.flip-front.accent,
 html body .blue.flip-back.accent {
-  background-color: #1ba1e2;
+    background-color: #1ba1e2;
 }
+
 html body .blue.accentColor,
 html body .blue.accentHover:hover,
 html body .blue.accentHover a:hover,
@@ -2168,23 +2495,29 @@ html body .blue.accentLink a:visited,
 a.accentLinkhtml body .blue,
 a.accentLinkhtml body .blue:hover,
 a.accentLinkhtml body .blue:visited {
-  color: #1ba1e2;
+    color: #1ba1e2;
 }
+
 html body .blue.accentBorder {
-  border-color: #1ba1e2;
+    border-color: #1ba1e2;
 }
+
 html body .blue.accentBorderBottom {
-  border-bottom-color: #1ba1e2;
+    border-bottom-color: #1ba1e2;
 }
+
 html body .blue.accentBorderLeft {
-  border-left-color: #1ba1e2;
+    border-left-color: #1ba1e2;
 }
+
 html body .blue.accentBorderRight {
-  border-right-color: #1ba1e2;
+    border-right-color: #1ba1e2;
 }
+
 html body .blue.accentBorderTop {
-  border-top-color: #1ba1e2;
+    border-top-color: #1ba1e2;
 }
+
 html body .brown.accent,
 html body .brown.live-tile > .accent,
 html body .brown.list-tile > .accent,
@@ -2208,8 +2541,9 @@ html body .brown.slide-front.accent,
 html body .brown.slide-back.accent,
 html body .brown.flip-front.accent,
 html body .brown.flip-back.accent {
-  background-color: #a05000;
+    background-color: #a05000;
 }
+
 html body .brown.accentColor,
 html body .brown.accentHover:hover,
 html body .brown.accentHover a:hover,
@@ -2219,23 +2553,29 @@ html body .brown.accentLink a:visited,
 a.accentLinkhtml body .brown,
 a.accentLinkhtml body .brown:hover,
 a.accentLinkhtml body .brown:visited {
-  color: #a05000;
+    color: #a05000;
 }
+
 html body .brown.accentBorder {
-  border-color: #a05000;
+    border-color: #a05000;
 }
+
 html body .brown.accentBorderBottom {
-  border-bottom-color: #a05000;
+    border-bottom-color: #a05000;
 }
+
 html body .brown.accentBorderLeft {
-  border-left-color: #a05000;
+    border-left-color: #a05000;
 }
+
 html body .brown.accentBorderRight {
-  border-right-color: #a05000;
+    border-right-color: #a05000;
 }
+
 html body .brown.accentBorderTop {
-  border-top-color: #a05000;
+    border-top-color: #a05000;
 }
+
 html body .cobalt.accent,
 html body .cobalt.live-tile > .accent,
 html body .cobalt.list-tile > .accent,
@@ -2259,8 +2599,9 @@ html body .cobalt.slide-front.accent,
 html body .cobalt.slide-back.accent,
 html body .cobalt.flip-front.accent,
 html body .cobalt.flip-back.accent {
-  background-color: #0050ef;
+    background-color: #0050ef;
 }
+
 html body .cobalt.accentColor,
 html body .cobalt.accentHover:hover,
 html body .cobalt.accentHover a:hover,
@@ -2270,23 +2611,29 @@ html body .cobalt.accentLink a:visited,
 a.accentLinkhtml body .cobalt,
 a.accentLinkhtml body .cobalt:hover,
 a.accentLinkhtml body .cobalt:visited {
-  color: #0050ef;
+    color: #0050ef;
 }
+
 html body .cobalt.accentBorder {
-  border-color: #0050ef;
+    border-color: #0050ef;
 }
+
 html body .cobalt.accentBorderBottom {
-  border-bottom-color: #0050ef;
+    border-bottom-color: #0050ef;
 }
+
 html body .cobalt.accentBorderLeft {
-  border-left-color: #0050ef;
+    border-left-color: #0050ef;
 }
+
 html body .cobalt.accentBorderRight {
-  border-right-color: #0050ef;
+    border-right-color: #0050ef;
 }
+
 html body .cobalt.accentBorderTop {
-  border-top-color: #0050ef;
+    border-top-color: #0050ef;
 }
+
 html body .crimson.accent,
 html body .crimson.live-tile > .accent,
 html body .crimson.list-tile > .accent,
@@ -2310,8 +2657,9 @@ html body .crimson.slide-front.accent,
 html body .crimson.slide-back.accent,
 html body .crimson.flip-front.accent,
 html body .crimson.flip-back.accent {
-  background-color: #a20025;
+    background-color: #a20025;
 }
+
 html body .crimson.accentColor,
 html body .crimson.accentHover:hover,
 html body .crimson.accentHover a:hover,
@@ -2321,23 +2669,29 @@ html body .crimson.accentLink a:visited,
 a.accentLinkhtml body .crimson,
 a.accentLinkhtml body .crimson:hover,
 a.accentLinkhtml body .crimson:visited {
-  color: #a20025;
+    color: #a20025;
 }
+
 html body .crimson.accentBorder {
-  border-color: #a20025;
+    border-color: #a20025;
 }
+
 html body .crimson.accentBorderBottom {
-  border-bottom-color: #a20025;
+    border-bottom-color: #a20025;
 }
+
 html body .crimson.accentBorderLeft {
-  border-left-color: #a20025;
+    border-left-color: #a20025;
 }
+
 html body .crimson.accentBorderRight {
-  border-right-color: #a20025;
+    border-right-color: #a20025;
 }
+
 html body .crimson.accentBorderTop {
-  border-top-color: #a20025;
+    border-top-color: #a20025;
 }
+
 html body .cyan.accent,
 html body .cyan.live-tile > .accent,
 html body .cyan.list-tile > .accent,
@@ -2361,8 +2715,9 @@ html body .cyan.slide-front.accent,
 html body .cyan.slide-back.accent,
 html body .cyan.flip-front.accent,
 html body .cyan.flip-back.accent {
-  background-color: #1ba0e1;
+    background-color: #1ba0e1;
 }
+
 html body .cyan.accentColor,
 html body .cyan.accentHover:hover,
 html body .cyan.accentHover a:hover,
@@ -2372,23 +2727,29 @@ html body .cyan.accentLink a:visited,
 a.accentLinkhtml body .cyan,
 a.accentLinkhtml body .cyan:hover,
 a.accentLinkhtml body .cyan:visited {
-  color: #1ba0e1;
+    color: #1ba0e1;
 }
+
 html body .cyan.accentBorder {
-  border-color: #1ba0e1;
+    border-color: #1ba0e1;
 }
+
 html body .cyan.accentBorderBottom {
-  border-bottom-color: #1ba0e1;
+    border-bottom-color: #1ba0e1;
 }
+
 html body .cyan.accentBorderLeft {
-  border-left-color: #1ba0e1;
+    border-left-color: #1ba0e1;
 }
+
 html body .cyan.accentBorderRight {
-  border-right-color: #1ba0e1;
+    border-right-color: #1ba0e1;
 }
+
 html body .cyan.accentBorderTop {
-  border-top-color: #1ba0e1;
+    border-top-color: #1ba0e1;
 }
+
 html body .emerald.accent,
 html body .emerald.live-tile > .accent,
 html body .emerald.list-tile > .accent,
@@ -2412,8 +2773,9 @@ html body .emerald.slide-front.accent,
 html body .emerald.slide-back.accent,
 html body .emerald.flip-front.accent,
 html body .emerald.flip-back.accent {
-  background-color: #008a00;
+    background-color: #008a00;
 }
+
 html body .emerald.accentColor,
 html body .emerald.accentHover:hover,
 html body .emerald.accentHover a:hover,
@@ -2423,23 +2785,29 @@ html body .emerald.accentLink a:visited,
 a.accentLinkhtml body .emerald,
 a.accentLinkhtml body .emerald:hover,
 a.accentLinkhtml body .emerald:visited {
-  color: #008a00;
+    color: #008a00;
 }
+
 html body .emerald.accentBorder {
-  border-color: #008a00;
+    border-color: #008a00;
 }
+
 html body .emerald.accentBorderBottom {
-  border-bottom-color: #008a00;
+    border-bottom-color: #008a00;
 }
+
 html body .emerald.accentBorderLeft {
-  border-left-color: #008a00;
+    border-left-color: #008a00;
 }
+
 html body .emerald.accentBorderRight {
-  border-right-color: #008a00;
+    border-right-color: #008a00;
 }
+
 html body .emerald.accentBorderTop {
-  border-top-color: #008a00;
+    border-top-color: #008a00;
 }
+
 html body .green.accent,
 html body .green.live-tile > .accent,
 html body .green.list-tile > .accent,
@@ -2463,8 +2831,9 @@ html body .green.slide-front.accent,
 html body .green.slide-back.accent,
 html body .green.flip-front.accent,
 html body .green.flip-back.accent {
-  background-color: #339933;
+    background-color: #339933;
 }
+
 html body .green.accentColor,
 html body .green.accentHover:hover,
 html body .green.accentHover a:hover,
@@ -2474,23 +2843,29 @@ html body .green.accentLink a:visited,
 a.accentLinkhtml body .green,
 a.accentLinkhtml body .green:hover,
 a.accentLinkhtml body .green:visited {
-  color: #339933;
+    color: #339933;
 }
+
 html body .green.accentBorder {
-  border-color: #339933;
+    border-color: #339933;
 }
+
 html body .green.accentBorderBottom {
-  border-bottom-color: #339933;
+    border-bottom-color: #339933;
 }
+
 html body .green.accentBorderLeft {
-  border-left-color: #339933;
+    border-left-color: #339933;
 }
+
 html body .green.accentBorderRight {
-  border-right-color: #339933;
+    border-right-color: #339933;
 }
+
 html body .green.accentBorderTop {
-  border-top-color: #339933;
+    border-top-color: #339933;
 }
+
 html body .indigo.accent,
 html body .indigo.live-tile > .accent,
 html body .indigo.list-tile > .accent,
@@ -2514,8 +2889,9 @@ html body .indigo.slide-front.accent,
 html body .indigo.slide-back.accent,
 html body .indigo.flip-front.accent,
 html body .indigo.flip-back.accent {
-  background-color: #6a00ff;
+    background-color: #6a00ff;
 }
+
 html body .indigo.accentColor,
 html body .indigo.accentHover:hover,
 html body .indigo.accentHover a:hover,
@@ -2525,23 +2901,29 @@ html body .indigo.accentLink a:visited,
 a.accentLinkhtml body .indigo,
 a.accentLinkhtml body .indigo:hover,
 a.accentLinkhtml body .indigo:visited {
-  color: #6a00ff;
+    color: #6a00ff;
 }
+
 html body .indigo.accentBorder {
-  border-color: #6a00ff;
+    border-color: #6a00ff;
 }
+
 html body .indigo.accentBorderBottom {
-  border-bottom-color: #6a00ff;
+    border-bottom-color: #6a00ff;
 }
+
 html body .indigo.accentBorderLeft {
-  border-left-color: #6a00ff;
+    border-left-color: #6a00ff;
 }
+
 html body .indigo.accentBorderRight {
-  border-right-color: #6a00ff;
+    border-right-color: #6a00ff;
 }
+
 html body .indigo.accentBorderTop {
-  border-top-color: #6a00ff;
+    border-top-color: #6a00ff;
 }
+
 html body .lime.accent,
 html body .lime.live-tile > .accent,
 html body .lime.list-tile > .accent,
@@ -2565,8 +2947,9 @@ html body .lime.slide-front.accent,
 html body .lime.slide-back.accent,
 html body .lime.flip-front.accent,
 html body .lime.flip-back.accent {
-  background-color: #a2c139;
+    background-color: #a2c139;
 }
+
 html body .lime.accentColor,
 html body .lime.accentHover:hover,
 html body .lime.accentHover a:hover,
@@ -2576,23 +2959,29 @@ html body .lime.accentLink a:visited,
 a.accentLinkhtml body .lime,
 a.accentLinkhtml body .lime:hover,
 a.accentLinkhtml body .lime:visited {
-  color: #a2c139;
+    color: #a2c139;
 }
+
 html body .lime.accentBorder {
-  border-color: #a2c139;
+    border-color: #a2c139;
 }
+
 html body .lime.accentBorderBottom {
-  border-bottom-color: #a2c139;
+    border-bottom-color: #a2c139;
 }
+
 html body .lime.accentBorderLeft {
-  border-left-color: #a2c139;
+    border-left-color: #a2c139;
 }
+
 html body .lime.accentBorderRight {
-  border-right-color: #a2c139;
+    border-right-color: #a2c139;
 }
+
 html body .lime.accentBorderTop {
-  border-top-color: #a2c139;
+    border-top-color: #a2c139;
 }
+
 html body .magenta.accent,
 html body .magenta.live-tile > .accent,
 html body .magenta.list-tile > .accent,
@@ -2616,8 +3005,9 @@ html body .magenta.slide-front.accent,
 html body .magenta.slide-back.accent,
 html body .magenta.flip-front.accent,
 html body .magenta.flip-back.accent {
-  background-color: #d80073;
+    background-color: #d80073;
 }
+
 html body .magenta.accentColor,
 html body .magenta.accentHover:hover,
 html body .magenta.accentHover a:hover,
@@ -2627,23 +3017,29 @@ html body .magenta.accentLink a:visited,
 a.accentLinkhtml body .magenta,
 a.accentLinkhtml body .magenta:hover,
 a.accentLinkhtml body .magenta:visited {
-  color: #d80073;
+    color: #d80073;
 }
+
 html body .magenta.accentBorder {
-  border-color: #d80073;
+    border-color: #d80073;
 }
+
 html body .magenta.accentBorderBottom {
-  border-bottom-color: #d80073;
+    border-bottom-color: #d80073;
 }
+
 html body .magenta.accentBorderLeft {
-  border-left-color: #d80073;
+    border-left-color: #d80073;
 }
+
 html body .magenta.accentBorderRight {
-  border-right-color: #d80073;
+    border-right-color: #d80073;
 }
+
 html body .magenta.accentBorderTop {
-  border-top-color: #d80073;
+    border-top-color: #d80073;
 }
+
 html body .mango.accent,
 html body .mango.live-tile > .accent,
 html body .mango.list-tile > .accent,
@@ -2667,8 +3063,9 @@ html body .mango.slide-front.accent,
 html body .mango.slide-back.accent,
 html body .mango.flip-front.accent,
 html body .mango.flip-back.accent {
-  background-color: #f09609;
+    background-color: #f09609;
 }
+
 html body .mango.accentColor,
 html body .mango.accentHover:hover,
 html body .mango.accentHover a:hover,
@@ -2678,23 +3075,29 @@ html body .mango.accentLink a:visited,
 a.accentLinkhtml body .mango,
 a.accentLinkhtml body .mango:hover,
 a.accentLinkhtml body .mango:visited {
-  color: #f09609;
+    color: #f09609;
 }
+
 html body .mango.accentBorder {
-  border-color: #f09609;
+    border-color: #f09609;
 }
+
 html body .mango.accentBorderBottom {
-  border-bottom-color: #f09609;
+    border-bottom-color: #f09609;
 }
+
 html body .mango.accentBorderLeft {
-  border-left-color: #f09609;
+    border-left-color: #f09609;
 }
+
 html body .mango.accentBorderRight {
-  border-right-color: #f09609;
+    border-right-color: #f09609;
 }
+
 html body .mango.accentBorderTop {
-  border-top-color: #f09609;
+    border-top-color: #f09609;
 }
+
 html body .mauve.accent,
 html body .mauve.live-tile > .accent,
 html body .mauve.list-tile > .accent,
@@ -2718,8 +3121,9 @@ html body .mauve.slide-front.accent,
 html body .mauve.slide-back.accent,
 html body .mauve.flip-front.accent,
 html body .mauve.flip-back.accent {
-  background-color: #765f89;
+    background-color: #765f89;
 }
+
 html body .mauve.accentColor,
 html body .mauve.accentHover:hover,
 html body .mauve.accentHover a:hover,
@@ -2729,23 +3133,29 @@ html body .mauve.accentLink a:visited,
 a.accentLinkhtml body .mauve,
 a.accentLinkhtml body .mauve:hover,
 a.accentLinkhtml body .mauve:visited {
-  color: #765f89;
+    color: #765f89;
 }
+
 html body .mauve.accentBorder {
-  border-color: #765f89;
+    border-color: #765f89;
 }
+
 html body .mauve.accentBorderBottom {
-  border-bottom-color: #765f89;
+    border-bottom-color: #765f89;
 }
+
 html body .mauve.accentBorderLeft {
-  border-left-color: #765f89;
+    border-left-color: #765f89;
 }
+
 html body .mauve.accentBorderRight {
-  border-right-color: #765f89;
+    border-right-color: #765f89;
 }
+
 html body .mauve.accentBorderTop {
-  border-top-color: #765f89;
+    border-top-color: #765f89;
 }
+
 html body .olive.accent,
 html body .olive.live-tile > .accent,
 html body .olive.list-tile > .accent,
@@ -2769,8 +3179,9 @@ html body .olive.slide-front.accent,
 html body .olive.slide-back.accent,
 html body .olive.flip-front.accent,
 html body .olive.flip-back.accent {
-  background-color: #6d8764;
+    background-color: #6d8764;
 }
+
 html body .olive.accentColor,
 html body .olive.accentHover:hover,
 html body .olive.accentHover a:hover,
@@ -2780,23 +3191,29 @@ html body .olive.accentLink a:visited,
 a.accentLinkhtml body .olive,
 a.accentLinkhtml body .olive:hover,
 a.accentLinkhtml body .olive:visited {
-  color: #6d8764;
+    color: #6d8764;
 }
+
 html body .olive.accentBorder {
-  border-color: #6d8764;
+    border-color: #6d8764;
 }
+
 html body .olive.accentBorderBottom {
-  border-bottom-color: #6d8764;
+    border-bottom-color: #6d8764;
 }
+
 html body .olive.accentBorderLeft {
-  border-left-color: #6d8764;
+    border-left-color: #6d8764;
 }
+
 html body .olive.accentBorderRight {
-  border-right-color: #6d8764;
+    border-right-color: #6d8764;
 }
+
 html body .olive.accentBorderTop {
-  border-top-color: #6d8764;
+    border-top-color: #6d8764;
 }
+
 html body .orange.accent,
 html body .orange.live-tile > .accent,
 html body .orange.list-tile > .accent,
@@ -2820,8 +3237,9 @@ html body .orange.slide-front.accent,
 html body .orange.slide-back.accent,
 html body .orange.flip-front.accent,
 html body .orange.flip-back.accent {
-  background-color: #fa6801;
+    background-color: #fa6801;
 }
+
 html body .orange.accentColor,
 html body .orange.accentHover:hover,
 html body .orange.accentHover a:hover,
@@ -2831,23 +3249,29 @@ html body .orange.accentLink a:visited,
 a.accentLinkhtml body .orange,
 a.accentLinkhtml body .orange:hover,
 a.accentLinkhtml body .orange:visited {
-  color: #fa6801;
+    color: #fa6801;
 }
+
 html body .orange.accentBorder {
-  border-color: #fa6801;
+    border-color: #fa6801;
 }
+
 html body .orange.accentBorderBottom {
-  border-bottom-color: #fa6801;
+    border-bottom-color: #fa6801;
 }
+
 html body .orange.accentBorderLeft {
-  border-left-color: #fa6801;
+    border-left-color: #fa6801;
 }
+
 html body .orange.accentBorderRight {
-  border-right-color: #fa6801;
+    border-right-color: #fa6801;
 }
+
 html body .orange.accentBorderTop {
-  border-top-color: #fa6801;
+    border-top-color: #fa6801;
 }
+
 html body .pink.accent,
 html body .pink.live-tile > .accent,
 html body .pink.list-tile > .accent,
@@ -2871,8 +3295,9 @@ html body .pink.slide-front.accent,
 html body .pink.slide-back.accent,
 html body .pink.flip-front.accent,
 html body .pink.flip-back.accent {
-  background-color: #e671b8;
+    background-color: #e671b8;
 }
+
 html body .pink.accentColor,
 html body .pink.accentHover:hover,
 html body .pink.accentHover a:hover,
@@ -2882,23 +3307,29 @@ html body .pink.accentLink a:visited,
 a.accentLinkhtml body .pink,
 a.accentLinkhtml body .pink:hover,
 a.accentLinkhtml body .pink:visited {
-  color: #e671b8;
+    color: #e671b8;
 }
+
 html body .pink.accentBorder {
-  border-color: #e671b8;
+    border-color: #e671b8;
 }
+
 html body .pink.accentBorderBottom {
-  border-bottom-color: #e671b8;
+    border-bottom-color: #e671b8;
 }
+
 html body .pink.accentBorderLeft {
-  border-left-color: #e671b8;
+    border-left-color: #e671b8;
 }
+
 html body .pink.accentBorderRight {
-  border-right-color: #e671b8;
+    border-right-color: #e671b8;
 }
+
 html body .pink.accentBorderTop {
-  border-top-color: #e671b8;
+    border-top-color: #e671b8;
 }
+
 html body .purple.accent,
 html body .purple.live-tile > .accent,
 html body .purple.list-tile > .accent,
@@ -2922,8 +3353,9 @@ html body .purple.slide-front.accent,
 html body .purple.slide-back.accent,
 html body .purple.flip-front.accent,
 html body .purple.flip-back.accent {
-  background-color: #a200ff;
+    background-color: #a200ff;
 }
+
 html body .purple.accentColor,
 html body .purple.accentHover:hover,
 html body .purple.accentHover a:hover,
@@ -2933,23 +3365,29 @@ html body .purple.accentLink a:visited,
 a.accentLinkhtml body .purple,
 a.accentLinkhtml body .purple:hover,
 a.accentLinkhtml body .purple:visited {
-  color: #a200ff;
+    color: #a200ff;
 }
+
 html body .purple.accentBorder {
-  border-color: #a200ff;
+    border-color: #a200ff;
 }
+
 html body .purple.accentBorderBottom {
-  border-bottom-color: #a200ff;
+    border-bottom-color: #a200ff;
 }
+
 html body .purple.accentBorderLeft {
-  border-left-color: #a200ff;
+    border-left-color: #a200ff;
 }
+
 html body .purple.accentBorderRight {
-  border-right-color: #a200ff;
+    border-right-color: #a200ff;
 }
+
 html body .purple.accentBorderTop {
-  border-top-color: #a200ff;
+    border-top-color: #a200ff;
 }
+
 html body .violet.accent,
 html body .violet.live-tile > .accent,
 html body .violet.list-tile > .accent,
@@ -2973,8 +3411,9 @@ html body .violet.slide-front.accent,
 html body .violet.slide-back.accent,
 html body .violet.flip-front.accent,
 html body .violet.flip-back.accent {
-  background-color: #a200ff;
+    background-color: #a200ff;
 }
+
 html body .violet.accentColor,
 html body .violet.accentHover:hover,
 html body .violet.accentHover a:hover,
@@ -2984,23 +3423,29 @@ html body .violet.accentLink a:visited,
 a.accentLinkhtml body .violet,
 a.accentLinkhtml body .violet:hover,
 a.accentLinkhtml body .violet:visited {
-  color: #a200ff;
+    color: #a200ff;
 }
+
 html body .violet.accentBorder {
-  border-color: #a200ff;
+    border-color: #a200ff;
 }
+
 html body .violet.accentBorderBottom {
-  border-bottom-color: #a200ff;
+    border-bottom-color: #a200ff;
 }
+
 html body .violet.accentBorderLeft {
-  border-left-color: #a200ff;
+    border-left-color: #a200ff;
 }
+
 html body .violet.accentBorderRight {
-  border-right-color: #a200ff;
+    border-right-color: #a200ff;
 }
+
 html body .violet.accentBorderTop {
-  border-top-color: #a200ff;
+    border-top-color: #a200ff;
 }
+
 html body .red.accent,
 html body .red.live-tile > .accent,
 html body .red.list-tile > .accent,
@@ -3024,8 +3469,9 @@ html body .red.slide-front.accent,
 html body .red.slide-back.accent,
 html body .red.flip-front.accent,
 html body .red.flip-back.accent {
-  background-color: #e51400;
+    background-color: #e51400;
 }
+
 html body .red.accentColor,
 html body .red.accentHover:hover,
 html body .red.accentHover a:hover,
@@ -3035,23 +3481,29 @@ html body .red.accentLink a:visited,
 a.accentLinkhtml body .red,
 a.accentLinkhtml body .red:hover,
 a.accentLinkhtml body .red:visited {
-  color: #e51400;
+    color: #e51400;
 }
+
 html body .red.accentBorder {
-  border-color: #e51400;
+    border-color: #e51400;
 }
+
 html body .red.accentBorderBottom {
-  border-bottom-color: #e51400;
+    border-bottom-color: #e51400;
 }
+
 html body .red.accentBorderLeft {
-  border-left-color: #e51400;
+    border-left-color: #e51400;
 }
+
 html body .red.accentBorderRight {
-  border-right-color: #e51400;
+    border-right-color: #e51400;
 }
+
 html body .red.accentBorderTop {
-  border-top-color: #e51400;
+    border-top-color: #e51400;
 }
+
 html body .sienna.accent,
 html body .sienna.live-tile > .accent,
 html body .sienna.list-tile > .accent,
@@ -3075,8 +3527,9 @@ html body .sienna.slide-front.accent,
 html body .sienna.slide-back.accent,
 html body .sienna.flip-front.accent,
 html body .sienna.flip-back.accent {
-  background-color: #7b3a3e;
+    background-color: #7b3a3e;
 }
+
 html body .sienna.accentColor,
 html body .sienna.accentHover:hover,
 html body .sienna.accentHover a:hover,
@@ -3086,23 +3539,29 @@ html body .sienna.accentLink a:visited,
 a.accentLinkhtml body .sienna,
 a.accentLinkhtml body .sienna:hover,
 a.accentLinkhtml body .sienna:visited {
-  color: #7b3a3e;
+    color: #7b3a3e;
 }
+
 html body .sienna.accentBorder {
-  border-color: #7b3a3e;
+    border-color: #7b3a3e;
 }
+
 html body .sienna.accentBorderBottom {
-  border-bottom-color: #7b3a3e;
+    border-bottom-color: #7b3a3e;
 }
+
 html body .sienna.accentBorderLeft {
-  border-left-color: #7b3a3e;
+    border-left-color: #7b3a3e;
 }
+
 html body .sienna.accentBorderRight {
-  border-right-color: #7b3a3e;
+    border-right-color: #7b3a3e;
 }
+
 html body .sienna.accentBorderTop {
-  border-top-color: #7b3a3e;
+    border-top-color: #7b3a3e;
 }
+
 html body .steel.accent,
 html body .steel.live-tile > .accent,
 html body .steel.list-tile > .accent,
@@ -3126,8 +3585,9 @@ html body .steel.slide-front.accent,
 html body .steel.slide-back.accent,
 html body .steel.flip-front.accent,
 html body .steel.flip-back.accent {
-  background-color: #657688;
+    background-color: #657688;
 }
+
 html body .steel.accentColor,
 html body .steel.accentHover:hover,
 html body .steel.accentHover a:hover,
@@ -3137,23 +3597,29 @@ html body .steel.accentLink a:visited,
 a.accentLinkhtml body .steel,
 a.accentLinkhtml body .steel:hover,
 a.accentLinkhtml body .steel:visited {
-  color: #657688;
+    color: #657688;
 }
+
 html body .steel.accentBorder {
-  border-color: #657688;
+    border-color: #657688;
 }
+
 html body .steel.accentBorderBottom {
-  border-bottom-color: #657688;
+    border-bottom-color: #657688;
 }
+
 html body .steel.accentBorderLeft {
-  border-left-color: #657688;
+    border-left-color: #657688;
 }
+
 html body .steel.accentBorderRight {
-  border-right-color: #657688;
+    border-right-color: #657688;
 }
+
 html body .steel.accentBorderTop {
-  border-top-color: #657688;
+    border-top-color: #657688;
 }
+
 html body .teal.accent,
 html body .teal.live-tile > .accent,
 html body .teal.list-tile > .accent,
@@ -3177,8 +3643,9 @@ html body .teal.slide-front.accent,
 html body .teal.slide-back.accent,
 html body .teal.flip-front.accent,
 html body .teal.flip-back.accent {
-  background-color: #00aba9;
+    background-color: #00aba9;
 }
+
 html body .teal.accentColor,
 html body .teal.accentHover:hover,
 html body .teal.accentHover a:hover,
@@ -3188,23 +3655,29 @@ html body .teal.accentLink a:visited,
 a.accentLinkhtml body .teal,
 a.accentLinkhtml body .teal:hover,
 a.accentLinkhtml body .teal:visited {
-  color: #00aba9;
+    color: #00aba9;
 }
+
 html body .teal.accentBorder {
-  border-color: #00aba9;
+    border-color: #00aba9;
 }
+
 html body .teal.accentBorderBottom {
-  border-bottom-color: #00aba9;
+    border-bottom-color: #00aba9;
 }
+
 html body .teal.accentBorderLeft {
-  border-left-color: #00aba9;
+    border-left-color: #00aba9;
 }
+
 html body .teal.accentBorderRight {
-  border-right-color: #00aba9;
+    border-right-color: #00aba9;
 }
+
 html body .teal.accentBorderTop {
-  border-top-color: #00aba9;
+    border-top-color: #00aba9;
 }
+
 html body .yellow.accent,
 html body .yellow.live-tile > .accent,
 html body .yellow.list-tile > .accent,
@@ -3228,8 +3701,9 @@ html body .yellow.slide-front.accent,
 html body .yellow.slide-back.accent,
 html body .yellow.flip-front.accent,
 html body .yellow.flip-back.accent {
-  background-color: #d8c101;
+    background-color: #d8c101;
 }
+
 html body .yellow.accentColor,
 html body .yellow.accentHover:hover,
 html body .yellow.accentHover a:hover,
@@ -3239,23 +3713,29 @@ html body .yellow.accentLink a:visited,
 a.accentLinkhtml body .yellow,
 a.accentLinkhtml body .yellow:hover,
 a.accentLinkhtml body .yellow:visited {
-  color: #d8c101;
+    color: #d8c101;
 }
+
 html body .yellow.accentBorder {
-  border-color: #d8c101;
+    border-color: #d8c101;
 }
+
 html body .yellow.accentBorderBottom {
-  border-bottom-color: #d8c101;
+    border-bottom-color: #d8c101;
 }
+
 html body .yellow.accentBorderLeft {
-  border-left-color: #d8c101;
+    border-left-color: #d8c101;
 }
+
 html body .yellow.accentBorderRight {
-  border-right-color: #d8c101;
+    border-right-color: #d8c101;
 }
+
 html body .yellow.accentBorderTop {
-  border-top-color: #d8c101;
+    border-top-color: #d8c101;
 }
+
 html body .trans.accent,
 html body .trans.live-tile > .accent,
 html body .trans.list-tile > .accent,
@@ -3279,8 +3759,9 @@ html body .trans.slide-front.accent,
 html body .trans.slide-back.accent,
 html body .trans.flip-front.accent,
 html body .trans.flip-back.accent {
-  background-color: transparent;
+    background-color: transparent;
 }
+
 html body .trans.accentColor,
 html body .trans.accentHover:hover,
 html body .trans.accentHover a:hover,
@@ -3290,23 +3771,29 @@ html body .trans.accentLink a:visited,
 a.accentLinkhtml body .trans,
 a.accentLinkhtml body .trans:hover,
 a.accentLinkhtml body .trans:visited {
-  color: transparent;
+    color: transparent;
 }
+
 html body .trans.accentBorder {
-  border-color: transparent;
+    border-color: transparent;
 }
+
 html body .trans.accentBorderBottom {
-  border-bottom-color: transparent;
+    border-bottom-color: transparent;
 }
+
 html body .trans.accentBorderLeft {
-  border-left-color: transparent;
+    border-left-color: transparent;
 }
+
 html body .trans.accentBorderRight {
-  border-right-color: transparent;
+    border-right-color: transparent;
 }
+
 html body .trans.accentBorderTop {
-  border-top-color: transparent;
+    border-top-color: transparent;
 }
+
 html body .white.accent,
 html body .white.live-tile > .accent,
 html body .white.list-tile > .accent,
@@ -3330,8 +3817,9 @@ html body .white.slide-front.accent,
 html body .white.slide-back.accent,
 html body .white.flip-front.accent,
 html body .white.flip-back.accent {
-  background-color: #ffffff;
+    background-color: #ffffff;
 }
+
 html body .white.accentColor,
 html body .white.accentHover:hover,
 html body .white.accentHover a:hover,
@@ -3341,23 +3829,29 @@ html body .white.accentLink a:visited,
 a.accentLinkhtml body .white,
 a.accentLinkhtml body .white:hover,
 a.accentLinkhtml body .white:visited {
-  color: #ffffff;
+    color: #ffffff;
 }
+
 html body .white.accentBorder {
-  border-color: #ffffff;
+    border-color: #ffffff;
 }
+
 html body .white.accentBorderBottom {
-  border-bottom-color: #ffffff;
+    border-bottom-color: #ffffff;
 }
+
 html body .white.accentBorderLeft {
-  border-left-color: #ffffff;
+    border-left-color: #ffffff;
 }
+
 html body .white.accentBorderRight {
-  border-right-color: #ffffff;
+    border-right-color: #ffffff;
 }
+
 html body .white.accentBorderTop {
-  border-top-color: #ffffff;
+    border-top-color: #ffffff;
 }
+
 html body .black.accent,
 html body .black.live-tile > .accent,
 html body .black.list-tile > .accent,
@@ -3381,8 +3875,9 @@ html body .black.slide-front.accent,
 html body .black.slide-back.accent,
 html body .black.flip-front.accent,
 html body .black.flip-back.accent {
-  background-color: #000000;
+    background-color: #000000;
 }
+
 html body .black.accentColor,
 html body .black.accentHover:hover,
 html body .black.accentHover a:hover,
@@ -3392,629 +3887,835 @@ html body .black.accentLink a:visited,
 a.accentLinkhtml body .black,
 a.accentLinkhtml body .black:hover,
 a.accentLinkhtml body .black:visited {
-  color: #000000;
+    color: #000000;
 }
+
 html body .black.accentBorder {
-  border-color: #000000;
+    border-color: #000000;
 }
+
 html body .black.accentBorderBottom {
-  border-bottom-color: #000000;
+    border-bottom-color: #000000;
 }
+
 html body .black.accentBorderLeft {
-  border-left-color: #000000;
+    border-left-color: #000000;
 }
+
 html body .black.accentBorderRight {
-  border-right-color: #000000;
+    border-right-color: #000000;
 }
+
 html body .black.accentBorderTop {
-  border-top-color: #000000;
+    border-top-color: #000000;
 }
 
 .appbar {
-  background-color: #212021;
-  bottom: 0px;
-  color: #fff;
-  font-size: .9em;
-  height: 60px;
-  left: 0px;
-  line-height: normal;
-  margin: 0;
-  max-height: 100%;
-  overflow: hidden;
-  padding: 10px 0;
-  position: fixed;
-  right: 0px;
-  text-align: right;
-  width: 100%;
-  z-index: 100;
-  -ms-touch-action: manipulation;
+    background-color: #212021;
+    bottom: 0px;
+    color: #fff;
+    font-size: .9em;
+    height: 60px;
+    left: 0px;
+    line-height: normal;
+    margin: 0;
+    max-height: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    position: fixed;
+    right: 0px;
+    text-align: right;
+    width: 100%;
+    z-index: 100;
+    -ms-touch-action: manipulation;
 }
+
 .appbar.condensed {
-  height: 40px;
+    height: 40px;
 }
+
 .appbar.condensed a.etc {
-  height: 40px;
-  line-height: 40px;
+    height: 40px;
+    line-height: 40px;
 }
+
 .appbar.top {
-  bottom: auto !important;
-  top: 0px;
+    bottom: auto !important;
+    top: 0px;
 }
+
 .appbar a.etc,
 .appbar a.etc:hover,
 .appbar a.etc:visited {
-  color: #fff;
-  cursor: pointer;
-  display: block;
-  font-size: 32px;
-  /* add some extra padding to make it easier to touch */
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 32px;
+    /* add some extra padding to make it easier to touch */
+    
+    height: 60px;
+    position: absolute;
+    right: 8px;
+    text-decoration: none;
+    top: 0px;
+    width: 90px;
+    z-index: 100;
+}
 
-  height: 60px;
-  position: absolute;
-  right: 8px;
-  text-decoration: none;
-  top: 0px;
-  width: 90px;
-  z-index: 100;
-}
 .appbar .clear {
-  clear: both;
+    clear: both;
 }
+
 .appbar .theme-options {
-  display: block;
-  float: left;
-  margin: 0px;
-  position: relative;
-  width: 80%;
+    display: block;
+    float: left;
+    margin: 0px;
+    position: relative;
+    width: 80%;
 }
+
 .appbar .theme-options > ul {
-  list-style-image: none;
-  list-style-type: none;
-  padding-right: 8px;
-  padding-left: 0px;
+    list-style-image: none;
+    list-style-type: none;
+    padding-right: 8px;
+    padding-left: 0px;
 }
+
 .appbar .theme-options li {
-  display: block;
-  margin: 8px;
-  float: left;
-  line-height: 32px;
-  height: 32px;
-  width: 32px;
+    display: block;
+    margin: 8px;
+    float: left;
+    line-height: 32px;
+    height: 32px;
+    width: 32px;
 }
+
 .appbar .theme-options li > a,
 .appbar .theme-options li > a:hover,
 .appbar .theme-options li > a:visited {
-  display: block;
-  padding: 0px;
-  text-decoration: none;
-  height: 32px;
-  width: 32px;
+    display: block;
+    padding: 0px;
+    text-decoration: none;
+    height: 32px;
+    width: 32px;
 }
+
 .appbar .base-theme-options {
-  display: block;
-  float: left;
-  margin: 0px;
-  position: relative;
-  width: 20%;
+    display: block;
+    float: left;
+    margin: 0px;
+    position: relative;
+    width: 20%;
 }
+
 .appbar .base-theme-options > ul {
-  padding-left: 2px;
+    padding-left: 2px;
 }
+
 .appbar .base-theme-options li {
-  display: block;
-  margin: 8px;
-  float: left;
-  line-height: 32px;
-  height: 32px;
-  width: 32px;
+    display: block;
+    margin: 8px;
+    float: left;
+    line-height: 32px;
+    height: 32px;
+    width: 32px;
 }
+
 .appbar .base-theme-options li > a,
 .appbar .base-theme-options li > a:hover,
 .appbar .base-theme-options li > a:visited {
-  display: block;
-  padding: 0px;
-  text-decoration: none;
-  height: 32px;
-  width: 32px;
+    display: block;
+    padding: 0px;
+    text-decoration: none;
+    height: 32px;
+    width: 32px;
 }
+
 .appbar .base-theme-options li > a.dark.accent {
-  background-color: #000;
+    background-color: #000;
 }
+
 .appbar .theme-options h2,
 .appbar .base-theme-options h2 {
-  font-size: 2em;
-  font-weight: normal;
-  padding: 8px 8px 12px;
-  text-align: left;
+    font-size: 2em;
+    font-weight: normal;
+    padding: 8px 8px 12px;
+    text-align: left;
 }
+
 .appbar .charm-title {
-  font-size: 10px;
-  display: block;
-  text-align: center;
+    font-size: 10px;
+    display: block;
+    text-align: center;
 }
+
 .appbar .links {
-  font-size: 2em;
-  padding: 24px 0 0 8px;
-  text-align: left;
+    font-size: 2em;
+    padding: 24px 0 0 8px;
+    text-align: left;
 }
+
 .appbar .links a,
 .appbar .links a:link {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .appbar.small {
-  height: 28px;
+    height: 28px;
 }
+
 .appbar.small a.etc,
 .appbar.small a.etc:hover,
 .appbar.small a.etc:visited {
-  font-size: 16px;
-  height: 60px;
-  width: 90px;
+    font-size: 16px;
+    height: 60px;
+    width: 90px;
 }
+
 .light .appbar {
-  background-color: #dfdfdf;
-  color: #000;
+    background-color: #dfdfdf;
+    color: #000;
 }
+
 .dark .appbar {
-  background-color: #212021;
+    background-color: #212021;
 }
+
 .light .appbar-buttons li a {
-  color: #000;
+    color: #000;
 }
+
 .light .appbar-buttons a > img {
-  background-image: url('images/metroIcons_light.jpg');
+    background-image: url('images/metroIcons_light.jpg');
 }
+
 .light .appbar a.etc,
 .light .appbar a.etc:hover,
 .light .appbar a.etc:visited {
-  color: #000;
+    color: #000;
 }
+
 .small .appbar-buttons {
-  /* default width is 3 buttons */
-
-  width: 156px;
+    /* default width is 3 buttons */
+    
+    width: 156px;
 }
+
 .small .appbar-buttons a > img {
-  height: 32px;
-  width: 32px;
+    height: 32px;
+    width: 32px;
 }
-.small .appbar-buttons.one {
-  width: 52px;
-}
-.small .appbar-buttons.two {
-  width: 104px;
-}
-.small .appbar-buttons.three {
-  width: 156px;
-}
-.small .appbar-buttons.four {
-  width: 208px;
-}
-.small .appbar-buttons.five {
-  width: 260px;
-}
-.small .appbar-buttons.six {
-  width: 312px;
-}
-.small .appbar-buttons.seven {
-  width: 364px;
-}
-.small .appbar-buttons.eight {
-  width: 416px;
-}
-.small .appbar-buttons.nine {
-  width: 468px;
-}
-.small .appbar-buttons.ten {
-  width: 520px;
-}
-.appbar-buttons {
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  padding: 0 0 2px;
-  text-align: right;
-  /* default width is 3 buttons */
 
-  width: 252px;
+.small .appbar-buttons.one {
+    width: 52px;
 }
+
+.small .appbar-buttons.two {
+    width: 104px;
+}
+
+.small .appbar-buttons.three {
+    width: 156px;
+}
+
+.small .appbar-buttons.four {
+    width: 208px;
+}
+
+.small .appbar-buttons.five {
+    width: 260px;
+}
+
+.small .appbar-buttons.six {
+    width: 312px;
+}
+
+.small .appbar-buttons.seven {
+    width: 364px;
+}
+
+.small .appbar-buttons.eight {
+    width: 416px;
+}
+
+.small .appbar-buttons.nine {
+    width: 468px;
+}
+
+.small .appbar-buttons.ten {
+    width: 520px;
+}
+
+.appbar-buttons {
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding: 0 0 2px;
+    text-align: right;
+    /* default width is 3 buttons */
+    
+    width: 252px;
+}
+
 .appbar-buttons.one {
-  width: 84px;
+    width: 84px;
 }
+
 .appbar-buttons.two {
-  width: 168px;
+    width: 168px;
 }
+
 .appbar-buttons.three {
-  width: 252px;
+    width: 252px;
 }
+
 .appbar-buttons.four {
-  width: 336px;
+    width: 336px;
 }
+
 .appbar-buttons.five {
-  width: 420px;
+    width: 420px;
 }
+
 .appbar-buttons.six {
-  width: 504px;
+    width: 504px;
 }
+
 .appbar-buttons.seven {
-  width: 588px;
+    width: 588px;
 }
+
 .appbar-buttons.eight {
-  width: 672px;
+    width: 672px;
 }
+
 .appbar-buttons.nine {
-  width: 756px;
+    width: 756px;
 }
+
 .appbar-buttons.ten {
-  width: 840px;
+    width: 840px;
 }
+
 .appbar-buttons a > img {
-  background-image: url('images/metroIcons.jpg');
-  background-repeat: no-repeat;
-  border: none;
-  height: 64px;
-  width: 64px;
+    background-image: url('images/metroIcons.jpg');
+    background-repeat: no-repeat;
+    border: none;
+    height: 64px;
+    width: 64px;
 }
+
 .appbar-buttons a.small > img {
-  height: 32px;
-  width: 32px;
+    height: 32px;
+    width: 32px;
 }
+
 .appbar-buttons a.search > img {
-  background-position: -12px -12px;
+    background-position: -12px -12px;
 }
+
 .appbar-buttons a.home > img {
-  background-position: -104px -12px;
+    background-position: -104px -12px;
 }
+
 .appbar-buttons a.twitter > img {
-  background-position: -196px -12px;
+    background-position: -196px -12px;
 }
+
 .appbar-buttons a.calendar > img {
-  background-position: -288px -12px;
+    background-position: -288px -12px;
 }
+
 .appbar-buttons a.storm > img {
-  background-position: -380px -12px;
+    background-position: -380px -12px;
 }
+
 .appbar-buttons a.down > img {
-  background-position: -472px -12px;
+    background-position: -472px -12px;
 }
+
 .appbar-buttons a.camera > img {
-  background-position: -12px -99px;
+    background-position: -12px -99px;
 }
+
 .appbar-buttons a.camcorder > img {
-  background-position: -104px -99px;
+    background-position: -104px -99px;
 }
+
 .appbar-buttons a.qmark > img,
 .appbar-buttons a.about > img {
-  background-position: -196px -99px;
+    background-position: -196px -99px;
 }
+
 .appbar-buttons a.share > img {
-  background-position: -288px -99px;
+    background-position: -288px -99px;
 }
+
 .appbar-buttons a.rain > img {
-  background-position: -380px -99px;
+    background-position: -380px -99px;
 }
+
 .appbar-buttons a.cancel > img,
 .appbar-buttons a.close > img {
-  background-position: -472px -99px;
+    background-position: -472px -99px;
 }
+
 .appbar-buttons a.delete > img,
 .appbar-buttons a.trash > img {
-  background-position: -12px -188px;
+    background-position: -12px -188px;
 }
+
 .appbar-buttons a.tag > img {
-  background-position: -104px -188px;
+    background-position: -104px -188px;
 }
+
 .appbar-buttons a.addcontact > img {
-  background-position: -196px -188px;
+    background-position: -196px -188px;
 }
+
 .appbar-buttons a.save > img {
-  background-position: -288px -188px;
+    background-position: -288px -188px;
 }
+
 .appbar-buttons a.snow > img {
-  background-position: -380px -188px;
+    background-position: -380px -188px;
 }
+
 .appbar-buttons a.msg > img {
-  background-position: -472px -188px;
+    background-position: -472px -188px;
 }
+
 .appbar-buttons a.email > img {
-  background-position: -12px -274px;
+    background-position: -12px -274px;
 }
+
 .appbar-buttons a.clock > img {
-  background-position: -104px -274px;
+    background-position: -104px -274px;
 }
+
 .appbar-buttons a.edit > img {
-  background-position: -196px -274px;
+    background-position: -196px -274px;
 }
+
 .appbar-buttons a.circle > img {
-  background-position: -288px -274px;
+    background-position: -288px -274px;
 }
+
 .appbar-buttons a.moon > img {
-  background-position: -380px -274px;
+    background-position: -380px -274px;
 }
+
 .appbar-buttons a.calc > img {
-  background-position: -12px -362px;
+    background-position: -12px -362px;
 }
+
 .appbar-buttons a.gear > img {
-  background-position: -104px -362px;
+    background-position: -104px -362px;
 }
+
 .appbar-buttons a.plus > img {
-  background-position: -196px -362px;
+    background-position: -196px -362px;
 }
+
 .appbar-buttons a.dot > img {
-  background-position: -288px -362px;
+    background-position: -288px -362px;
 }
+
 .appbar-buttons a.restart > img,
 .appbar-buttons a.return > img {
-  background-position: -380px -362px;
+    background-position: -380px -362px;
 }
+
 .appbar-buttons a.add > img {
-  background-position: -472px -362px;
+    background-position: -472px -362px;
 }
+
 .appbar-buttons a.phone > img {
-  background-position: -12px -453px;
+    background-position: -12px -453px;
 }
+
 .appbar-buttons a.film > img {
-  background-position: -104px -453px;
+    background-position: -104px -453px;
 }
+
 .appbar-buttons a.back > img {
-  background-position: -196px -453px;
+    background-position: -196px -453px;
 }
+
 .appbar-buttons a.car > img {
-  background-position: -288px -453px;
+    background-position: -288px -453px;
 }
+
 .appbar-buttons a.forward > img {
-  background-position: -380px -453px;
+    background-position: -380px -453px;
 }
+
 .appbar-buttons a.selectmany > img {
-  background-position: -472px -453px;
+    background-position: -472px -453px;
 }
+
 .appbar-buttons a.stop > img {
-  background-position: -12px -538px;
+    background-position: -12px -538px;
 }
+
 .appbar-buttons a.contacts > img {
-  background-position: -104px -538px;
+    background-position: -104px -538px;
 }
+
 .appbar-buttons a.select > img {
-  background-position: -196px -538px;
+    background-position: -196px -538px;
 }
+
 .appbar-buttons a.sun > img {
-  background-position: -288px -538px;
+    background-position: -288px -538px;
 }
+
 .appbar-buttons a.dpad > img {
-  background-position: -380px -538px;
+    background-position: -380px -538px;
 }
+
 .appbar-buttons a.play > img {
-  background-position: -472px -538px;
+    background-position: -472px -538px;
 }
+
 .appbar-buttons li {
-  display: inline;
-  padding: 0 10px;
-  float: left;
-  list-style: none;
+    display: inline;
+    padding: 0 10px;
+    float: left;
+    list-style: none;
 }
+
 .appbar-buttons li a {
-  font-weight: bold;
-  background-color: transparent;
-  color: #fff;
+    font-weight: bold;
+    background-color: transparent;
+    color: #fff;
 }
+
 .appbar-buttons li a:active,
 .appbar-buttons ul#menu li.selected a,
 .appbar-buttons .appbar-buttons li a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 .small .appbar-buttons .search > img,
 .appbar-buttons .small.search > img {
-  background-position: -562px -6px;
+    background-position: -562px -6px;
 }
+
 .small .appbar-buttons .home > img,
 .appbar-buttons .small.home > img {
-  background-position: -608px -6px;
+    background-position: -608px -6px;
 }
+
 .small .appbar-buttons .twitter > img,
 .appbar-buttons .small.twitter > img {
-  background-position: -654px -6px;
+    background-position: -654px -6px;
 }
+
 .small .appbar-buttons .calendar > img,
 .appbar-buttons .small.calendar > img {
-  background-position: -700px -6px;
+    background-position: -700px -6px;
 }
+
 .small .appbar-buttons .storm > img,
 .appbar-buttons .small.storm > img {
-  background-position: -746px -6px;
+    background-position: -746px -6px;
 }
+
 .small .appbar-buttons .down > img,
 .appbar-buttons .small.down > img {
-  background-position: -792px -6px;
+    background-position: -792px -6px;
 }
+
 .small .appbar-buttons .camera > img,
 .appbar-buttons .small.camera > img {
-  background-position: -562px -50px;
+    background-position: -562px -50px;
 }
+
 .small .appbar-buttons .camcorder > img,
 .appbar-buttons .small.camcorder > img {
-  background-position: -608px -50px;
+    background-position: -608px -50px;
 }
+
 .small .appbar-buttons .qmark > img,
 .appbar-buttons .small.qmark > img,
 .small .appbar-buttons .about > img,
 .appbar-buttons .small.about > img {
-  background-position: -654px -50px;
+    background-position: -654px -50px;
 }
+
 .small .appbar-buttons .share > img,
 .appbar-buttons .small.share > img {
-  background-position: -700px -50px;
+    background-position: -700px -50px;
 }
+
 .small .appbar-buttons .rain > img,
 .appbar-buttons .small.rain > img {
-  background-position: -746px -50px;
+    background-position: -746px -50px;
 }
+
 .small .appbar-buttons .cancel > img,
 .appbar-buttons .small.cancel > img,
 .small .appbar-buttons .close > img,
 .appbar-buttons .small.close > img {
-  background-position: -792px -50px;
+    background-position: -792px -50px;
 }
+
 .small .appbar-buttons .delete > img,
 .appbar-buttons .small.delete > img,
 .small .appbar-buttons .trash > img,
 .appbar-buttons .small.trash > img {
-  background-position: -562px -94px;
+    background-position: -562px -94px;
 }
+
 .small .appbar-buttons .tag > img,
 .appbar-buttons .small.tag > img {
-  background-position: -608px -94px;
+    background-position: -608px -94px;
 }
+
 .small .appbar-buttons .addcontact > img,
 .appbar-buttons .small.addcontact > img {
-  background-position: -654px -94px;
+    background-position: -654px -94px;
 }
+
 .small .appbar-buttons .save > img,
 .appbar-buttons .small.save > img {
-  background-position: -700px -94px;
+    background-position: -700px -94px;
 }
+
 .small .appbar-buttons .snow > img,
 .appbar-buttons .small.snow > img {
-  background-position: -746px -94px;
+    background-position: -746px -94px;
 }
+
 .small .appbar-buttons .msg > img,
 .appbar-buttons .small.msg > img {
-  background-position: -792px -94px;
+    background-position: -792px -94px;
 }
+
 .small .appbar-buttons .email > img,
 .appbar-buttons .small.email > img {
-  background-position: -562px -137px;
+    background-position: -562px -137px;
 }
+
 .small .appbar-buttons .clock > img,
 .appbar-buttons .small.clock > img {
-  background-position: -608px -137px;
+    background-position: -608px -137px;
 }
+
 .small .appbar-buttons .edit > img,
 .appbar-buttons .small.edit > img {
-  background-position: -654px -137px;
+    background-position: -654px -137px;
 }
+
 .small .appbar-buttons .circle > img,
 .appbar-buttons .small.circle > img {
-  background-position: -700px -137px;
+    background-position: -700px -137px;
 }
+
 .small .appbar-buttons .moon > img,
 .appbar-buttons .small.moon > img {
-  background-position: -746px -137px;
+    background-position: -746px -137px;
 }
+
 .small .appbar-buttons .calc > img,
 .appbar-buttons .small.calc > img {
-  background-position: -562px -181px;
+    background-position: -562px -181px;
 }
+
 .small .appbar-buttons .gear > img,
 .appbar-buttons .small.gear > img {
-  background-position: -608px -181px;
+    background-position: -608px -181px;
 }
+
 .small .appbar-buttons .plus > img,
 .appbar-buttons .small.plus > img {
-  background-position: -654px -181px;
+    background-position: -654px -181px;
 }
+
 .small .appbar-buttons .dot > img,
 .appbar-buttons .small.dot > img {
-  background-position: -700px -181px;
+    background-position: -700px -181px;
 }
+
 .small .appbar-buttons .restart > img,
 .appbar-buttons .small.restart > img,
 .small .appbar-buttons .return > img,
 .appbar-buttons .small.return > img {
-  background-position: -746px -181px;
+    background-position: -746px -181px;
 }
+
 .small .appbar-buttons .add > img,
 .appbar-buttons .small.add > img {
-  background-position: -792px -181px;
+    background-position: -792px -181px;
 }
+
 .small .appbar-buttons .phone > img,
 .appbar-buttons .small.phone > img {
-  background-position: -562px -226px;
+    background-position: -562px -226px;
 }
+
 .small .appbar-buttons .film > img,
 .appbar-buttons .small.film > img {
-  background-position: -608px -226px;
+    background-position: -608px -226px;
 }
+
 .small .appbar-buttons .back > img,
 .appbar-buttons .small.back > img {
-  background-position: -654px -226px;
+    background-position: -654px -226px;
 }
+
 .small .appbar-buttons .car > img,
 .appbar-buttons .small.car > img {
-  background-position: -700px -226px;
+    background-position: -700px -226px;
 }
+
 .small .appbar-buttons .forward > img,
 .appbar-buttons .small.forward > img {
-  background-position: -746px -226px;
+    background-position: -746px -226px;
 }
+
 .small .appbar-buttons .selectmany > img,
 .appbar-buttons .small.selectmany > img {
-  background-position: -792px -226px;
+    background-position: -792px -226px;
 }
+
 .small .appbar-buttons .stop > img,
 .appbar-buttons .small.stop > img {
-  background-position: -562px -269px;
+    background-position: -562px -269px;
 }
+
 .small .appbar-buttons .contacts > img,
 .appbar-buttons .small.contacts > img {
-  background-position: -608px -269px;
+    background-position: -608px -269px;
 }
+
 .small .appbar-buttons .select > img,
 .appbar-buttons .small.select > img {
-  background-position: -654px -269px;
+    background-position: -654px -269px;
 }
+
 .small .appbar-buttons .sun > img,
 .appbar-buttons .small.sun > img {
-  background-position: -700px -269px;
+    background-position: -700px -269px;
 }
+
 .small .appbar-buttons .dpad > img,
 .appbar-buttons .small.dpad > img {
-  background-position: -746px -269px;
+    background-position: -746px -269px;
 }
+
 .small .appbar-buttons .play > img,
 .appbar-buttons .small.play > img {
-  background-position: -792px -269px;
+    background-position: -792px -269px;
 }
 /* Media queries */
+
 @media screen and (max-width: 1025px) {
-  .appbar .theme-options h2,
-  .appbar .base-theme-options h2,
-  .appbar .links {
-    font-size: 1.7em;
-    padding: 8px 8px 2px;
-    text-align: left;
-  }
-  .appbar .base-theme-options li,
-  .appbar .base-theme-options li a,
-  .appbar .theme-options li,
-  .appbar .theme-options li a {
-    display: block;
-    height: 32px;
-    margin: 4px;
-    width: 32px;
-  }
+    .appbar .theme-options h2,
+    .appbar .base-theme-options h2,
+    .appbar .links {
+        font-size: 1.7em;
+        padding: 8px 8px 2px;
+        text-align: left;
+    }
+    .appbar .base-theme-options li,
+    .appbar .base-theme-options li a,
+    .appbar .theme-options li,
+    .appbar .theme-options li a {
+        display: block;
+        height: 32px;
+        margin: 4px;
+        width: 32px;
+    }
 }
+
 @media screen and (max-width: 801px) {
-  .appbar .theme-options h2,
-  .appbar .base-theme-options h2,
-  .appbar .links {
-    font-size: 1.3em;
-  }
-  .appbar .theme-options > ul {
-    padding-right: 6px;
-  }
+    .appbar .theme-options h2,
+    .appbar .base-theme-options h2,
+    .appbar .links {
+        font-size: 1.3em;
+    }
+    .appbar .theme-options > ul {
+        padding-right: 6px;
+    }
 }
+
 @media screen and (max-width: 641px) {
-  .appbar .theme-options {
-    width: 70%;
-  }
-  .appbar .base-theme-options {
-    width: 30%;
-  }
+    .appbar .theme-options {
+        width: 70%;
+    }
+    .appbar .base-theme-options {
+        width: 30%;
+    }
 }
-
-
 
 .live-tile:hover {
     box-shadow: 0 0 20px yellow;
 }
 
+.live-tile.clock {
+    background-color: #d8c101;
+}
+
+.live-tile.device {
+    background-color: #657688;
+}
+
+.live-tile.status {
+    background-color: #657688;
+}
+
+.live-tile.thermostat {
+    background-color: #1e90ff
+}
+
+.live-tile.weather {
+    background-color: #00bfff
+}
+
+.tile {
+    border-radius: 2px;
+    color: black;
+    background-color: steelblue;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+}
+
+.tile.two-wide {
+    width: 310px;
+}
+
+.tile.two-tall {
+    height: 310px;
+}
+
+.tiles {
+    overflow: hidden;
+    margin: 2px;
+}
+
+.free-wall {
+    margin: 2px;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    padding: 2px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}

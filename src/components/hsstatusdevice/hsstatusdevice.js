@@ -1,11 +1,12 @@
-define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jqueryui', 'touchpunch', 'underscore', 'faye', 'jquerymobile'], function ($, ko, devicecontroller, templateMarkup) {
+define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'text!./hsstatusdevice.html', 'faye'], function ($, ko, devicecontroller, device, templateMarkup) {
 
-    function HSDWidget(params) {
-
+    function Hsstatusdevice(params) {
         var self = this;
-        self.timer = null;
+        var refreshInterval = 300000 //time is in milliseconds.  Currently set to 5 minutes
+
         var proxyIP = params.proxyIP;
         var proxyPort = params.proxyPort;
+
 
         self.classInfo = ko.observable();
         if (params.hasOwnProperty("width")) {
@@ -14,6 +15,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jquer
         if (params.hasOwnProperty("color")) {
             self.defaultColor = params.color;
         } else self.defaultColor = "steel";
+
         self.classInfo("live-tile exclude accent " + self.defaultColor + " " + self.defaultWidth);
 
         self.icons = params.icons;
@@ -21,86 +23,8 @@ define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jquer
         self.url = params.url;
         self.device = ko.observable();
         self.statusIcon = ko.observable();
-        self.controlButtonsVisible = ko.observable(false);
-
-        self.toggleDevice = function (params) {
-            if (self.timer != null) {
-                clearTimeout(self.timer);
-                self.timer = null;
-            }
-            //var newstatus = (self.status() == "On" ? "Off" : "On");
-            var o = _.find(self.device().controlPairs(), function (item) {
-                //debugger;
-                return item.Label == self.device().status();
-            });
-            //debugger;
-            var i = _.indexOf(self.device().controlPairs(), o);
-            ++i;
-            if (i >= _.size(self.device().controlPairs())) {
-                i = 0;
-            }
-            //debugger;
-            var label = self.device().controlPairs()[i].Label;
-            if (self.device().controlPairs()[i].Range != null) {
-                self.controlButtonsVisible(true);
-                if (self.device().value() > self.device().controlPairs()[i].Range.RangeEnd) {
-                    self.device().value(self.device().controlPairs()[i].Range.RangeEnd);
-                }
-            } else{
-                self.device().value(self.device().controlPairs()[i].ControlValue);
-                self.controlButtonsVisible(false);
-            }
-                
-            //debugger; 
-            self.device().status(label);           
-            self.timer = setTimeout(devicecontroller.control, 3000, {
-                "ref": self.ref,
-                "url": self.url,
-                "value": self.device().value()
-            });
-            //debugger;
-            setStatusIcon(self);
-        };
-
-        self.rangeUp = function (device, event) {
-            //debugger;
-            event.stopPropagation();
-            var currentVal = self.device().value();
-            if (currentVal < 98) {
-                if ((currentVal + 10) < 98) {
-                    if (currentVal === 1) {
-                        self.device().value(10);
-                    } else
-                        self.device().value(currentVal + 10);
-                } else {
-                    self.device().value(98);
-                }
-            }
-            devicecontroller.control({
-                "ref": self.ref,
-                "url": self.url,
-                "value": self.device().value()
-            });
-        };
-
-        self.rangeDown = function (device, event) {
-            event.stopPropagation();
-            var currentVal = self.device().value();
-            if (currentVal >= 1) {
-                if ((currentVal - 10) > 1) {
-                    self.device().value(currentVal - 10);
-                } else {
-                    self.device().value(1);
-                }
-            }
-            devicecontroller.control({
-                "ref": self.ref,
-                "url": self.url,
-                "value": self.device().value()
-            });
-        }
-
-        var setStatusIcon = function () {
+        
+      var setStatusIcon = function () {
             var iconPath;
             var status = self.device().status();
             
@@ -127,6 +51,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jquer
 
             case "Locked":
             case "Lock":
+            case "Closed":
             case "On Last Level":
                 //case ((String(device.status()).toLowerCase().match(/dim/)) ? device.status() : "undefined"):
             case "On":
@@ -168,19 +93,23 @@ define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jquer
                     break;
                 }
             }
-        }
+        }        
 
-        $.when(devicecontroller.query({
-            "url": self.url,
-            "ref": self.ref
-        })).done(function (data) {
-            self.device(data);
-            if (self.device().deviceSubType == 16) {
-                self.defaultWidth = "half-wide";
-            }
-            setStatusIcon();
-            return true;
-        });
+        var query = function () {
+            $.when(devicecontroller.query({
+                "url": self.url,
+                "ref": self.ref
+            })).done(function (data) {
+                self.device(data);
+                setStatusIcon();
+                return true;
+            });
+        }
+        var intervalRefresh = setInterval(function () {
+            query();
+        }, refreshInterval);
+        query();
+
 
 
         // Check to ensure proxy IP and port values are set.  ThenCreate a new client that subscribes 
@@ -206,22 +135,19 @@ define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jquer
                             return true;
                         });
                     }
-
-                };
+                }
             });
-
-
         }
     }
 
     // This runs when the component is torn down. Put here any logic necessary to clean up,
     // for example cancelling setTimeouts or disposing Knockout subscriptions/computeds.
-    HSDWidget.prototype.dispose = function () {};
-
+    Hsstatusdevice.prototype.dispose = function () {};
 
     return {
-        viewModel: HSDWidget,
+        viewModel: Hsstatusdevice,
         template: templateMarkup
     };
 
 });
+

@@ -2,6 +2,7 @@ define(['knockout', 'text!./weather.html', 'simpleweather','jquery','metrojs'], 
 
     function Weather(params) {
         var self = this;
+        var refreshInterval = 18000000 //time is in milliseconds.  Currently set to 1 hour
         var zipcode=params.zipcode;
         var color=params.color;
         self.classInfo=ko.observable("live-tile two-wide two-tall exclude accent " + color);
@@ -16,6 +17,7 @@ define(['knockout', 'text!./weather.html', 'simpleweather','jquery','metrojs'], 
         self.humidity=ko.observable();
         self.description=ko.observable();
         self.forecast=ko.observableArray()();
+        var getWeather=function() {
         $.simpleWeather({
             location: zipcode,
             unit: 'f',
@@ -38,7 +40,11 @@ define(['knockout', 'text!./weather.html', 'simpleweather','jquery','metrojs'], 
                 alert(error.message);
             }
         })
-       // $(".live-tile, .flip-list").not(".exclude").liveTile();
+        }
+        getWeather();
+        var intervalRefresh = setInterval(function () {
+            getWeather();
+        }, refreshInterval);       
     }
 
     // This runs when the component is torn down. Put here any logic necessary to clean up,

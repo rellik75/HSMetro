@@ -1,8 +1,10 @@
-    <div class="live-tile accent {0} " data-bind='event: {click: toggleDevice, touchstart: toggleDevice}, attr: {"id": ref}, attr: {"class": classInfo}' >
-
-        <span class="tile-title align-" data-bind="text: name"></span>
-        <p class="align-mid-top" data-bind="text: statusLabel"></p>
-        <img class="align-mid" data-bind="attr:{src: statusIcon}"/>
-        <input class="align-left-y" type="image" src="img/up.png"  id="up" data-bind="event: {click: rangeUp, touchstart: rangeUp}, visible: controlButtonsVisible">
-        <input class="align-right-y" type="image" src="img/down.png"  id="down" data-bind="event: {click: rangeDown, touchstart: rangeDown}, visible: controlButtonsVisible">
-    </div>
+<div class="live-tile" data-bind='event: {click: toggleDevice}, attr: {"id": ref}, attr: {"class": classInfo}' >
+    <!--ko with: device -->
+    <span class="tile-title align-" data-bind="text: deviceName"></span>
+    <p class="align-mid-top" data-bind="text: statusLabel"></p>
+    <p style="font-size: 6pt; position:absolute; top: 20px; left: 0px" data-bind="text: location"></p>
+    <!-- /ko -->
+    <input class="align-left-y" type="image" src="img/up.png"  id="up" data-bind="event: {click: rangeUp, touchstart: rangeUp}, visible: controlButtonsVisible">
+    <input class="align-right-y" type="image" src="img/down.png"  id="down" data-bind="event: {click: rangeDown, touchstart: rangeDown}, visible: controlButtonsVisible">
+    <img class="align-mid" data-bind="attr:{src: statusIcon}"/>
+</div>

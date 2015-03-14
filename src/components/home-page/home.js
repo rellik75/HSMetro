@@ -4,6 +4,22 @@ define(["knockout", "text!./home.html", 'jquery', 'jqueryui', 'metrojs'], functi
         $(".hstile, .live-tile, .flip-list").not(".exclude").liveTile();
         $(".tiles").sortable();
         $(".tiles").disableSelection();
+        /*var wall = new freewall("#freewall");
+			wall.reset({
+						selector: '.tile',
+                        cellW:300,
+                        cellH:300,
+						//fixSize: 1,
+						gutterY: 2,
+						gutterX: 2,
+						onResize: function() {
+							wall.fitWidth();
+						}
+					})
+					wall.fitWidth();
+				
+				$(window).trigger("resize"); */
+            
     }
 
     HomeViewModel.prototype.doSomething = function () {
