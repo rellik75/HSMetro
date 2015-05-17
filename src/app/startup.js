@@ -34,6 +34,18 @@ define(['jquery', 'knockout', './router', 'bootstrap', 'knockout-projections'], 
     ko.components.register('hsstatusdevice', { require: 'components/hsstatusdevice/hsstatusdevice' });
     
 
+    ko.components.register('staticimage', { require: 'components/staticimage/staticimage' });
+    
+    
+
+    ko.components.register('webpage', { require: 'components/webpage/webpage' });
+    
+    
+
+    ko.components.register('hsevent', { require: 'components/hsevent/hsevent' });
+    
+    
+
     // [Scaffolded component registrations will be inserted here. To retain this feature, don't remove this comment.]
 
     // Start the application

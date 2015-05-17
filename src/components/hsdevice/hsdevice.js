@@ -1,11 +1,11 @@
-define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jqueryui', 'touchpunch', 'underscore', 'faye', 'jquerymobile'], function ($, ko, devicecontroller, templateMarkup) {
+define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsdevice.html', 'jqueryui', 'underscore', 'faye', 'jquerymobile'], function ($, ko, devicecontroller, config, templateMarkup) {
 
     function HSDWidget(params) {
-
+        $.mobile.loadingMessage = false;
         var self = this;
         self.timer = null;
-        var proxyIP = params.proxyIP;
-        var proxyPort = params.proxyPort;
+        var proxyIP=config.proxyIP;
+        var proxyPort=config.proxyPort;
 
         self.classInfo = ko.observable();
         if (params.hasOwnProperty("width")) {
@@ -18,9 +18,10 @@ define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jquer
 
         self.icons = params.icons;
         self.ref = params.ref;
-        self.url = params.url;
+        self.url=config.url;
         self.device = ko.observable();
         self.statusIcon = ko.observable();
+        self.iconIsVisible=ko.observable(true);
         self.controlButtonsVisible = ko.observable(false);
 
         self.toggleDevice = function (params) {
@@ -30,16 +31,14 @@ define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jquer
             }
             //var newstatus = (self.status() == "On" ? "Off" : "On");
             var o = _.find(self.device().controlPairs(), function (item) {
-                //debugger;
                 return item.Label == self.device().status();
             });
-            //debugger;
+            
             var i = _.indexOf(self.device().controlPairs(), o);
             ++i;
             if (i >= _.size(self.device().controlPairs())) {
                 i = 0;
             }
-            //debugger;
             var label = self.device().controlPairs()[i].Label;
             if (self.device().controlPairs()[i].Range != null) {
                 self.controlButtonsVisible(true);
@@ -51,15 +50,13 @@ define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jquer
                 self.controlButtonsVisible(false);
             }
                 
-            //debugger; 
             self.device().status(label);           
             self.timer = setTimeout(devicecontroller.control, 3000, {
                 "ref": self.ref,
                 "url": self.url,
                 "value": self.device().value()
             });
-            //debugger;
-            setStatusIcon(self);
+            setStatusIcon();
         };
 
         self.rangeUp = function (device, event) {
@@ -118,10 +115,12 @@ define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jquer
             }
             if (self.icons) {
                 iconPath = self.icons[status.toLowerCase()];
+                self.statusIcon(self.url + iconPath); 
             } else
-                iconPath = "/images/HomeSeer/status/unknown.png"
+                self.iconIsVisible(false);
+                //iconPath = "/images/HomeSeer/status/unknown.png"
                 
-            self.statusIcon(self.url + iconPath);    
+               
 
             switch (status) {
 
@@ -209,8 +208,6 @@ define(['jquery', 'knockout', 'devicecontroller', 'text!./hsdevice.html', 'jquer
 
                 };
             });
-
-
         }
     }
 

@@ -1,11 +1,14 @@
-define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'text!./hsstatusdevice.html', 'faye'], function ($, ko, devicecontroller, device, templateMarkup) {
+define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'config','text!./hsstatusdevice.html', 'faye'], function ($, ko, devicecontroller, device, config,templateMarkup) {
 
     function Hsstatusdevice(params) {
         var self = this;
-        var refreshInterval = 300000 //time is in milliseconds.  Currently set to 5 minutes
+        self.refreshInteraval="";
+        if (params.hasOwnProperty("refresh")) {
+            self.refreshInteraval = params.refresh;
+        }
 
-        var proxyIP = params.proxyIP;
-        var proxyPort = params.proxyPort;
+        var proxyIP = config.proxyIP;
+        var proxyPort = config.proxyPort;
 
 
         self.classInfo = ko.observable();
@@ -20,11 +23,12 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'text!./hsstatusdevice.
 
         self.icons = params.icons;
         self.ref = params.ref;
-        self.url = params.url;
+        self.url = config.url;
         self.device = ko.observable();
         self.statusIcon = ko.observable();
+        self.iconIsVisible=ko.observable(true);
         
-      var setStatusIcon = function () {
+      self.setStatusIcon = function () {
             var iconPath;
             var status = self.device().status();
             
@@ -42,51 +46,69 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'text!./hsstatusdevice.
             }
             if (self.icons) {
                 iconPath = self.icons[status.toLowerCase()];
+                 self.statusIcon(self.url + iconPath); 
             } else
-                iconPath = "/images/HomeSeer/status/unknown.png"
+                self.iconIsVisible(false);
                 
-            self.statusIcon(self.url + iconPath);    
-
+                
+           // self.statusIcon(self.url + iconPath);    
+            status=String(status).toLocaleLowerCase();
             switch (status) {
 
-            case "Locked":
-            case "Lock":
-            case "Closed":
-            case "On Last Level":
+            case "locked":
+            case "lock":
+            case "closed":
+            case "ok":
+            case "on last level":
                 //case ((String(device.status()).toLowerCase().match(/dim/)) ? device.status() : "undefined"):
-            case "On":
+            case "on":
                 {
                     self.classInfo(_classInfo + " accent green" );
                     break;
                 }
-            case "Away":
+            case "away":
                 {
                     self.classInfo(_classInfo + " accent mauve");
                     break;
                 }
-            case "Night":
+            case "night":
+            case "heat":
+            case "heating":
                 {
                     self.classInfo(_classInfo + " accent orange");
                     break;
                 }
-            case "Arm":
-            case "Armed":
+            case "cool":
+            case "cooling":
+                {
+                    self.classInfo(_classInfo + " accent cyan");
+                    break;                     
+                }
+            case "arm":
+            case "armed":
+            case "emergency":
+            case "glass breakage":
+            case "intrusion":
                 {
                     self.classInfo(_classInfo + " accent red");
                     break;
                 }
-            case "Unlock":
-            case "Unlocked":
-            case "Opened":
+            case "unlock":
+            case "unlocked":
+            case "opened":
+            case "open":
+            case "warning":
+            case "motion":
                 {
                     self.classInfo(_classInfo + " accent orange");
                     break;
                 }
-            case "Unknown":
-            case "Off":
-            case "Home":
-            case "Disarm":
-            case "Disarmed":
+            case "unknown":
+            case "off":
+            case "home":
+            case "disarm":
+            case "disarmed":
+            case "idle":
             default:
                 {
                     self.classInfo(_classInfo + " accent " + self.defaultColor);
@@ -95,20 +117,22 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'text!./hsstatusdevice.
             }
         }        
 
-        var query = function () {
+        self.query = function () {
             $.when(devicecontroller.query({
                 "url": self.url,
                 "ref": self.ref
             })).done(function (data) {
                 self.device(data);
-                setStatusIcon();
+                self.setStatusIcon();
                 return true;
             });
         }
-        var intervalRefresh = setInterval(function () {
-            query();
-        }, refreshInterval);
-        query();
+        if (self.refreshInteraval!="" && self.refreshInteraval > 0 ) {
+            self.intervalRefresh = setInterval(function () {
+                self.query();
+            }, self.refreshInterval);
+        }
+       self.query();
 
 
 
@@ -126,14 +150,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'text!./hsstatusdevice.
                 if (parseInt(arr[1]) == self.ref) {
                     if (self.device().value() != parseInt(arr[2])) {
                         self.device().value(parseInt(arr[2]));
-                        $.when(devicecontroller.query({
-                            "url": self.url,
-                            "ref": self.ref
-                        })).done(function (data) {
-                            self.device(data);
-                            setStatusIcon();
-                            return true;
-                        });
+                        self.query();
                     }
                 }
             });

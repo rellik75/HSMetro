@@ -1,0 +1,21 @@
+{
+  "name": "hsmetro",
+  "description": "An HTML Metro style live-tile UI for controlling HomeSeer",
+  "version": "1.0.3.2",
+  "author": "Wayne Posner <wayne.posner@gmail.com> (http://www.wayneposner.com)",
+  "keywords": [
+    "HomeSeer",
+    "home automation",
+    "ASCII",
+    "TCP",
+    "proxy",
+    "http"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rellik75/HSMetro"
+  },
+  "dependencies": {
+    "faye": "^1.1.1"
+  }
+}

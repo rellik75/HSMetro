@@ -1,66 +1,68 @@
-<div  class="tiles" id="tilewall" >
-    <weather class="hstile" params="color: 'blue', zipcode: '89135'"></weather>
-    <hsthermostat class="hstile" params="url: 'http://192.168.1.250', ref: 324"></hsthermostat> 
+<div class="tiles" id="tilewall">
+    <weather class="hstile" params="color: 'blue', zipcode: '89135', refresh: 18000000, unit: 'f'"></weather>
+    <hsthermostat class="hstile" params="ref: 324"></hsthermostat>
+    <hsthermostat class="hstile" params="ref: 312"></hsthermostat>
+    <hsthermostat class="hstile" params="ref: 300"></hsthermostat>
     <clock class="hstile" params="color: 'yellow'"></clock>
 
-    <hsdevice class="hstile" id="barlight" params="url: 'http://192.168.1.250', ref: 217, color: 'steel', icons: {
+    <hsdevice class="hstile" id="barlight" params="ref: 217, color: 'steel', icons: {
                                       'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'},
-                                        proxyIP: '192.168.1.250', proxyPort: '8000'"></hsdevice>
-    
-    <hsdevice class="hstile" id="kitchen_light" params="url: 'http://192.168.1.250', ref: 218, color: 'steel', icons: {
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+
+    <hsdevice class="hstile" id="kitchen_light" params="ref: 218, color: 'steel', icons: {
                                       'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'},
-                                        proxyIP: '192.168.1.250', proxyPort: '8000'"></hsdevice>
-    
-    <hsdevice class="hstile" id="stair_light" params="url: 'http://192.168.1.250', ref: 220, color: 'steel', icons: {
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+
+    <hsdevice class="hstile" id="stair_light" params="ref: 220, color: 'steel', icons: {
                                       'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'},
-                                        proxyIP: '192.168.1.250', proxyPort: '8000'"></hsdevice>    
-    
-    <hsdevice class="hstile" params="url: 'http://192.168.1.250', ref: 230, color: 'steel', icons: {
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+
+    <hsdevice class="hstile" params="ref: 230, color: 'steel', icons: {
                                       'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'},
-                                        proxyIP: '192.168.1.250', proxyPort: '8000'"></hsdevice>
-    
-    <hsdevice class="hstile" params="url: 'http://192.168.1.250', ref: 215, color: 'steel', icons: {
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+
+    <hsdevice class="hstile" params="ref: 215, color: 'steel', icons: {
                                       'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'},
-                                        proxyIP: '192.168.1.250', proxyPort: '8000'"></hsdevice>
-    
-    <hsdevice class="hstile" params="url: 'http://192.168.1.250', ref: 434, color: 'steel', icons: {
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+
+    <hsdevice class="hstile" params="ref: 434, color: 'steel', icons: {
                                       'unlocked': '/images/HomeSeer/status/unlocked.gif', 
-                                      'locked': '/images/HomeSeer/status/locked.gif'},
-                                        proxyIP: '192.168.1.250', proxyPort: '8000'"></hsdevice>
-    
-    <hsdevice class="hstile" params="url: 'http://192.168.1.250', ref: 298, color: 'steel', icons: {
+                                      'locked': '/images/HomeSeer/status/locked.gif'}"></hsdevice>
+
+    <hsdevice class="hstile" params="ref: 298, color: 'steel', icons: {
                                       'home': '/images/home_sm.png',
                                       'away': '/images/home_red_sm.png',
                                       'night': '/images/nighttime.png'
-                                      },
-                                        proxyIP: '192.168.1.250', proxyPort: '8000'"></hsdevice>
+                                      }"></hsdevice>
 
-    <hsdevice class="hstile" params="url: 'http://192.168.1.250', ref: 229, color: 'steel', icons: {
+    <hsdevice class="hstile" params="ref: 229, color: 'steel', icons: {
                                       'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'},
-                                        proxyIP: '192.168.1.250', proxyPort: '8000'"></hsdevice>
-    
-    <hsdevice class="hstile" params="url: 'http://192.168.1.250', ref: 226, color: 'steel', icons: {
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+
+    <hsdevice class="hstile" params="ref: 226, color: 'steel', icons: {
                                       'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'},
-                                        proxyIP: '192.168.1.250', proxyPort: '8000'"></hsdevice>
-    
-    <hsdevice class="hstile" params="url: 'http://192.168.1.250', ref: 216, color: 'steel', icons: {
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+
+    <hsdevice class="hstile" params="ref: 216, color: 'steel', icons: {
                                       'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'},
-                                        proxyIP: '192.168.1.250', proxyPort: '8000'"></hsdevice>
-    <hsstatusdevice clas="hstile" params="url: 'http://192.168.1.250', ref: 243, color: 'steel',  
+                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+
+    <hsstatusdevice class="hstile" params="ref: 243, color: 'steel',  
                                       icons: {
                                       'opened': '/images/HomeSeer/status/unlocked.gif', 
-                                      'closed': '/images/HomeSeer/status/locked.gif'},
-                                        proxyIP: '192.168.1.250', proxyPort: '8000'"></hsstatusdevice>
+                                      'closed': '/images/HomeSeer/status/locked.gif'}"></hsstatusdevice>
+
+    <webpage class="hstile" params="sites: [
+                                  { site: 'Google', url: 'www.google.com'}, 
+                                  {site: 'Yahoo', url: 'www.yahoo.com'}]"></webpage>
+
+    <!--<staticimage class="hstile" id="camera2" params="imageName: '/netcam/CurrentImage.jpg', 
+                                        refresh: 10000, 
+                                        width: 'two-wide', 
+                                        height: 'two-tall',
+                                        color: 'yellow'"></staticimage>-->
     
-
-
+    <hsevent class="hstile" id="lights off" params="group: 'Auto Lights Off', event: 'All Off',  
+                                                    icon:  '/images/HomeSeer/status/on.gif'"></hsevent>
 
 </div>

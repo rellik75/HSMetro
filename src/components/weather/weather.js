@@ -1,9 +1,20 @@
-define(['knockout', 'text!./weather.html', 'simpleweather','jquery','metrojs'], function (ko, templateMarkup, simpleweather) {
+define(['knockout', 'text!./weather.html', 'simpleweather'], function (ko, templateMarkup, simpleweather) {
 
     function Weather(params) {
         var self = this;
-        var refreshInterval = 18000000 //time is in milliseconds.  Currently set to 1 hour
+        var refreshInterval = 18000000; //time is in milliseconds.  Currently set to 1 hour
+        if (params.hasOwnProperty("refresh")) {
+            refreshInteraval = params.refresh;
+        }
+        var unit="f";
+        if (params.hasOwnProperty("unit")){
+           unit=params.unit; 
+        }
         var zipcode=params.zipcode;
+        var location=params.location;
+        if (zipcode) {
+            location=zipcode;
+        }        
         var color=params.color;
         self.classInfo=ko.observable("live-tile two-wide two-tall exclude accent " + color);
         self.image=ko.observable();
@@ -19,8 +30,8 @@ define(['knockout', 'text!./weather.html', 'simpleweather','jquery','metrojs'], 
         self.forecast=ko.observableArray()();
         var getWeather=function() {
         $.simpleWeather({
-            location: zipcode,
-            unit: 'f',
+            location: location,
+            unit: unit,
             success: function (weather) {
                 self.image(weather.image);
                 self.status(weather.text);

@@ -1,7 +1,7 @@
 {
   "name": "hsmetro",
   "description": "An HTML Metro style live-tile UI for controlling HomeSeer",
-  "version": "1.0.1",
+  "version": "1.0.6-2",
   "author": "Wayne Posner <wayne.posner@gmail.com> (http://www.wayneposner.com)",
   "keywords": [
     "HomeSeer",
@@ -16,6 +16,13 @@
     "url": "https://github.com/rellik75/HSMetro"
   },
   "dependencies": {
-    "faye": "^1.1.1"
+    "faye": "^1.1.1",
+    "gulp-bump": "^0.3.0",
+    "gulp-replace-task": "^0.1.0",
+    "metrojs": "^0.9.77",
+    "semver": "^4.3.1"
+  },
+  "devDependencies": {
+    "run-sequence": "^1.0.2"
   }
 }

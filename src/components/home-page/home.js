@@ -1,6 +1,9 @@
 define(["knockout", "text!./home.html", 'jquery', 'jqueryui', 'metrojs'], function (ko, homeTemplate) {
 
     function HomeViewModel(route) {
+        $(document).on("pageshow", "[data-role='page']", function () {
+            $('div.ui-loader').remove();
+            });
         $(".hstile, .live-tile, .flip-list").not(".exclude").liveTile();
         $(".tiles").sortable();
         $(".tiles").disableSelection();

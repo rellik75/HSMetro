@@ -1,8 +1,8 @@
-<div class="live-tile" data-bind='attr: {"id": ref}, attr: {"class": classInfo}' >
+<div class="live-tile" data-bind='attr: {"id": ref, "class": classInfo}' >
     <!--ko with: device -->
     <span class="tile-title align-" data-bind="text: deviceName"></span>
     <p class="align-mid-top" data-bind="text: statusLabel"></p>
     <p style="font-size: 6pt; position:absolute; top: 20px; left: 0px" data-bind="text: location"></p>
     <!-- /ko -->
-    <img class="align-mid" data-bind="attr:{src: statusIcon}"/>
+    <img class="align-mid" data-bind="attr:{src: statusIcon}, visible: iconIsVisible"/>
 </div>

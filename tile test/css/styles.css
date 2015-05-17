@@ -1,0 +1,33 @@
+
+
+.tile {
+    border-radius: 2px;
+    color: black;
+    background-color: steelblue;
+    width: 150px;
+    height: 150px;
+}
+
+.tile.two-wide {
+    width: 310px;
+}
+
+.tile.two-tall {
+    height: 310px;
+}
+
+
+#tilewall{
+    width: 90%;
+}
+
+
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
