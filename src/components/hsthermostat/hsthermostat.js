@@ -29,7 +29,7 @@ Device Temp SubTypes for Thermostats:
     Humidity=       5      
 *************************************/
 
-define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat.html', 'underscore', 'faye'], function ($, ko, controller, config, templateMarkup) {
+define(['jquery', 'knockout', 'devicecontroller', 'config', 'bluebird', 'text!./hsthermostat.html', 'underscore', 'faye'], function ($, ko, controller, config, Promise, templateMarkup) {
 
     function Hsthermostat(params) {
         var self = this;
@@ -47,9 +47,13 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
         var OFF_ICON = "img/on_off.png";
         var ENERGY_SAVE_ICON = "img/energy_save.png";
         var AUTO_CHANGEOVER_ICON = "img/heat-cool.png";
-
-
-
+        var COOL_COLOR = "bg-darkCyan";
+        var COOLING_COLOR = "bg-darkBlue"
+        var HEAT_COLOR = "bg-darkOrange";
+        var HEATING_COLOR = "bg-orange"
+        var ESH_COLOR = "bg-amber";
+        var AUTO_CHANGE_OVER_COLOR = "bg-violet";
+        var OFF_COLOR="bg-gray";
 
         self.url = config.url;
 
@@ -58,23 +62,21 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
         self.coolSetPointControlRef = ko.observable();
         self.heatSetPointControlRef = ko.observable();
         self.ESHSetpointControlRef = ko.observable();
-        self.modeControlRef = "";
-        self.currentModeValue = "";
-        self.ambientControlRef = "";
-        self.humidityControlRef = "";
+        self.operatingStatusControlRef = ko.observable();
+        self.modeControlRef = ko.observable();
+        self.currentModeValue = ko.observable();
+        self.ambientControlRef = ko.observable();
+        self.humidityControlRef = ko.observable();
+        self.rootControlRef = ko.observable(self.ref);
 
         //self.controlModeValue="";
 
 
-        self.classInfo = ko.observable();
-        if (params.hasOwnProperty("width")) {
-            self.defaultWidth = params.width;
-        } else self.defaultWidth = "one-wide two-tall";
-        if (params.hasOwnProperty("color")) {
-            self.defaultColor = params.color;
-        } else self.defaultColor = "steel";
 
-        self.classInfo("live-tile exclude accent " + self.defaultColor + " " + self.defaultWidth);
+        /*if (params.hasOwnProperty("color")) {
+            self.defaultColor = params.color;
+        } else self.defaultColor = "bg-steel";*/
+        //self.classInfo("tile tile-wide-x fg-white " + self.defaultColor);
 
 
         self.statusIcon = ko.observable();
@@ -87,12 +89,13 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
         self.coolSetPoint = ko.observable();
         self.heatSetPoint = ko.observable();
         self.ESHSetPoint = ko.observable();
-        self.status = ko.observable();
+        self.systemStatus = ko.observable();
+        self.operatingStatus = ko.observable();
         self.fanStatus = ko.observable();
-        self.valveStatus=ko.observable();
-        self.batteryStatus=ko.observable();
-        self.batteryIsVisible=ko.observable(false);
-        self.valveIsVisible=ko.observable(false);
+        self.valveStatus = ko.observable();
+        self.batteryStatus = ko.observable();
+        self.batteryIsVisible = ko.observable(false);
+        self.valveIsVisible = ko.observable(false);
         self.humidityIsVisible = ko.observable(false);
         self.pendingIsVisible = ko.observable(false);
         self.controlButtonsAreVisible = ko.observable(true);
@@ -101,10 +104,9 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
         self.setpoint = ko.pureComputed({
             read: function () {
                 if (self.pendingModeValue() == null) {
-                    if (self.modeValue()==OFF){
+                    if (self.modeValue() == OFF) {
                         return "";
-                    }
-                    else if (self.modeValue() == HEATING_MODE) {
+                    } else if (self.modeValue() == HEATING_MODE) {
                         return self.heatSetPoint();
                     } else if (self.modeValue() == ESH_MODE) {
                         return self.ESHSetPoint();
@@ -114,10 +116,9 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
                         //*********TO DO********//
                     } else return self.heatSetPoint();
                 } else {
-                    if (self.pendingModeValue()==OFF){
+                    if (self.pendingModeValue() == OFF) {
                         return "";
-                    }
-                    else if (self.pendingModeValue() == HEATING_MODE) {
+                    } else if (self.pendingModeValue() == HEATING_MODE) {
                         return self.heatSetPoint();
                     } else if (self.pendingModeValue() == ESH_MODE) {
                         return self.ESHSetPoint();
@@ -144,8 +145,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
             if (self.pendingModeValue() == null) {
                 if (self.modeValue() == OFF) {
                     return "";
-                }
-                else if (self.modeValue() == HEATING_MODE) {
+                } else if (self.modeValue() == HEATING_MODE) {
                     return self.heatSetPointControlRef();
                 } else if (self.modeValue() == ESH_MODE) {
                     return self.ESHSetpointControlRef();
@@ -155,10 +155,9 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
                     //*********TO DO********//
                 } else return self.heatSetPointControlRef();
             } else {
-                if (self.pendingModeValue()==OFF) {
+                if (self.pendingModeValue() == OFF) {
                     return "";
-                }
-                else if (self.pendingModeValue() == HEATING_MODE) {
+                } else if (self.pendingModeValue() == HEATING_MODE) {
                     return self.heatSetPointControlRef();
                 } else if (self.pendingModeValue() == ESH_MODE) {
                     return self.ESHSetpointControlRef();
@@ -197,18 +196,84 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
                 }
                 //else return HEAT_ICON;
             }
-
         });
+        self.classInfo = ko.observable();
+        /*self.classInfo=ko.computed(function() {
+             if (self.pendingModeValue() == null) {
+                if (self.modeValue() == HEATING_MODE) {
+                    return "tile tile-wide-x fg-white " + HEAT_COLOR;
+                } else if (self.modeValue() == ESH_MODE) {
+                    return "tile tile-wide-x fg-white " + ESH_COLOR;
+                } else if (self.modeValue() == COOLING_MODE) {
+                    return "tile tile-wide-x fg-white " + COOL_COLOR;
+                } else if (self.modeValue() == OFF) {
+                    return "tile tile-wide-x fg-white " + self.defaultColor
+                } else if (self.modeValue() == AUTO_CHANGE_OVER_MODE) {
+                    return "tile tile-wide-x fg-white " + AUTO_CHANGE_OVER_COLOR;
+                }
+                //else return HEAT_ICON;
+            } else {
+                if (self.pendingModeValue() == HEATING_MODE) {
+                    return "tile tile-wide-x fg-white " + HEAT_COLOR;
+                } else if (self.pendingModeValue() == ESH_MODE) {
+                    return "tile tile-wide-x fg-white " + ESH_COLOR;
+                } else if (self.pendingModeValue() == COOLING_MODE) {
+                    return "tile tile-wide-x fg-white " + COOL_COLOR;
+                } else if (self.pendingModeValue() == OFF) {
+                    return "tile tile-wide-x fg-white " + self.defaultColor;
+                } else if (self.pendingModeValue() == AUTO_CHANGE_OVER_MODE) {
+                    return "tile tile-wide-x fg-white " + AUTO_CHANGE_OVER_COLOR;
+                }
+            }
+                    if (self.operatingStatus() == "Cooling") {
+                    return "tile tile-wide-x fg-white  bg-darkCyan ";
+                    } else if (self.operatingStatus() == "Heating") {
+                    return "tile tile-wide-x fg-white  bg-darkOrange ";
+                    } else {
+                    return "tile tile-wide-x fg-white " + self.defaultColor; 
+                    }
+                
+        });*/
 
         self.setTileColor = function () {
-            var _classInfo = "live-tile exclude " + self.defaultWidth;
-            if (self.modeValue() == COOLING_MODE) {
-                self.classInfo(_classInfo + " accent blue");
-            } else if (self.modeValue() == HEATING_MODE || self.modeValue() == ESH_MODE) {
-                self.classInfo(_classInfo + " accent orange");
+            var _classInfo = "tile tile-wide-x fg-white ";
+            if (self.pendingModeValue() == null) {
+                if (self.modeValue() == OFF) {
+                    self.defaultColor=OFF_COLOR;
+                    self.classInfo(_classInfo + OFF_COLOR);
+                } else if (self.modeValue() == HEATING_MODE) {
+                    self.defaultColor = HEAT_COLOR;
+                    self.classInfo(_classInfo + HEAT_COLOR);
+                } else if (self.modeValue() == ESH_MODE) {
+                    self.defaultColor = ESH_COLOR;
+                    self.classInfo(_classInfo + ESH_COLOR);
+                } else if (self.modeValue() == COOLING_MODE) {
+                    self.defaultColor = COOL_COLOR;
+                    self.classInfo(_classInfo + COOL_COLOR);
+                } else if (self.modeValue() == AUTO_CHANGE_OVER_MODE) {
+                    self.defaultColor = AUTO_CHANGE_OVER_COLOR;
+                    self.classInfo(_classInfo + AUTO_CHANGE_OVER_COLOR);
+                }
             } else {
-                self.classInfo(_classInfo + " accent " + self.defaultColor);
+                if (self.pendingModeValue() == HEATING_MODE) {
+                    self.classInfo(_classInfo + HEAT_COLOR);
+                } else if (self.pendingModeValue() == ESH_MODE) {
+                    self.classInfo(_classInfo + ESH_COLOR);
+                } else if (self.pendingModeValue() == COOLING_MODE) {
+                    self.classInfo(_classInfo + COOL_COLOR);
+                } else if (self.pendingModeValue() == OFF) {
+                    self.classInfo(_classInfo + OFF_COLOR);
+                } else if (self.pendingModeValue() == AUTO_CHANGE_OVER_MODE) {
+                    self.classInfo(_classInfo + AUTO_CHANGE_OVER_COLOR);
+                }
             }
+            if (self.operatingStatus() == "Cooling") {
+                self.classInfo(_classInfo + COOLING_COLOR);
+            } else if (self.operatingStatus() == "Heating") {
+                self.classInfo(_classInfo + HEATING_COLOR);
+            } /*else {
+                self.classInfo(_classInfo + self.defaultColor);
+            }*/
         }
 
 
@@ -224,7 +289,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
 
             if ((unit == "F" && currentVal < 98) || (unit == "C" && currentVal < 90)) {
                 currentVal++;
-                self.setpoint(currentVal + "\xB0" + unit);
+                self.setpoint(currentVal + "\xB0");
             }
             self.timer = setTimeout(controller.control, 3000, {
                 "ref": self.setPointControlRef(),
@@ -246,7 +311,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
 
             if ((unit == "F" && currentVal > 60) || (unit == "C" && currentVal > 10)) {
                 currentVal--;
-                self.setpoint(currentVal + "\xB0" + unit);
+                self.setpoint(currentVal + "\xB0");
             }
             self.timer = setTimeout(controller.control, 3000, {
                 "ref": self.setPointControlRef(),
@@ -281,9 +346,10 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
                 try {
                     var label = self.device().controlPairs()[i].Label;
                     self.pendingModeValue(self.device().controlPairs()[i].ControlValue);
-                    self.mode(label);                    
+                    self.mode(label);
+                    self.setTileColor();
                     self.timer = setTimeout(controlThermostat, 3000, {
-                        "ref": self.modeControlRef,
+                        "ref": self.modeControlRef(),
                         "url": self.url,
                         "value": self.pendingModeValue()
                     });
@@ -299,40 +365,38 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
             publishToProxy({
                 "pendingModeValue": params.value,
                 "pendingIsVisible": true,
-                "refID": self.modeControlRef,
+                "refID": self.modeControlRef(),
                 "setpoint": self.setpoint(),
-                "controlButtonsAreVisible": self.controlButtonsAreVisible(),
+                // "controlButtonsAreVisible": self.controlButtonsAreVisible(),
                 "setPointIsVisible": self.setPointIsVisible(),
                 "setPointControlRef": self.setPointControlRef()
-                });
+            });
             console.log("Pending Mode Value = " + self.pendingModeValue());
             //self.modeValue(params.value);
             $.when(controller.control(params)).done(function (data) {
                 queryThermostat();
-
             });;
         }
 
         //FUNCTION queryThermostat
         var queryThermostat = function () {
-            $.when(controller.query({
+            Promise.resolve(controller.query({
                 "url": self.url,
                 "ref": self.ref,
                 "isParent": true
-            })).done(function (data) {
+            })).then(function (data) {
                 self.device(data);
+                //debugger;
                 if (self.device().statusLabel() == "Offline") {
-                    self.controlButtonsAreVisible(false);
+                    //self.controlButtonsAreVisible(false);
                     self.setPointIsVisible(false);
                 } else {
-                    self.controlButtonsAreVisible(true);
+                    // self.controlButtonsAreVisible(true);
                     self.setPointIsVisible(true);
                 }
-                //var promises=[];
                 _.each(self.device().children, function (item) {
                     queryChild(item);
                 });
-                //return promises;   
             })
         }
 
@@ -341,20 +405,22 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
                 var query = {};
                 query.url = self.url;
                 query.ref = item;
-                return $.when(controller.query(query)).done(function (data) {
+                return Promise.resolve(controller.query(query)).then(function (data) {
                     self.children.push(data);
                     //debugger;
                     if (data.deviceType == 2 && (data.deviceSubType == 0 || data.deviceSubType == 1)) {
-                        self.ambientTemp(data.statusLabel());
-                        self.ambientControlRef = data.ref();
+                        self.ambientTemp(data.statusLabel().substr(0, 2) + "\xB0");
+                        self.ambientControlRef(data.ref());
                     }
                     if (data.deviceType == 1) {
-                        self.status(data.statusLabel());
+                        self.operatingStatus(data.statusLabel());
+                        self.operatingStatusControlRef(data.ref());
+                        self.setTileColor();
                     }
-                    if ((data.deviceType == 2 || data.deviceType == 999) && (data.deviceSubType == 5 || data.deviceSubType == 0)) {
+                    if ((data.deviceType == 2 && data.deviceSubType == 5) || (data.deviceType == 999 && data.deviceSubType == 0)) {
                         self.humidity(data.statusLabel());
                         self.humidityIsVisible(true);
-                        self.humidityControlRef = data.ref();
+                        self.humidityControlRef(data.ref());
                     }
                     if (data.deviceType == 3 || data.deviceType == 9) {
                         //debugger;
@@ -362,20 +428,20 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
                         self.modeValue(data.value());
                         console.log("HS Mode Value = " + self.modeValue());
                         ko.utils.arrayPushAll(self.device().controlPairs(), data.controlPairs());
-                        self.modeControlRef = data.ref();
+                        self.modeControlRef(data.ref());
 
                         if (self.pendingModeValue() == null) {
                             if (self.modeValue() == OFF) {
                                 //self.modeIcon(OFF_ICON);
-                                self.controlButtonsAreVisible(false);
+                                //self.controlButtonsAreVisible(false);
                                 self.setPointIsVisible(false);
                             } else if (self.device().statusLabel() != "Offline") {
-                                self.controlButtonsAreVisible(true);
+                                //self.controlButtonsAreVisible(true);
                                 self.setPointIsVisible(true);
                             }
                         } else
                         if (self.pendingModeValue() == OFF) {
-                            self.controlButtonsAreVisible(false);
+                            //self.controlButtonsAreVisible(false);
                             self.setPointIsVisible(false);
                         }
                     }
@@ -384,30 +450,30 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
                         if (data.deviceSubType == 1) {
                             //Setpoint RefID for Heating Child
                             self.heatSetPointControlRef(data.ref());
-                            self.heatSetPoint(data.statusLabel().substr(0, 2) + "\xB0" + unit);
+                            self.heatSetPoint(data.statusLabel().substr(0, 2) + "\xB0");
                             console.log("Heat setpoint ref= " + data.ref());
                             console.log("Heat setpoint = " + data.statusLabel().substr(0, 2) + "\xB0" + unit);
                         } else if (data.deviceSubType == 11) {
                             //Setpoint REFID for Energy Save Heat Child
                             self.ESHSetpointControlRef(data.ref());
-                            self.ESHSetPoint(data.statusLabel().substr(0, 2) + "\xB0" + unit);
+                            self.ESHSetPoint(data.statusLabel().substr(0, 2) + "\xB0");
                             console.log("Energy Save Heat setpoint ref= " + data.ref());
                         } else if (data.deviceSubType == 2) {
                             //Setpoint RefID for Cooling Child
                             self.coolSetPointControlRef(data.ref());
-                            self.coolSetPoint(data.statusLabel().substr(0, 2) + "\xB0" + unit);
+                            self.coolSetPoint(data.statusLabel().substr(0, 2) + "\xB0");
                             console.log("Cool setpoint ref= " + data.ref());
                             console.log("Cool setpoint = " + data.statusLabel().substr(0, 2) + "\xB0" + unit);
                         }
 
                     }
                     if (data.deviceType == 4 || data.deviceType == 5) {
-                        self.fanStatus(data.statusLabel());
+                        self.systemStatus(data.statusLabel());
                     }
 
                     if (data.deviceType == 0 && data.deviceSubType == 128) {
                         //**BATTERY**//
-                        self.batteryStatus(data.status());
+                        self.batteryStatus(data.value() + "%");
                         self.batteryIsVisible(true);
 
                     }
@@ -433,11 +499,11 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
                 var refID = parseInt(arr[1]);
                 console.log("Proxy Broadcast message received for device: " + arr[1]);
                 //debugger;
-                if (refID == self.setPointControlRef() || refID == self.modeControlRef ||
-                    refID == self.ambientControlRef || refID == self.humidityControlRef) {
+                if (refID == self.setPointControlRef() || refID == self.modeControlRef() ||
+                    refID == self.ambientControlRef() || refID == self.humidityControlRef() || refID == self.operatingStatusControlRef() || refID == self.rootControlRef()) {
                     console.log("Proxy Broadcast match--doing query");
-                    var q=$.when (queryChild(refID)).done(function (data) {
-                        console.log ("query complete for refID " + refID);
+                    var q = $.when(queryChild(refID)).done(function (data) {
+                        console.log("query complete for refID " + refID);
                         self.pendingIsVisible(false);
                     });
 
@@ -447,7 +513,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsthermostat
                 console.log("Broadcast message received from a hsthermostat widget");
                 var modeControlRef = message.refID;
                 var setPointControlRef = message.setPointControlRef;
-                if (setPointControlRef == self.setPointControlRef() || modeControlRef == self.modeControlRef) {
+                if (setPointControlRef == self.setPointControlRef() || modeControlRef == self.modeControlRef()) {
                     console.log("Message ID is a match.  Displaying hourglass");
                     self.pendingIsVisible(message.pendingIsVisible);
                     //self.modeIcon(message.modeIcon);

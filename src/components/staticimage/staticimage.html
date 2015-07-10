@@ -1,3 +1,5 @@
-<div class="live-tile" data-bind='attr: {"id": id, "class": classInfo}' >
-    <img class="align-mid" data-bind='attr:{src: image}'/>
+<div class="tile bg-steel fg-white" data-role="tile" data-bind='attr: {"class": classInfo}'>
+    <div class="tile-content" data-bind='attr: {"id": id}'>
+        <img data-role="fitImage" data-format='square' data-bind='attr:{src: image}' />
+    </div>
 </div>

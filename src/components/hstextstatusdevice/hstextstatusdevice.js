@@ -1,9 +1,9 @@
-define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'config', 'bluebird', 'text!./hsstatusdevice.html', 'faye'], function ($, ko, devicecontroller, device, config, Promise, templateMarkup) {
+define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'config', 'bluebird', 'text!./hstextstatusdevice.html', 'faye'], function ($, ko, devicecontroller, device, config, Promise, templateMarkup) {
 
-    function Hsstatusdevice(params) {
+    function HSTextStatusDevice(params) {
         var self = this;
 
-        self.refreshInteraval="";
+        self.refreshInteraval = "";
         if (params.hasOwnProperty("refresh")) {
             self.refreshInteraval = params.refresh;
         }
@@ -21,20 +21,18 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'config', 'bluebird', '
         self.locationIsVisible=ko.observable();
         if (params.hasOwnProperty("locationIsVisible")){
             self.locationIsVisible(params.locationIsVisible);
-        } else self.locationIsVisible(true);
+        } else self.locationIsVisible(true);        
 
         self.icons = params.icons;
         self.ref = params.ref;
         self.url = config.url;
         self.device = ko.observable();
-        self.statusIcon = ko.observable();
-        self.iconIsVisible=ko.observable(true);
-        
-      self.setStatus = function () {
+
+        self.setStatus = function () {
             var iconPath;
             var status = self.device().status();
-            
-            var _classInfo="tile fg-white ";
+
+            var _classInfo = "tile fg-white  ";
 
             if (String(status).match(/Dim/)) {
                 status = "On";
@@ -50,10 +48,10 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'config', 'bluebird', '
                  self.statusIcon(self.url + iconPath); 
             } else
                 self.iconIsVisible(false);*/
-             
-                
-           // self.statusIcon(self.url + iconPath);    
-            status=String(status).toLocaleLowerCase();
+
+
+            // self.statusIcon(self.url + iconPath);    
+            status = String(status).toLocaleLowerCase();
             switch (status) {
 
             case "locked":
@@ -64,7 +62,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'config', 'bluebird', '
                 //case ((String(device.status()).toLowerCase().match(/dim/)) ? device.status() : "undefined"):
             case "on":
                 {
-                    self.classInfo(_classInfo + " bg-green" );
+                    self.classInfo(_classInfo + " bg-green");
                     break;
                 }
             case "away":
@@ -83,7 +81,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'config', 'bluebird', '
             case "cooling":
                 {
                     self.classInfo(_classInfo + " bg-cyan");
-                    break;                     
+                    break;
                 }
             case "arm":
             case "armed":
@@ -116,7 +114,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'config', 'bluebird', '
                     break;
                 }
             }
-        }        
+        }
 
         self.query = function () {
             Promise.resolve(devicecontroller.query({
@@ -128,12 +126,12 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'config', 'bluebird', '
                 return true;
             });
         }
-        if (self.refreshInteraval!="" && self.refreshInteraval > 0 ) {
+        if (self.refreshInteraval != "" && self.refreshInteraval > 0) {
             self.intervalRefresh = setInterval(function () {
                 self.query();
             }, self.refreshInterval);
         }
-       self.query();
+        self.query();
 
 
 
@@ -160,12 +158,11 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'config', 'bluebird', '
 
     // This runs when the component is torn down. Put here any logic necessary to clean up,
     // for example cancelling setTimeouts or disposing Knockout subscriptions/computeds.
-    Hsstatusdevice.prototype.dispose = function () {};
-    
-    return {        
-        viewModel: Hsstatusdevice,
+    HSTextStatusDevice.prototype.dispose = function () {};
+
+    return {
+        viewModel: HSTextStatusDevice,
         template: templateMarkup
     };
 
 });
-

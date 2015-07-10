@@ -1,22 +1,23 @@
-define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsdevice.html', 'jqueryui', 'underscore', 'faye', 'jquerymobile'], function ($, ko, devicecontroller, config, templateMarkup) {
+define(['jquery', 'knockout', 'devicecontroller', 'config', 'bluebird', 'text!./hsdevice.html', 'underscore', 'faye'], function ($, ko, devicecontroller, config, Promise, templateMarkup) {
 
     function HSDWidget(params) {
-        $.mobile.loadingMessage = false;
+        //$.mobile.loadingMessage = false;
         var self = this;
         self.timer = null;
         var proxyIP=config.proxyIP;
         var proxyPort=config.proxyPort;
 
         self.classInfo = ko.observable();
-        if (params.hasOwnProperty("width")) {
-            self.defaultWidth = params.width;
-        } else self.defaultWidth = "one-wide";
         if (params.hasOwnProperty("color")) {
             self.defaultColor = params.color;
-        } else self.defaultColor = "steel";
-        self.classInfo("live-tile exclude accent " + self.defaultColor + " " + self.defaultWidth);
+        } else self.defaultColor = "bg-steel";
+        self.classInfo("tile fg-white " + self.defaultColor);
 
-        self.icons = params.icons;
+        self.locationIsVisible=ko.observable();
+        if (params.hasOwnProperty("locationIsVisible")){
+            self.locationIsVisible(params.locationIsVisible);
+        } else self.locationIsVisible(true);
+        
         self.ref = params.ref;
         self.url=config.url;
         self.device = ko.observable();
@@ -25,6 +26,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsdevice.htm
         self.controlButtonsVisible = ko.observable(false);
 
         self.toggleDevice = function (params) {
+            var pendingValue=null;
             if (self.timer != null) {
                 clearTimeout(self.timer);
                 self.timer = null;
@@ -43,20 +45,25 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsdevice.htm
             if (self.device().controlPairs()[i].Range != null) {
                 self.controlButtonsVisible(true);
                 if (self.device().value() > self.device().controlPairs()[i].Range.RangeEnd) {
-                    self.device().value(self.device().controlPairs()[i].Range.RangeEnd);
+                    //self.device().value(self.device().controlPairs()[i].Range.RangeEnd);
+                    pendingValue=self.device().controlPairs()[i].Range.RangeEnd;
+                }
+                else {
+                    pendingValue=self.device().controlPairs()[i].Range.RangeStart;
                 }
             } else{
-                self.device().value(self.device().controlPairs()[i].ControlValue);
+                //self.device().value(self.device().controlPairs()[i].ControlValue);
+                pendingValue=self.device().controlPairs()[i].ControlValue;
                 self.controlButtonsVisible(false);
             }
                 
-            self.device().status(label);           
+            self.device().status(label); 
             self.timer = setTimeout(devicecontroller.control, 3000, {
                 "ref": self.ref,
                 "url": self.url,
-                "value": self.device().value()
+                "value": pendingValue
             });
-            setStatusIcon();
+            setStatus();
         };
 
         self.rangeUp = function (device, event) {
@@ -97,14 +104,14 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsdevice.htm
             });
         }
 
-        var setStatusIcon = function () {
-            var iconPath;
+        var setStatus = function () {
             var status = self.device().status();
             
-            var _classInfo="live-tile exclude " + self.defaultWidth;
+            var _classInfo="tile fg-white  ";
 
             if (String(status).match(/Dim/)) {
                 status = "On";
+                //self.device().status(self.device().status().replace("Dim"," "));
                 self.controlButtonsVisible(true);
             } else if (String(status).match(/On/)) {
                 status = "On";
@@ -112,16 +119,16 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsdevice.htm
                 status = "Locked";
             } else if (String(status).match(/Unlock/)) {
                 status = "Unlocked";
+            } else if (String(status).match(/Open/)) {
+                status = "Opened";
+            } else if (String(status).match(/Close/)) {
+                status = "Closed";
+            } else if (String(status).match(/Off/)) {
+                status = "Off";
+                self.controlButtonsVisible(false);
             }
-            if (self.icons) {
-                iconPath = self.icons[status.toLowerCase()];
-                self.statusIcon(self.url + iconPath); 
-            } else
-                self.iconIsVisible(false);
-                //iconPath = "/images/HomeSeer/status/unknown.png"
                 
-               
-
+                
             switch (status) {
 
             case "Locked":
@@ -130,30 +137,31 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsdevice.htm
                 //case ((String(device.status()).toLowerCase().match(/dim/)) ? device.status() : "undefined"):
             case "On":
                 {
-                    self.classInfo(_classInfo + " accent green" );
+                    self.classInfo(_classInfo + " bg-green" );
                     break;
                 }
             case "Away":
                 {
-                    self.classInfo(_classInfo + " accent mauve");
+                    self.classInfo(_classInfo + " bg-mauve");
                     break;
                 }
             case "Night":
                 {
-                    self.classInfo(_classInfo + " accent orange");
+                    self.classInfo(_classInfo + " bg-orange");
                     break;
                 }
             case "Arm":
             case "Armed":
                 {
-                    self.classInfo(_classInfo + " accent red");
+                    self.classInfo(_classInfo + " bg-red");
                     break;
                 }
             case "Unlock":
             case "Unlocked":
             case "Opened":
+            case "Open":        
                 {
-                    self.classInfo(_classInfo + " accent orange");
+                    self.classInfo(_classInfo + " bg-orange");
                     break;
                 }
             case "Unknown":
@@ -163,23 +171,25 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsdevice.htm
             case "Disarmed":
             default:
                 {
-                    self.classInfo(_classInfo + " accent " + self.defaultColor);
+                    self.classInfo(_classInfo + self.defaultColor);
                     break;
                 }
             }
         }
+        
+        self.query = function () {
+            Promise.resolve(devicecontroller.query({
+                "url": self.url,
+                "ref": self.ref
+            })).then(function (data) {
+                self.device(data);
+                setStatus();
+                return true;
+            });
+        }
+        
+        self.query();
 
-        $.when(devicecontroller.query({
-            "url": self.url,
-            "ref": self.ref
-        })).done(function (data) {
-            self.device(data);
-            if (self.device().deviceSubType == 16) {
-                self.defaultWidth = "half-wide";
-            }
-            setStatusIcon();
-            return true;
-        });
 
 
         // Check to ensure proxy IP and port values are set.  ThenCreate a new client that subscribes 
@@ -191,21 +201,12 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'text!./hsdevice.htm
             var proxyURL = "http://" + proxyIP + ":" + proxyPort + "/faye";
             var client = new Faye.Client(proxyURL);
             client.subscribe('/homeseer/statuschange', function (message) {
-                //debugger;
                 var arr = String(message).split(",");
                 if (parseInt(arr[1]) == self.ref) {
                     if (self.device().value() != parseInt(arr[2])) {
                         self.device().value(parseInt(arr[2]));
-                        $.when(devicecontroller.query({
-                            "url": self.url,
-                            "ref": self.ref
-                        })).done(function (data) {
-                            self.device(data);
-                            setStatusIcon();
-                            return true;
-                        });
+                        self.query();
                     }
-
                 };
             });
         }

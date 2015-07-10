@@ -1,0 +1,14 @@
+<div class="tile bg-steel fg-white" data-role="tile" data-bind='attr: {"class": classInfo}'>
+    <div class="tile-content iconic" data-bind='attr: {"id": ref}'>
+        <div data-bind="visible: locationIsVisible">
+            <!--ko with: device -->
+            <p class="v-align-top align-center margin5" style="font-size:14px" data-bind="text: location"></p>
+            <!-- /ko -->
+        </div>        
+        <!--ko with: device -->
+        <span class="tile-label-center" data-bind="text: deviceName"></span>
+        <span class="absolute-center" style="font-size:32px" data-bind="text: statusLabel"></span>
+        <img class="align-mid-top" style='height:20px;width:20px;position:absolute;left:40%;margin:5px' data-bind="attr:{src: statusImage}" />
+        <!-- /ko -->
+    </div>
+</div>

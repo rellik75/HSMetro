@@ -10,13 +10,17 @@ define(['knockout', 'text!./weather.html', 'simpleweather'], function (ko, templ
         if (params.hasOwnProperty("unit")){
            unit=params.unit; 
         }
+        if (params.hasOwnProperty("color")) {
+            self.color = params.color;
+        } else self.color = "bg-steel";
+        
         var zipcode=params.zipcode;
         var location=params.location;
         if (zipcode) {
             location=zipcode;
         }        
-        var color=params.color;
-        self.classInfo=ko.observable("live-tile two-wide two-tall exclude accent " + color);
+
+        self.classInfo=ko.observable("tile-large fg-white " + self.color);
         self.image=ko.observable();
         self.status=ko.observable();
         self.temp=ko.observable();
@@ -28,6 +32,9 @@ define(['knockout', 'text!./weather.html', 'simpleweather'], function (ko, templ
         self.humidity=ko.observable();
         self.description=ko.observable();
         self.forecast=ko.observableArray()();
+        self.region=ko.observable();
+        self.tomorrow=ko.observable();
+        self.today=ko.observable();
         var getWeather=function() {
         $.simpleWeather({
             location: location,
@@ -35,15 +42,18 @@ define(['knockout', 'text!./weather.html', 'simpleweather'], function (ko, templ
             success: function (weather) {
                 self.image(weather.image);
                 self.status(weather.text);
-                self.temp(weather.temp);
+                self.temp(weather.temp + "\xB0 " + weather.units.temp);
                 self.units(weather.units.temp);
                 self.currently(weather.currently);
-                self.city(weather.title);
+                self.city(weather.city);
+                self.region(weather.region);
                 self.windDirection(weather.wind.direction);
                 self.windSpeed(weather.wind.speed);
                 self.humidity(weather.humidity);
                 self.description(weather.description);
                 self.forecast.push(weather.forecast);
+                self.tomorrow(weather.forecast[1].low + "\xB0" + "/" + weather.forecast[1].high + "\xB0" + " " + weather.forecast[1].text);
+                self.today(weather.low + "\xB0" + "/" + weather.high + "\xB0" + " " + weather.text);
                 //debugger;
             },
             error: function (error) {

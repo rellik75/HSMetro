@@ -1,5 +1,8 @@
-<div class="live-tile" data-bind='event: {click: runEvent}, attr: {"id": event, "class": classInfo}' >
-    <p class="align-mid-top" data-bind="text: event"></p>
-    <p style="font-size: 6pt; position:absolute; bottom: 1px; left: 0px" data-bind="text: group"></p>
-    <img class="align-mid" data-bind="attr:{src: icon}, visbile: iconIsVisible"/>
+<div class="tile bg-steel fg-white" data-role="tile" data-bind='attr: {"class": classInfo}'>
+    <div class="tile-content iconic" data-bind='event: {click: runEvent}, attr: {"id": event}'>
+        <p class="v-align-top align-center margin5"   data-bind="text: event"></p>
+        <span class="tile-label-center" data-bind="text: group"></span>
+        <img class="icon" data-bind="attr:{src: icon}, visbile: iconIsVisible" />
+        <span class="mif-spinner mif-ani-spin" style='position:absolute;top:40px;right:10px;' data-bind="visible: timeoutIsVisible" ></span>
+    </div>
 </div>

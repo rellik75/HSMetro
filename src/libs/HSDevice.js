@@ -29,16 +29,17 @@ Device Temp SubTypes for Thermostats:
     Humidity=       5      
 *************************************/ 
 
-define(['knockout'], function (ko) {
+define(['knockout', 'config'], function (ko,config) {
 
 
     return function device(data) {
         var self = this;
+        var url = config.url;
         self.deviceName = ko.observable(data.Devices[0].name);
         self.value = ko.observable(data.Devices[0].value);
         self.status = ko.observable(data.Devices[0].status);
-        self.deviceType=data.Devices[0].device_type.Device_Type;
-        self.deviceSubType=data.Devices[0].device_type.Device_SubType;
+        self.deviceType=ko.observable(data.Devices[0].device_type.Device_Type);
+        self.deviceSubType=ko.observable(data.Devices[0].device_type.Device_SubType);
         self.location=ko.observable(data.Devices[0].location);
         self.location2=ko.observable(data.Devices[0].location2);
         self.ref=ko.observable(data.Devices[0].ref);
@@ -57,13 +58,19 @@ define(['knockout'], function (ko) {
             ko.utils.arrayPushAll(self.controlPairs, data.ControlPairs);
             
         }
+        self.statusImage=ko.computed(function () {
+             return url + "/" + data.Devices[0].status_image;
+        });
         self.statusLabel = ko.computed(function () {
             if (String(self.status()).match(/Dim/))
-                return "Dim " + self.value();
-            else
-                return self.status();
+                return  self.value();
+            else if (self.status()=="No Status") {
+                    return "";
+             }
+            else 
+                return self.status().replace(/(\r\n|\n|\r)/gm,"");
         });
-        self.relationship=data.Devices[0].relationship;
+        self.relationship=ko.observable(data.Devices[0].relationship);
         self.children=[];
         //if (self.relationship==2)
             ko.utils.arrayPushAll(self.children, data.Devices[0].associated_devices);

@@ -1,14 +1,13 @@
-<div class="live-tile two-wide two-tall" id="weather" data-bind='attr: {"class": classInfo}'>
-    <div>
-        <span class="tile-title" data-bind="text: city"></span>
-        <p>
-            <img data-bind="attr:{src: image}" /> Temp: <span class="metroSmall" data-bind="text: temp()"></span>
-            </br>
-            Currently: <span class="metroSmall" data-bind="text: status"></span>
-            </br>
-            Wind Dir: <span class="metroSmall" data-bind="text: windDirection"></span> </br>
-            Wind Speed: <span class="metroSmall" data-bind="text: windSpeed"></span>
-
-        </p>
+<div class="tile-large bg-blue fg-white" data-role="tile" data-bind='attr: {"class": classInfo}'>
+    <div class="tile-content" id="weather" data-bind="style: {backgroundImage: 'url(' + image() + ')' }" style="top left no-repeat; background-size: cover">
+        <div class="padding10 ">
+            <h1 data-bind="text: temp" />
+            <h2 data-bind="text: city"></h2>
+            <h5 data-bind="text: currently" />
+            <h4>Today</h4>
+            <p class="tertiary-text fg-white no-margin" data-bind="text: today" />
+            <h4>Tomorrow</h4>
+            <p class="tertiary-text fg-white no-margin" data-bind="text: tomorrow" />
+        </div>
     </div>
 </div>

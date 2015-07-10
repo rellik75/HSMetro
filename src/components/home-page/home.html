@@ -1,68 +1,117 @@
-<div class="tiles" id="tilewall">
-    <weather class="hstile" params="color: 'blue', zipcode: '89135', refresh: 18000000, unit: 'f'"></weather>
-    <hsthermostat class="hstile" params="ref: 324"></hsthermostat>
-    <hsthermostat class="hstile" params="ref: 312"></hsthermostat>
-    <hsthermostat class="hstile" params="ref: 300"></hsthermostat>
-    <clock class="hstile" params="color: 'yellow'"></clock>
+<!--
+*******Valid Tile Background Colors********
 
-    <hsdevice class="hstile" id="barlight" params="ref: 217, color: 'steel', icons: {
-                                      'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+bg-black
+bg-lime
+bg-green
+bg-emerald
+bg-teal
+bg-blue
+bg-cyan
+bg-cobalt
+bg-indigo
+bg-violet
+bg-pink
+bg-magenta
+bg-crimson
+bg-red
+bg-orange
+bg-amber
+bg-yellow
+bg-brown
+bg-olive
+bg-steel
+bg-mauve
+bg-taupe
+bg-gray
+bg-dark
+bg-darker
+bg-darkBrown
+bg-darkCrimson
+bg-darkMagenta
+bg-darkIndigo
+bg-darkCyan
+bg-darkCobalt
+bg-darkTeal
+bg-darkEmerald
+bg-darkGreen
+bg-darkOrange
+bg-darkRed
+bg-darkPink
+bg-darkViolet
+bg-darkBlue
+bg-lightBlue
+bg-lightRed
+bg-lightGreen
+bg-ligherBlue
+bg-lightTeal
+bg-lightOlive
+bg-lightOrange
+bg-lightPink
+bg-grayDark
+bg-grayDarker
+bg-grayLight
+bg-grayLigher
 
-    <hsdevice class="hstile" id="kitchen_light" params="ref: 218, color: 'steel', icons: {
-                                      'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+********You can also create ribbed backgrouns by using a prifix of ribbed- instead of bg- *************
 
-    <hsdevice class="hstile" id="stair_light" params="ref: 220, color: 'steel', icons: {
-                                      'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
+-->
 
-    <hsdevice class="hstile" params="ref: 230, color: 'steel', icons: {
-                                      'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
 
-    <hsdevice class="hstile" params="ref: 215, color: 'steel', icons: {
-                                      'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
 
-    <hsdevice class="hstile" params="ref: 434, color: 'steel', icons: {
-                                      'unlocked': '/images/HomeSeer/status/unlocked.gif', 
-                                      'locked': '/images/HomeSeer/status/locked.gif'}"></hsdevice>
+<div class="tile-area tile-area-scheme-dark fg-white">
+    <div class="tile-group double">
+        <span class="tile-group-title">General</span>
+        <div class="tile-container">
+            <clock params="color: 'bg-gray'"></clock>
+            <weather params="color: 'bg-gray', zipcode: '89135', refresh: 18000000, unit: 'f'"></weather>
+        </div>
+    </div>
 
-    <hsdevice class="hstile" params="ref: 298, color: 'steel', icons: {
-                                      'home': '/images/home_sm.png',
-                                      'away': '/images/home_red_sm.png',
-                                      'night': '/images/nighttime.png'
-                                      }"></hsdevice>
-
-    <hsdevice class="hstile" params="ref: 229, color: 'steel', icons: {
-                                      'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
-
-    <hsdevice class="hstile" params="ref: 226, color: 'steel', icons: {
-                                      'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
-
-    <hsdevice class="hstile" params="ref: 216, color: 'steel', icons: {
-                                      'on': '/images/HomeSeer/status/on.gif', 
-                                      'off': '/images/HomeSeer/status/off.gif'}"></hsdevice>
-
-    <hsstatusdevice class="hstile" params="ref: 243, color: 'steel',  
-                                      icons: {
-                                      'opened': '/images/HomeSeer/status/unlocked.gif', 
-                                      'closed': '/images/HomeSeer/status/locked.gif'}"></hsstatusdevice>
-
-    <webpage class="hstile" params="sites: [
-                                  { site: 'Google', url: 'www.google.com'}, 
-                                  {site: 'Yahoo', url: 'www.yahoo.com'}]"></webpage>
-
-    <!--<staticimage class="hstile" id="camera2" params="imageName: '/netcam/CurrentImage.jpg', 
-                                        refresh: 10000, 
-                                        width: 'two-wide', 
-                                        height: 'two-tall',
-                                        color: 'yellow'"></staticimage>-->
-    
-    <hsevent class="hstile" id="lights off" params="group: 'Auto Lights Off', event: 'All Off',  
+    <div class="tile-group double">
+        <span class="tile-group-title">Status Devices</span>
+        <div class="tile-container">
+            <hstextstatusdevice id="sensorTemp" params="ref: 477, color: 'bg-gray', locationIsVisible: false"></hstextstatusdevice>
+            <hsstatusdevice params="ref: 243, color: 'bg-gray', locationIsVisible: false"></hsstatusdevice>
+            <hsevent id="lights off" params="group: 'Auto Lights Off', event: 'All Off',  timeout: 5000, color: 'bg-gray',
                                                     icon:  '/images/HomeSeer/status/on.gif'"></hsevent>
+            <hsdevice id="virtual_home_mode" params="ref: 298, color: 'bg-gray'"></hsdevice>
+            <webpage params="sites: [{ site: 'Google', url: 'www.google.com'}, 
+                                  {site: 'Yahoo', url: 'www.yahoo.com'}]"></webpage>
+        </div>
+    </div>
 
+    <div class="tile-group double">
+        <span class="tile-group-title">Thermostats</span>
+        <div class="tile-container">
+            <hsthermostat params="ref: 300, color:'bg-gray'"></hsthermostat>
+            <hsthermostat params="ref: 324, color: 'bg-gray'"></hsthermostat>
+            <hsthermostat params="ref: 312, color: 'bg-gray'"></hsthermostat>
+            <hsthermostat params="ref: 318, color: 'bg-gray'"></hsthermostat>
+        </div>
+    </div>
+
+
+    <div class="tile-group triple">
+        <span class="tile-group-title">Devices</span>
+        <div class="tile-container">
+            <hsdevice id="stair_light" params="ref: 220, color: 'bg-taupe', locationIsVisible: false"></hsdevice>
+            <hsdevice id="kitchen_light" params="ref: 218, color: 'bg-taupe'"></hsdevice>
+            <hsdevice id="main_hall_lights" params="ref: 215, color: 'bg-taupe'"></hsdevice>
+            <hsdevice id="garage_hall_lights" params="ref: 217, color: 'bg-taupe'"></hsdevice>
+            <hsdevice id="family_room_fan" params="ref: 426, color: 'bg-taupe', locationIsVisible: false"></hsdevice>
+            <hsdevice id="bar_lights" params="ref: 216, color: 'bg-taupe'"></hsdevice>
+            <hsdevice id="family_room_light" params="ref: 427, color: 'bg-taupe'"></hsdevice>
+            <hsdevice id="dinette_light" params="ref: 229, color: 'bg-taupe'"></hsdevice>
+            <hsdevice id="patio_light" params="ref: 230, color: 'bg-taupe'"></hsdevice>
+        </div>
+    </div>
+    
+    <div class="tile-group double">
+        <span class="tile-group-title">Locks</span>
+        <div class="tile-container">
+            <hsdevice id="front_door" params="ref: 434, color: 'bg-gray'"></hsdevice>
+            <hsdevice id="garage_door" params="ref: 440, color: 'bg-gray'"></hsdevice>
+        </div>
+    </div>    
 </div>

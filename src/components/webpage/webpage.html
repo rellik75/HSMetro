@@ -1,5 +1,10 @@
-<div class="live-tile" data-bind='event: {click: toggleSite}, attr: {"class": classInfo}' >
-    <span class="tile-title align-" data-bind="text: siteName"></span>
-    <p class="align-mid-top">Load Webpage</p>
-    <img class="align-mid" data-bind="attr:{src: icon}, visible: iconIsVisible"/>
+<div class="tile bg-steel fg-white" data-role="tile" data-bind='attr: {"class": classInfo}'>
+        <div class="tile-content iconic" data-bind='event: {click: toggleSite}'>
+            <p class="v-align-top align-center margin5" data-bind="text: siteName"></p>
+            <p class="align-center">Load Webpage</p>
+            <img class="icon" data-bind="attr:{src: icon}, visible: iconIsVisible" />
+            <!-- ko ifnot: iconIsVisible -->
+            <span class="mif-earth mif-2x" style="position:absolute;top:50%;left: 50%;transform: translate(-50%,-50%);margin-right: -50%;"/>
+            <!-- /ko -->
+        </div>
 </div>

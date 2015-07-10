@@ -13,13 +13,10 @@ define(['knockout', 'text!./webpage.html', 'underscore'], function (ko, template
         self.iconIsVisible = ko.observable(false);
 
         self.classInfo = ko.observable();
-        if (params.hasOwnProperty("width")) {
-            self.defaultWidth = params.width;
-        } else self.defaultWidth = "one-wide";
         if (params.hasOwnProperty("color")) {
             self.defaultColor = params.color;
-        } else self.defaultColor = "steel";
-        self.classInfo("live-tile exclude accent " + self.defaultColor + " " + self.defaultWidth);
+        } else self.defaultColor = "bg-steel";
+        self.classInfo("tile fg-white " + self.defaultColor);
 
         self.navigateToSite = function (url) {
             window.location.href = url;
@@ -42,7 +39,7 @@ define(['knockout', 'text!./webpage.html', 'underscore'], function (ko, template
             self.siteName(self.sites[i].site);
             if (self.sites[i].url != '') {
                 //self.icon("http://www.google.com/s2/favicons?domain=http://" + self.sites[i].url)
-                self.icon("http://grabicon.com/icon?domain=http://" + self.sites[i].url + "&size=48")
+                self.icon("http://www.google.com/s2/favicons?domain=" + self.sites[i].url)
                 self.iconIsVisible(true);
 
                 self.timer = setTimeout(function (url) {

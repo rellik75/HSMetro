@@ -2,8 +2,11 @@ define(['knockout', 'text!./refresh.html'], function (ko, templateMarkup) {
 
     function Refresh(params) {
         self = this;
-        var color=params.color;
-        self.classInfo=ko.observable("live-tile exclude accent " + color);
+        self.classInfo = ko.observable();
+        if (params.hasOwnProperty("color")) {
+            self.defaultColor = params.color;
+        } else self.defaultColor = "bg-steel";
+        self.classInfo("tile fg-white " + self.defaultColor);        
         self.refresh = function () {
             location.reload(true);
         }

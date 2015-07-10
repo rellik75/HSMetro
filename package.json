@@ -1,7 +1,7 @@
 {
   "name": "hsmetro",
   "description": "An HTML Metro style live-tile UI for controlling HomeSeer",
-  "version": "1.0.6-2",
+  "version": "2.1.1-4",
   "author": "Wayne Posner <wayne.posner@gmail.com> (http://www.wayneposner.com)",
   "keywords": [
     "HomeSeer",

@@ -12,17 +12,11 @@ define(['knockout', 'text!./staticimage.html', 'config'], function (ko, template
         self.url = config.url;
         self.classInfo = ko.observable();
 
-        if (params.hasOwnProperty("width")) {
-            self.defaultWidth = params.width;
-        } else self.defaultWidth = "one-wide";
-        if (params.hasOwnProperty("height")) {
-            self.defaultHeight = params.height;
-        } else self.defaultHeight = "one-tall";
         if (params.hasOwnProperty("color")) {
             self.defaultColor = params.color;
-        } else self.defaultColor = "steel";
+        } else self.defaultColor = "bg-steel";
 
-        self.classInfo("live-tile " + self.defaultWidth + " " + self.defaultHeight + " exclude accent " + self.defaultColor);
+        self.classInfo("tile fg-white "  + self.defaultColor);
         self.image = ko.observable(new Image());
         self.id = ko.observable(randomID);
         self.image(self.url + self.imagePath + "?v=" + self.id() + new Date().getTime());

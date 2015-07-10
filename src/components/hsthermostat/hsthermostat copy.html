@@ -1,0 +1,26 @@
+<div class="tile tile-wide-y bg-steel fg-white" data-role="tile" data-bind='attr: {"class": classInfo}'>
+<div class="tile-content" data-bind='event: {click: toggleDevice}, attr: {"id": ref}'>
+    <!--ko with: device -->
+    <span class="tile-label" data-bind="text: deviceName"></span>
+    <p style='position:absolute;font-size:10pt; top:5px;right:3px;' data-bind="text: statusLabel"></p>
+    <p style="font-size: 6pt; position:absolute; top: 40px; left: 5px" data-bind="text: location"></p>
+    <!-- /ko -->
+    <p style='position:absolute;top:20px;left:5px;font-size: 10pt' data-bind="text: ambientTemp"></p>
+    <p style='position:absolute;top:20px;left:40px;font-size: 10pt' data-bind="text: operatingStatus"></p>
+    <p class="align-center" style='font-size: 30pt;top:40%' data-bind="text: setpoint, visible: setPointIsVisible" />
+
+    <p style='position:absolute;bottom:15px;right:3px;' data-bind="text: humidity" />
+    <p style='position:absolute;bottom:15px;left:15px;' data-bind="text: valveStatus" />
+    <p style='position:absolute;top:15px;right:5px;' data-bind="text: batteryStatus" />
+    <img src='img/battery.png' style='position:absolute;top:25px;right:30%;height:14px;width:14px' data-bind="visible: batteryIsVisible" />
+    <img src='img/valve.png' style='position:absolute;bottom:25px;left:2%;height:14px;width:14px' data-bind="visible: valveIsVisible" />
+    <img src='img/humidity.png' style='position:absolute;bottom:30px;right:33%;height:14px;width:14px' data-bind="visible: humidityIsVisible" />
+    <!--<img src='img/pending.png' style='position:absolute;top:40px;right:3px;height:48px;width:48px' data-bind="visible: pendingIsVisible" />-->
+    <span class="mif-spinner mif-ani-spin" style='position:absolute;top:40px;right:10px;' data-bind="visible: pendingIsVisible" ></span>
+    <img style='position:absolute;top:2px;left:5px;height:16px; width:16px' data-bind="attr:{src: modeIcon}" />
+    <button class="button cycle-button bg-grayLighter" style='position:absolute;left:40%;top:20%;' id="up" data-bind="event: {click: rangeUp}, visible: controlButtonsAreVisible"><span class="mif-expand-less mif-2x"></span></button>
+    <button class="button cycle-button bg-grayLighter" style='position:absolute;left:40%;bottom:25%;' id="down" data-bind="event: {click: rangeDown}, visible: controlButtonsAreVisible"><span class="mif-expand-more mif-2x"></span></button>
+    <!--<input style='position:absolute;left:40%;top:20%;' type="image" src="img/up.png" id="up" data-bind="event: {click: rangeUp}, visible: controlButtonsAreVisible">-->
+    <!--<input style='position:absolute;left:40%;bottom:25%;' type="image" src="img/down.png" id="down" data-bind="event: {click: rangeDown}, visible: controlButtonsAreVisible">-->
+</div>
+</div>

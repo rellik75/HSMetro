@@ -2,8 +2,11 @@ define(['knockout', 'text!./clock.html'], function (ko, templateMarkup) {
 
     function Clock(params) {
         self = this;
-        var color = params.color;
-        self.classInfo = ko.observable("live-tile two-wide exclude accent " + color);
+        if (params.hasOwnProperty("color")) {
+            self.color = params.color;
+        } else self.color = "bg-steel";
+        //var color = params.color;
+        self.classInfo = ko.observable("tile-wide fg-white " + self.color);
 
         var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]

@@ -29,26 +29,26 @@
     <meta name="theme-color" content="#000000">
     <!-- build:css -->
     <link href="bower_modules/components-bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_modules/metro/build/css/metro-icons.min.css" rel="stylesheet">
+    <link href="bower_modules/metro/build/css/metro.min.css" rel="stylesheet">
     <!-- endbuild -->
-    <link href="css/MetroJs.css" rel="stylesheet">
-    <link href="css/clock.css" rel="stylesheet">
-
+    <link href="css/clock.css" rel="stylesheet"> 
     
     <script src="app/require.config.js"></script>
     <!-- build:js -->
     <script data-main="app/startup" src="bower_modules/requirejs/require.js"></script>
     <!-- endbuild -->
     
-    <script>
-        
+    <script>        
         var message = "Version @@version";
         document.oncontextmenu = new Function("alert(message);return false");
+                
     </script>
 </head>
 
 <body>
 
-    <div id="wall" class="container" data-bind="component: { name: route().page, params: route }"></div>
+    <div id="tiles" data-bind="component: { name: route().page, params: route }"></div>
 
 </body>
 

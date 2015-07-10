@@ -7,7 +7,7 @@ define(['jquery', 'knockout', 'hsd'], function ($, ko, Device) {
             return $.when(statusData).then(function (data) {
                 var d= data;
                 //debugger;
-                if (d.Devices[0].device_type.Device_Type!=2 && d.Devices[0].device_type.Device_Type!=99 && d.Devices[0].device_type.Device_Type!=1 &&  d.Devices[0].device_type.Device_Type!=6)
+                if (d.Devices[0].device_type.Device_Type!=2 && d.Devices[0].device_type.Device_Type!=99 && d.Devices[0].device_type.Device_Type!=1 &&  d.Devices[0].device_type.Device_Type!=6 &&  d.Devices[0].device_type.Device_Type!=69)
                 {
                     var controlData = $.getJSON(params.url + "/JSON?request=getcontrol&ref=" + params.ref);
                     return $.when(controlData).then(function (_cdata) {

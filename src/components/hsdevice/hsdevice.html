@@ -1,10 +1,40 @@
-<div class="live-tile" data-bind='event: {click: toggleDevice}, attr: {"id": ref, "class": classInfo}' >
-    <!--ko with: device -->
-    <span class="tile-title align-" data-bind="text: deviceName"></span>
-    <p class="align-mid-top" data-bind="text: statusLabel"></p>
-    <p style="font-size: 6pt; position:absolute; top: 20px; left: 0px" data-bind="text: location"></p>
-    <!-- /ko -->
-    <input class="align-left-y" type="image" src="img/up.png"  id="up" data-bind="event: {click: rangeUp}, visible: controlButtonsVisible">
-    <input class="align-right-y" type="image" src="img/down.png"  id="down" data-bind="event: {click: rangeDown}, visible: controlButtonsVisible">
-    <img class="align-mid" data-bind="attr:{src: statusIcon}, visbile: iconIsVisible"/>
+<div class="tile bg-steel fg-white" data-role="tile" data-bind='attr: {"class": classInfo}'>
+    <div class="tile-content iconic" data-bind='attr: {"id": ref}'>
+        <!-- ko if: controlButtonsVisible -->
+        <div data-bind='event: {click: toggleDevice}' style="position:absolute; width:150px;height:100px;top:0px;">   
+            <div data-bind="visible: locationIsVisible">
+                <!--ko with: device -->
+                <p class="v-align-top align-center margin5 uppercase" style="font-size:14px" data-bind="text: location"></p>
+                <!-- /ko -->
+            </div>
+            
+            <!--ko with: device -->
+            <span class="tile-label-center" data-bind="text: deviceName() + ' ' + statusLabel()"></span>
+            <img class="icon-raised" data-bind="attr:{src: statusImage}" />
+            <!-- /ko -->   
+        </div>
+        <div style="position:absolute;width:75px; height:45px;left:0px;bottom:0px" data-bind="event: {click: rangeUp}, visible: controlButtonsVisible">
+            <input type="image" style="display: block;margin: auto;" src="img/up.png" id="up">
+            <div class="vertical-line" style="height: 45px;right:0px;top:0px" />
+        </div>
+        <div style="position:absolute;width:75px;height:45px;right:0px;bottom:0px;" data-bind="event: {click: rangeDown}, visible: controlButtonsVisible">
+            <input type="image" style="display: block;margin: auto;" src="img/down.png" id="down">
+        </div>
+        <!-- /ko --> 
+        <!-- ko ifnot: controlButtonsVisible -->
+        <div data-bind='event: {click: toggleDevice}' style="position:absolute; width:150px;height:150px;top:0px;">   
+            <div data-bind="visible: locationIsVisible">
+                <!--ko with: device -->
+                <p class="v-align-top align-center margin5 uppercase" style="font-size:14px" data-bind="text: location"></p>
+                <!-- /ko -->
+            </div>
+            
+            <!--ko with: device -->
+            <span class="tile-label-center"  data-bind="text: deviceName() + ' ' + statusLabel()"></span>
+            <img class="icon" data-bind="attr:{src: statusImage}" />
+            <!-- /ko -->   
+        </div>        
+        <!-- /ko --> 
+        
+    </div>
 </div>
