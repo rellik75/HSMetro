@@ -19,7 +19,6 @@ var require = {
         "knockout-projections": "bower_modules/knockout-projections/dist/knockout-projections.min",
         "signals":              "bower_modules/js-signals/dist/signals.min",
         "text":                 "bower_modules/requirejs-text/text",
-        //"jqueryui":             "libs/jquery-ui.min",
         "simpleweather":        "bower_modules/libs/jQuery.simpleWeather.min",
         "underscore":           "bower_modules/underscore/underscore-min",
         "faye":                 "bower_modules/faye-browser-min",
@@ -33,6 +32,5 @@ var require = {
     shim: {
         "bootstrap": { deps: ["jquery"] },
         "metrojs": {deps: ["jquery"]},
-        //"jqueryui": {deps: ["jquery"]},
     }
 };

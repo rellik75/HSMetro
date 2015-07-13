@@ -2,26 +2,41 @@
     <div class="tile-content" data-bind='attr: {"id": ref}'>
         <!-- ko if: setPointIsVisible -->
         <div style="width:220px;height:150px;float:left;position:relative" data-bind='event: {click: toggleDevice}'>
+            
             <!--ko with: device -->
             <span class="tile-label-center" data-bind="text: deviceName"></span>
-            <p style='position:absolute;font-size:10pt;left:3px;top:5px' data-bind="text: statusLabel"></p>
-            <!--<p style="font-size: 6pt; position:absolute; top: 40px; left: 5px" data-bind="text: location"></p>-->
-
             <!-- /ko -->
+            
             <span class="absolute-center" style="font-size:32px" data-bind="text: ambientTemp"></span>
             <span class="horizontal-center" style="bottom:20%;font-size: 12pt; font-weight: bold;" data-bind="text: operatingStatus, visible: setPointIsVisible"></span>
 
-            <div style="position:relative;top:5px;float:right;margin-right:3px" data-bind="visible: humidityIsVisible">
-                <span style="font-size:14px" data-bind="text: humidity() " /><span class="mif-water" />
+            <div id="status_bar" style="position:absolute;width:220px;height:25px;top:3px;left:3px">
+                <table width="100%;table-layout: fixed;">
+                    <tr>
+                        <td style="width: 25%;">
+                            <!--ko with: device -->
+                            <span style='font-size:10pt' data-bind="text: statusLabel" />
+                            <!-- /ko -->
+                        </td>
+                        <td style="width: 25%;">
+                            <span style='font-size:10pt' data-bind="text: valveStatus" />
+                            <img src='img/valve.png' style='height:14px;width:14px' data-bind="visible: valveIsVisible" />
+                        </td>
+                        <td style="width: 25%;">
+                            <span style='font-size:10pt' data-bind="text: batteryStatus" />
+                            <img src='img/battery.png' style='height:14px;width:14px' data-bind="visible: batteryIsVisible" />
+                        </td>
+                        <td data-bind="visible: humidityIsVisible" style="width: 25%;">
+                            <span style="font-size:10pt" data-bind="text: humidity() " />
+                            <span class="mif-water" />
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <p style='position:absolute;bottom:15px;left:15px;' data-bind="text: valveStatus" />
-            <p style='position:absolute;top:15px;right:5px;' data-bind="text: batteryStatus" />
-            <img src='img/battery.png' style='position:absolute;top:25px;right:30%;height:14px;width:14px' data-bind="visible: batteryIsVisible" />
-            <img src='img/valve.png' style='position:absolute;bottom:25px;left:2%;height:14px;width:14px' data-bind="visible: valveIsVisible" />
-            <!--<img src='img/humidity.png' style='position:absolute;bottom:30px;right:33%;height:14px;width:14px' data-bind="visible: humidityIsVisible" />-->
+
             <span class="mif-spinner mif-ani-spin" style='position:absolute;top:40px;right:10px;' data-bind="visible: pendingIsVisible"></span>
-            <!-- <img style='position:absolute;top:2px;left:5px;height:16px; width:16px' data-bind="attr:{src: modeIcon}" />-->
         </div>
+        
         <div style="width:90px;height:150px;float:right;position:relative" data-bind="visible: setPointIsVisible">
             <div class="vertical-line" style="height: 131px;top:5%;" />
             <div style="width:90px;height:60px;top:0px;position:absolute" data-bind="event: {click: rangeUp}">
@@ -35,23 +50,39 @@
             <p class="absolute-center" style='font-size:18pt;' data-bind="text: setpoint" />
         </div>
         <!-- /ko -->
-        
+
         <!-- ko ifnot: setPointIsVisible -->
         <div style="width:310px;height:150px;float:left;position:relative" data-bind='event: {click: toggleDevice}'>
             <!--ko with: device -->
             <span class="tile-label-center" data-bind="text: deviceName"></span>
-            <p style='position:absolute;font-size:10pt;left:3px;top:5px' data-bind="text: statusLabel"></p>
             <!-- /ko -->
-            
+
             <span class="absolute-center" style="font-size:32px" data-bind="text: ambientTemp"></span>
             <span class="horizontal-center" style="bottom:20%;font-size: 12pt; font-weight: bold;" data-bind="text: operatingStatus, visible: setPointIsVisible"></span>
-            <div style="position:relative;top:5px;float:right;margin-right:3px" data-bind="visible: humidityIsVisible">
-                <span style="font-size:14px" data-bind="text: humidity() " /><span class="mif-water" />
+
+            <div id="status_bar" style="position:absolute;width:310px;height:25px;top:3px;left:3px">
+                <table width="100%;table-layout: fixed;">
+                    <tr>
+                        <td style="width: 25%;">
+                            <!--ko with: device -->
+                            <span style='font-size:10pt' data-bind="text: statusLabel" />
+                            <!-- /ko -->
+                        </td>
+                        <td style="width: 25%;">
+                            <span style='font-size:10pt' data-bind="text: valveStatus" />
+                            <img src='img/valve.png' style='height:14px;width:14px' data-bind="visible: valveIsVisible" />
+                        </td>
+                        <td style="width: 25%;">
+                            <span style='font-size:10pt' data-bind="text: batteryStatus" />
+                            <img src='img/battery.png' style='height:14px;width:14px' data-bind="visible: batteryIsVisible" />
+                        </td>
+                        <td data-bind="visible: humidityIsVisible" style="width: 25%;">
+                            <span style="font-size:10pt" data-bind="text: humidity() " />
+                            <span class="mif-water" />
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <p style='position:absolute;bottom:15px;left:15px;' data-bind="text: valveStatus" />
-            <p style='position:absolute;top:15px;right:5px;' data-bind="text: batteryStatus" />
-            <img src='img/battery.png' style='position:absolute;top:25px;right:30%;height:14px;width:14px' data-bind="visible: batteryIsVisible" />
-            <img src='img/valve.png' style='position:absolute;bottom:25px;left:2%;height:14px;width:14px' data-bind="visible: valveIsVisible" />
             <span class="mif-spinner mif-ani-spin" style='position:absolute;top:40px;right:10px;' data-bind="visible: pendingIsVisible"></span>
         </div>
         <!-- /ko -->

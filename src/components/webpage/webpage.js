@@ -18,6 +18,11 @@ define(['knockout', 'text!./webpage.html', 'underscore'], function (ko, template
         } else self.defaultColor = "bg-steel";
         self.classInfo("tile fg-white " + self.defaultColor);
 
+        self.delay = 3000;
+        if (params.hasOwnProperty("delay")) {
+            self.delay = params.delay;
+        }
+
         self.navigateToSite = function (url) {
             window.location.href = url;
         }
@@ -44,7 +49,7 @@ define(['knockout', 'text!./webpage.html', 'underscore'], function (ko, template
 
                 self.timer = setTimeout(function (url) {
                         window.location.href = "http://" + url;
-                    }, 3000,
+                    }, self.delay,
                     self.sites[i].url
                 );
             } else self.iconIsVisible(false);

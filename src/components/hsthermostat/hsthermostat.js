@@ -54,7 +54,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'bluebird', 'text!./
         var ESH_COLOR = "bg-amber";
         var AUTO_CHANGE_OVER_COLOR = "bg-violet";
         var OFF_COLOR="bg-gray";
-
+        
         self.url = config.url;
 
         self.ref = params.ref;
@@ -68,15 +68,6 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'bluebird', 'text!./
         self.ambientControlRef = ko.observable();
         self.humidityControlRef = ko.observable();
         self.rootControlRef = ko.observable(self.ref);
-
-        //self.controlModeValue="";
-
-
-
-        /*if (params.hasOwnProperty("color")) {
-            self.defaultColor = params.color;
-        } else self.defaultColor = "bg-steel";*/
-        //self.classInfo("tile tile-wide-x fg-white " + self.defaultColor);
 
 
         self.statusIcon = ko.observable();
