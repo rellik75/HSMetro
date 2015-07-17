@@ -11,7 +11,25 @@ define(["knockout", "crossroads", "hasher"], function (ko, crossroads, hasher) {
 
     return new Router({
         routes: [
-            { url: '',          params: { page: 'home-page' } }
+            { url: '',          	params: { page: 'home-page' } },
+            { url: 'master_br',     params: { page: 'master_br' } },
+            { url: 'kitchen',     	params: { page: 'kitchen' } },
+            { url: 'hallway',     	params: { page: 'hallway' } },
+            { url: 'guest_room',    params: { page: 'guest_room' } },
+            { url: 'media_room',    params: { page: 'media_room' } },
+            { url: 'office',     	params: { page: 'office' } },
+            { url: 'patio',         params: { page: 'patio' } },
+            { url: 'den',           params: { page: 'den' } },
+            { url: 'bedroom_1',     params: { page: 'bedroom_1' } },
+            { url: 'bedroom_2',     params: { page: 'bedroom_2' } },
+            { url: 'bedroom_3',     params: { page: 'bedroom_3' } },
+            { url: 'study',         params: { page: 'study' } },
+            { url: 'entry',         params: { page: 'entry' } },
+            { url: 'garage',        params: { page: 'garage' } },
+            { url: 'dining_room',   params: { page: 'dining_room' } },
+            { url: 'outside',       params: { page: 'outside' } },
+            { url: 'living_room',   params: { page: 'living_room' } },
+            { url: 'family_room',   params: { page: 'family_room' } },
         ]
     });
 

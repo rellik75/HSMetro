@@ -189,42 +189,11 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'bluebird', 'text!./
             }
         });
         self.classInfo = ko.observable();
-        /*self.classInfo=ko.computed(function() {
-             if (self.pendingModeValue() == null) {
-                if (self.modeValue() == HEATING_MODE) {
-                    return "tile tile-wide-x fg-white " + HEAT_COLOR;
-                } else if (self.modeValue() == ESH_MODE) {
-                    return "tile tile-wide-x fg-white " + ESH_COLOR;
-                } else if (self.modeValue() == COOLING_MODE) {
-                    return "tile tile-wide-x fg-white " + COOL_COLOR;
-                } else if (self.modeValue() == OFF) {
-                    return "tile tile-wide-x fg-white " + self.defaultColor
-                } else if (self.modeValue() == AUTO_CHANGE_OVER_MODE) {
-                    return "tile tile-wide-x fg-white " + AUTO_CHANGE_OVER_COLOR;
-                }
-                //else return HEAT_ICON;
-            } else {
-                if (self.pendingModeValue() == HEATING_MODE) {
-                    return "tile tile-wide-x fg-white " + HEAT_COLOR;
-                } else if (self.pendingModeValue() == ESH_MODE) {
-                    return "tile tile-wide-x fg-white " + ESH_COLOR;
-                } else if (self.pendingModeValue() == COOLING_MODE) {
-                    return "tile tile-wide-x fg-white " + COOL_COLOR;
-                } else if (self.pendingModeValue() == OFF) {
-                    return "tile tile-wide-x fg-white " + self.defaultColor;
-                } else if (self.pendingModeValue() == AUTO_CHANGE_OVER_MODE) {
-                    return "tile tile-wide-x fg-white " + AUTO_CHANGE_OVER_COLOR;
-                }
-            }
-                    if (self.operatingStatus() == "Cooling") {
-                    return "tile tile-wide-x fg-white  bg-darkCyan ";
-                    } else if (self.operatingStatus() == "Heating") {
-                    return "tile tile-wide-x fg-white  bg-darkOrange ";
-                    } else {
-                    return "tile tile-wide-x fg-white " + self.defaultColor; 
-                    }
-                
-        });*/
+        if (params.hasOwnProperty("color")) {
+            self.defaultColor = params.color;
+        } else self.defaultColor = "bg-steel";
+        self.classInfo("tile tile-wide-x fg-white " + self.defaultColor);
+
 
         self.setTileColor = function () {
             var _classInfo = "tile tile-wide-x fg-white ";

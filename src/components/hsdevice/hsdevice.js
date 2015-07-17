@@ -115,6 +115,8 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'bluebird', 'text!./
                 self.controlButtonsVisible(true);
             } else if (String(status).match(/On/)) {
                 status = "On";
+            } else if (String(status).match(/Loop/)) {
+                status = "On";    
             } else if (String(status).match(/Lock/)) {
                 status = "Locked";
             } else if (String(status).match(/Unlock/)) {
@@ -152,6 +154,7 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'bluebird', 'text!./
                 }
             case "Arm":
             case "Armed":
+            case "Alert":        
                 {
                     self.classInfo(_classInfo + " bg-red");
                     break;

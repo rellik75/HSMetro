@@ -1,0 +1,83 @@
+<!--
+  The navigation UI that is docked to the top of the window. Most of this markup simply
+  follows Bootstrap conventions. The only Knockout-specific parts are the data-bind
+  attributes on the <li> elements.
+-->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">HSMetro</a>
+    </div>
+    <div class="collapse navbar-collapse">
+
+      <ul class="nav navbar-nav">
+        <li  data-bind="css: { active: route().page === 'home-page' }">
+          <a href="#">Main</a>
+        </li>
+        <li  data-bind="css: { active: route().page === 'master_br' }, visible: master_br">
+          <a href="#master_br">Master Bedroom</a>
+        </li>
+        <li  data-bind="css: { active: route().page === 'kitchen' }, visible: kitchen">
+          <a href="#kitchen">Kitchen</a>
+        </li> 
+        <li  data-bind="css: { active: route().page === 'hallway' }, visible: hallway">
+          <a href="#hallway">Hallway</a>
+        </li> 
+        <li  data-bind="css: { active: route().page === 'guest_room' }, visible: guest_room">
+          <a href="#guest_room">Guest Room</a>
+        </li>
+        <li  data-bind="css: { active: route().page === 'media_room' }, visible: media_room">
+          <a href="#media_room">Media Room</a>
+        </li>
+        <li  data-bind="css: { active: route().page === 'office' }, visible: office">
+          <a href="#office">Office</a>
+        </li> 
+        <li  data-bind="css: { active: route().page === 'patio' }, visible: patio">
+          <a href="#patio">Patio</a>
+        </li> 
+        <li  data-bind="css: { active: route().page === 'den' }, visible: den">
+          <a href="#den">Den</a>
+        </li>
+        <li  data-bind="css: { active: route().page === 'bedroom_1' }, visible: bedroom_1">
+          <a href="#bedroom_1">Bedroom 1</a>
+        </li>
+        <li  data-bind="css: { active: route().page === 'bedroom_2' }, visible: bedroom_2">
+          <a href="#bedroom_2">Bedroom 2</a>
+        </li> 
+        <li  data-bind="css: { active: route().page === 'bedroom_3' }, visible: bedroom_3">
+          <a href="#bedroom_3">Bedroom 3</a>
+        </li>   
+        <li  data-bind="css: { active: route().page === 'study' }, visible: study">
+          <a href="#study">Study</a>
+        </li>
+        <li  data-bind="css: { active: route().page === 'entry' }, visible: entry">
+          <a href="#entry">Entry</a>
+        </li>
+        <li  data-bind="css: { active: route().page === 'garage' }, visible: garage">
+          <a href="#garage">Garage</a>
+        </li> 
+        <li  data-bind="css: { active: route().page === 'dining_room' }, visible: dining_room">
+          <a href="#dining_room">Dining Room</a>
+        </li>           
+         <li  data-bind="css: { active: route().page === 'outside' }, visible: outside">
+          <a href="#outside">Outside</a>
+        </li>
+        </li>           
+         <li  data-bind="css: { active: route().page === 'family_room' }, visible: family_room">
+          <a href="#family_room">Family Room</a>
+        </li>
+        </li>           
+         <li  data-bind="css: { active: route().page === 'living_room' }, visible: living_room">
+          <a href="#living_room">Living Room</a>
+        </li>        
+      </ul>
+
+    </div>
+  </div>
+</div>

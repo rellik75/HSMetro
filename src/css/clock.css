@@ -13,15 +13,15 @@
     text-shadow: 0 0 5px #00c6ff;
 }
 
-ul {
+ul.clock {
     width: 250px;
     margin: 0 auto;
-    padding: 0px;
+    padding: 10px;
     list-style: none;
     text-align: center;
 }
 
-ul li {
+ul.clock li {
     display: inline;
     font-size: 36px;
     text-align: center;

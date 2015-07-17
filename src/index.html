@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>HSMetro</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" sizes="192x192" href="android-chrome-192x192.png">
     <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
@@ -26,7 +26,6 @@
     <meta http-equiv="Cache-control" content="no-cache">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="mstile-144x144.png">
-    <meta name="theme-color" content="#000000">
     <!-- build:css -->
     <link href="bower_modules/components-bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bower_modules/metro/build/css/metro-icons.min.css" rel="stylesheet">
@@ -37,19 +36,18 @@
     <script src="app/require.config.js"></script>
     <!-- build:js -->
     <script data-main="app/startup" src="bower_modules/requirejs/require.js"></script>
+
     <!-- endbuild -->
     
     <script>        
         var message = "Version @@version";
         document.oncontextmenu = new Function("alert(message);return false");
-                
     </script>
+    
 </head>
 
 <body style="background-color:black">
-
+	<nav-bar params="route: route"></nav-bar>
     <div id="tiles" data-bind="component: { name: route().page, params: route }"></div>
-
 </body>
-
 </html>
