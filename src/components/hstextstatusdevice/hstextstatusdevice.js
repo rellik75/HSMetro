@@ -147,8 +147,8 @@ define(['jquery', 'knockout', 'devicecontroller', 'hsd', 'config', 'bluebird', '
                 //debugger;
                 var arr = String(message).split(",");
                 if (parseInt(arr[1]) == self.ref) {
-                    if (self.device().value() != parseInt(arr[2])) {
-                        self.device().value(parseInt(arr[2]));
+                    if (self.device().value() != parseFloat(arr[2])) {
+                        self.device().value(parseFloat(arr[2]));
                         self.query();
                     }
                 }

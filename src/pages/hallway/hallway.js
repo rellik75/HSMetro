@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./hallway.html"], function ($, ko, pageLayout, hallwayTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./hallway.html"], function ($, ko, pageLayout, metro, hallwayTemplate) {
 
     function HallwayViewModel(route) {
         pageLayout.layoutPage();

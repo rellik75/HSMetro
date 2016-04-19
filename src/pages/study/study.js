@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./study.html"], function ($, ko, pageLayout, studyTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./study.html"], function ($, ko, pageLayout, metro, studyTemplate) {
 
     function StudyViewModel(route) {
         pageLayout.layoutPage();

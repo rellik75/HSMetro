@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./garage.html"], function ($, ko, pageLayout, garageTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./garage.html"], function ($, ko, pageLayout, metro, garageTemplate) {
 
     function GarageViewModel(route) {
         pageLayout.layoutPage();

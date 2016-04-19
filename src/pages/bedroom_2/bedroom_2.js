@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./bedroom_2.html"], function ($, ko, pageLayout, br2Template) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./bedroom_2.html"], function ($, ko, pageLayout, metro, br2Template) {
 
     function BR2ViewModel(route) {
         pageLayout.layoutPage();

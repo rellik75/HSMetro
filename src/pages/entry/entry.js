@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./entry.html"], function ($, ko, pageLayout, entryTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./entry.html"], function ($, ko, pageLayout, metro, entryTemplate) {
 
     function EntryViewModel(route) {
         pageLayout.layoutPage();

@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./kitchen.html"], function ($, ko, pageLayout, kitchenTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./kitchen.html"], function ($, ko, pageLayout, metro, kitchenTemplate) {
 
     function KitchenViewModel(route) {
         pageLayout.layoutPage();  

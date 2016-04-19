@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./guest_room.html"], function ($, ko, pageLayout, guestRoomTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./guest_room.html"], function ($, ko, pageLayout, metro, guestRoomTemplate) {
 
     function GuestRoomViewModel(route) {
         pageLayout.layoutPage();

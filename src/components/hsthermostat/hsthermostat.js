@@ -194,7 +194,11 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'bluebird', 'text!./
         } else self.defaultColor = "bg-steel";
         self.classInfo("tile tile-wide-x fg-white " + self.defaultColor);
 
-
+        self.locationIsVisible=ko.observable();
+        if (params.hasOwnProperty("locationIsVisible")){
+            self.locationIsVisible(params.locationIsVisible);
+        } else self.locationIsVisible(true); 
+        
         self.setTileColor = function () {
             var _classInfo = "tile tile-wide-x fg-white ";
             if (self.pendingModeValue() == null) {
@@ -348,10 +352,8 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'bluebird', 'text!./
                 self.device(data);
                 //debugger;
                 if (self.device().statusLabel() == "Offline") {
-                    //self.controlButtonsAreVisible(false);
                     self.setPointIsVisible(false);
                 } else {
-                    // self.controlButtonsAreVisible(true);
                     self.setPointIsVisible(true);
                 }
                 _.each(self.device().children, function (item) {
@@ -386,22 +388,19 @@ define(['jquery', 'knockout', 'devicecontroller', 'config', 'bluebird', 'text!./
                         //debugger;
                         self.mode(data.statusLabel());
                         self.modeValue(data.value());
+                        self.setTileColor();
                         console.log("HS Mode Value = " + self.modeValue());
                         ko.utils.arrayPushAll(self.device().controlPairs(), data.controlPairs());
                         self.modeControlRef(data.ref());
 
                         if (self.pendingModeValue() == null) {
                             if (self.modeValue() == OFF) {
-                                //self.modeIcon(OFF_ICON);
-                                //self.controlButtonsAreVisible(false);
                                 self.setPointIsVisible(false);
                             } else if (self.device().statusLabel() != "Offline") {
-                                //self.controlButtonsAreVisible(true);
                                 self.setPointIsVisible(true);
                             }
                         } else
                         if (self.pendingModeValue() == OFF) {
-                            //self.controlButtonsAreVisible(false);
                             self.setPointIsVisible(false);
                         }
                     }

@@ -31,6 +31,13 @@
                             <span class="mif-water" />
                         </td>
                     </tr>
+                    <tr colspan="4" data-bind="visible: locationIsVisible"  >
+                        <td>
+                         <!--ko with: device -->
+                        <span class="uppercase" style="font-size:10pt" data-bind="text: location" />
+                        <!-- /ko -->
+                        </td>    
+                    </tr>                    
                 </table>
             </div>
 
@@ -40,12 +47,14 @@
         <div style="width:90px;height:150px;float:right;position:relative" data-bind="visible: setPointIsVisible">
             <div class="vertical-line" style="height: 131px;top:5%;" />
             <div style="width:90px;height:60px;top:0px;position:absolute" data-bind="event: {click: rangeUp}">
-                <button class="button cycle-button bg-grayLighter" style='position:absolute;top:5%;left: 50%;margin-right: -50%;transform: translate(-50%, 0%) ' id="up">&#9651;
-                </button>
+                <input type="image" src="img/up.png" style='position:absolute;top:5%;left: 50%;margin-right: -50%;transform: translate(-50%, 0%) ' id="up">
+<!--             <button class="button cycle-button bg-grayLighter" style='position:absolute;top:5%;left: 50%;margin-right: -50%;transform: translate(-50%, 0%) ' id="up">&#9651;
+                </button>-->
             </div>
             <div style="width:90px;height:60px;bottom:0px;position:absolute" data-bind="event: {click: rangeDown}">
-                <button class="button cycle-button bg-grayLighter" style='position:absolute;bottom:5%;left: 50%;margin-right: -50%;transform: translate(-50%, 0%) ' id="down">&#9661;
-                </button>
+                <input type="image" src="img/down.png" style='position:absolute;bottom:5%;left: 50%;margin-right: -50%;transform: translate(-50%, 0%) ' id="down">
+<!--             <button class="button cycle-button bg-grayLighter" style='position:absolute;bottom:5%;left: 50%;margin-right: -50%;transform: translate(-50%, 0%) ' id="down">&#9661;
+                </button>-->
             </div>
             <p class="absolute-center" style='font-size:18pt;' data-bind="text: setpoint" />
         </div>
@@ -80,6 +89,13 @@
                             <span style="font-size:10pt" data-bind="text: humidity() " />
                             <span class="mif-water" />
                         </td>
+                    </tr>
+                    <tr colspan="4" data-bind="visible: locationIsVisible">
+                        <td>
+                         <!--ko with: device -->
+                        <span class="uppercase" style="font-size:10pt" data-bind="text: location " />
+                         <!-- /ko -->
+                        </td>    
                     </tr>
                 </table>
             </div>

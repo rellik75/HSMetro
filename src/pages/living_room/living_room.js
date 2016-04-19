@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./living_room.html"], function ($, ko, pageLayout, livingRoomTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./living_room.html"], function ($, ko, pageLayout, metro,  livingRoomTemplate) {
 
     function LivingRoomViewModel(route) {
         pageLayout.layoutPage();

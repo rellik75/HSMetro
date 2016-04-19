@@ -57,11 +57,9 @@ bg-grayLigher
 
 -->
 
-
-
 <div class="tile-area tile-area-scheme-dark fg-white">
 
-    <div class="tile-group single">
+    <div class="tile-group double">
         <span class="tile-group-title">Status Devices</span>
         <div class="tile-container">
             <hsstatusdevice params="ref: 243, color: 'bg-gray', locationIsVisible: false"></hsstatusdevice>
@@ -71,12 +69,9 @@ bg-grayLigher
     <div class="tile-group triple">
         <span class="tile-group-title">Devices</span>
         <div class="tile-container">
-
             <hsdevice id="kitchen_light" params="ref: 218, color: 'bg-taupe'"></hsdevice>
-            <hsdevice id="family_room_fan" params="ref: 426, color: 'bg-taupe', locationIsVisible: false"></hsdevice>
-            <hsdevice id="bar_lights" params="ref: 216, color: 'bg-taupe'"></hsdevice>
+            <hsnavidevice id="bar_lights" params="ref: 216, color: 'bg-taupe'"></hsnavidevice>
             <hsdevice id="dinette_light" params="ref: 229, color: 'bg-taupe'"></hsdevice>
-            <hsdevice id="patio_light" params="ref: 230, color: 'bg-taupe'"></hsdevice>
             <hsevent id="lights off" params="group: 'Auto Lights Off', event: 'All Off',  timeout: 5000, color: 'bg-gray',
                                                     icon:  '/images/HomeSeer/status/on.gif'"></hsevent>
             <hsdevice id="virtual_home_mode" params="ref: 298, color: 'bg-gray'"></hsdevice>            

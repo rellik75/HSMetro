@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./master_br.html"], function ($, ko, pageLayout, master_brTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./master_br.html"], function ($, ko, pageLayout, metro, master_brTemplate) {
 
     function MasterBRViewModel(route) {
         pageLayout.layoutPage();

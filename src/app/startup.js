@@ -1,52 +1,23 @@
 define(['jquery', 'knockout', 'metrojs', './router', 'bootstrap', 'knockout-projections'], function ($, ko, metro, router) {
 
-    // Components can be packaged as AMD modules, such as the following:
-    ko.components.register('home-page', {
-        require: 'pages/home-page/home'
-    });
+    
+    //HSMetro Components are registered here//
     ko.components.register('nav-bar', { require: 'components/nav-bar/nav-bar' });
-
-    // ... or for template-only components, you can just point to a .html file directly:
-
-    ko.components.register('hsdevice', {
-        require: 'components/hsdevice/hsdevice'
-    });
-
-    ko.components.register('weather', {
-        require: 'components/weather/weather'
-    });
-
-    ko.components.register('clock', {
-        require: 'components/clock/clock'
-    });
-
-    ko.components.register('refresh', {
-        require: 'components/refresh/refresh'
-    });
-
-    ko.components.register('hsthermostat', {
-        require: 'components/hsthermostat/hsthermostat'
-    });
-    
-
+    ko.components.register('hsdevice', {require: 'components/hsdevice/hsdevice'});
+    ko.components.register('weather', {require: 'components/weather/weather'});
+    ko.components.register('clock', {require: 'components/clock/clock'});
+    ko.components.register('refresh', {require: 'components/refresh/refresh'});
+    ko.components.register('hsthermostat', {require: 'components/hsthermostat/hsthermostat'});
     ko.components.register('hsstatusdevice', { require: 'components/hsstatusdevice/hsstatusdevice' });
-    
-
     ko.components.register('staticimage', { require: 'components/staticimage/staticimage' });
-    
-    
-
-    ko.components.register('webpage', { require: 'components/webpage/webpage' });
-    
-    
-
+    ko.components.register('webpage', { require: 'components/webpage/webpage' });   
     ko.components.register('hsevent', { require: 'components/hsevent/hsevent' });
-    
-    
-
     ko.components.register('hstextstatusdevice', { require: 'components/hstextstatusdevice/hstextstatusdevice' });
+    ko.components.register('hsnavidevice', { require: 'components/hsnavidevice/hsnavidevice' });
+    //End Component Registration//
     
-    //ko.components.register('master_br', {template: { require: 'text!pages/master_br/master_br.html' }});
+    //HSMetro Pages are registered here.  The first parameter must match the page value specified in router.js//
+    ko.components.register('home-page', {require: 'pages/home-page/home'});
     ko.components.register('kitchen', {require: 'pages/kitchen/kitchen' });
     ko.components.register('master_br', {require: 'pages/master_br/master_br'});
     ko.components.register('guest_room', {require: 'pages/guest_room/guest_room'});
@@ -65,6 +36,8 @@ define(['jquery', 'knockout', 'metrojs', './router', 'bootstrap', 'knockout-proj
     ko.components.register('living_room', {require: 'pages/living_room/living_room'});
     ko.components.register('family_room', {require: 'pages/family_room/family_room'});
     ko.components.register('hallway', {require: 'pages/hallway/hallway'});
+    //End Page Registration//
+    
 
     // [Scaffolded component registrations will be inserted here. To retain this feature, don't remove this comment.]
 
