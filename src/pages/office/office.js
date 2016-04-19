@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./office.html"], function ($, ko, pageLayout, officeTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./office.html"], function ($, ko, pageLayout, metro, officeTemplate) {
 
     function OfficeViewModel(route) {
         pageLayout.layoutPage();

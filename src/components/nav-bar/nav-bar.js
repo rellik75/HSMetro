@@ -3,25 +3,20 @@ define(['knockout', 'config', 'text!./nav-bar.html'], function(ko, config, templ
   function NavBarViewModel(params) {
       
       var navBarItems=config.navBarItems;
+      var navBarLabels=config.navBarLabels;
       var self=this;
-      self.master_br=ko.observable(navBarItems.master_br);
-      self.kitchen=ko.observable(navBarItems.kitchen);
-      self.hallway=ko.observable(navBarItems.hallway);
-      self.guest_room=ko.observable(navBarItems.guest_room);
-      self.media_room=ko.observable(navBarItems.media_room);
-      self.office=ko.observable(navBarItems.office);
-      self.patio=ko.observable(navBarItems.patio);
-      self.den=ko.observable(navBarItems.den);
-      self.bedroom_1=ko.observable(navBarItems.bedroom_1);
-      self.bedroom_2=ko.observable(navBarItems.bedroom_2);
-      self.bedroom_3=ko.observable(navBarItems.bedroom_3);
-      self.study=ko.observable(navBarItems.study);
-      self.entry=ko.observable(navBarItems.entry);
-      self.garage=ko.observable(navBarItems.garage);
-      self.dining_room=ko.observable(navBarItems.dining_room);
-      self.outside=ko.observable(navBarItems.outside);
-      self.living_room=ko.observable(navBarItems.living_room);
-      self.family_room=ko.observable(navBarItems.family_room);
+      
+      var items=[];
+      for (var property in navBarItems) {
+        if (navBarItems.hasOwnProperty(property)) {
+         if (navBarItems[property]) {
+             items.push("<li data-bind='css: { active: route().page === '" + property + "' }> <a href='#" + property + "'>"+navBarLabels[property]+"</a> </li>");
+         }
+        }
+      }
+      $('#navbar').append( items.join('') );
+      
+      self.main_label=ko.observable(navBarLabels.main);
 
 
     this.route = params.route;

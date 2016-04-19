@@ -1,0 +1,21 @@
+1.  Create a folder called HSMetro under HomeSeer/html
+2.  Extract contents of zip file to this folder
+3.  Install Node.js from http://nodejs.org
+4.  Download NSSM from https://nssm.cc/download
+5.  Extract NSSM to your HSMetro folder
+6.  Open a command prompt and navigate to your HSMetro folder
+7.  Run "npm install"
+8.  You should see a new directory created called node_modules
+9.  Run "nssm install HSProxyService".  When the UI launches enter the following values:
+			For Path: C:\Program Files\nodejs\node.exe or C:\Program Files x86\nodejs\node.exe
+			For Startup Directory: <HomeSeer Install Folder>\html\HSMetro
+			For Arguments: proxy.js <your homeseer IP address> <Proxy Port the HTML will subscribe to--Default is 6512>
+10.  Add node.exe to your firewall and enable HTTP/TCP traffic			
+11.  To log your errors, select the I/O tab and enter a path/filename for your error log
+12.  Click the "Install Service" button.  Verify your service exists by going to the computer management console->servies
+	and look for HSProxyService in the list.
+13.  Start the service.  If everything is configured correctly, your service will connect to the ASCII interface on port 11000
+	and start broadcasting messages to the HSMetro UI.
+	
+	
+			

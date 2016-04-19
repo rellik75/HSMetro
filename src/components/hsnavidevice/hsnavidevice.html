@@ -1,0 +1,22 @@
+<div class="tile-wide" data-role="tile" data-bind='attr: {"class": classInfo}'>
+    <div class="tile-content iconic" data-bind='attr: {"id": ref}'>
+            <div data-bind="visible: locationIsVisible">
+                <!--ko with: device -->
+                <p class="v-align-top align-center margin5 uppercase" style="font-size:14px" data-bind="text: location"></p>
+                <!-- /ko -->
+            </div>        
+        <div id="left_nav" style="width:100px;height:150px;left:0px;top:0px;position:absolute;" data-bind='event: {click: toggleDevice}'>
+            <input type="image" class="absolute-center"  src="img/left.png" id="back">
+        </div>
+        <div id="device_info" style="height:150px;width:110px;top:0px;position:absolute;left:100px">
+            <!--ko with: device -->
+            <span class="tile-label-center" style="font-size:14px;" data-bind="text: deviceName() + ' ' + statusLabel()"></span>
+            <img class="icon" style="width:32px;height:32px;top:40%;position:absolute;left:50%;margin-right:-50%;transform: translate(-50%,0%);" data-bind="attr:{src: statusImage}" />
+            <!-- /ko -->
+        </div>
+        <div id="right_nav" style="width:100px;height:150px;right:0px;top:0px;position:absolute" data-bind='event: {click: toggleDevice}'>
+            <input type="image" class="absolute-center" src="img/right.png" id="forward">
+        </div>
+
+    </div>
+</div>

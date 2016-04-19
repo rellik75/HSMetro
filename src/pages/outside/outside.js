@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./outside.html"], function ($, ko, pageLayout, outsideTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./outside.html"], function ($, ko, pageLayout, metro, outsideTemplate) {
 
     function OutsideViewModel(route) {
         pageLayout.layoutPage();

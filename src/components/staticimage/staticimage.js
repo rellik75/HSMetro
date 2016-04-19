@@ -11,18 +11,25 @@ define(['knockout', 'text!./staticimage.html', 'config'], function (ko, template
 
         self.url = config.url;
         self.classInfo = ko.observable();
+        if (self.imagePath.substring(0, 4) == "http"){
+             self.url=self.imagePath;
+        }
+        else {
+            self.url=self.url + self.imagePath;
+        }
 
         if (params.hasOwnProperty("color")) {
             self.defaultColor = params.color;
         } else self.defaultColor = "bg-steel";
 
-        self.classInfo("tile fg-white "  + self.defaultColor);
+        self.classInfo("tile-big-x tile-wide-y fg-white "  + self.defaultColor);
         self.image = ko.observable(new Image());
         self.id = ko.observable(randomID);
-        self.image(self.url + self.imagePath + "?v=" + self.id() + new Date().getTime());
+        self.image(self.url + "?v=" + self.id() + new Date().getTime());
+
 
         self.intervalRefresh = setInterval(function () {
-            self.image(self.url + self.imagePath + "?v=" + self.id() + new Date().getTime());
+            self.image(self.url + "?v=" + self.id() + new Date().getTime());
         }, self.refreshInterval);
 
 

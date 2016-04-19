@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./den.html"], function ($, ko, pageLayout, denTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./den.html"], function ($, ko, pageLayout, metro, denTemplate) {
 
     function DenViewModel(route) {
         pageLayout.layoutPage();

@@ -1,4 +1,4 @@
-define(["jquery", "knockout", "pageLayout", "text!./patio.html"], function ($, ko, pageLayout, patioTemplate) {
+define(["jquery", "knockout", "pageLayout", "metrojs", "text!./patio.html"], function ($, ko, pageLayout, metro, patioTemplate) {
 
     function PatioViewModel(route) {
         pageLayout.layoutPage();
